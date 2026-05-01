@@ -1,0 +1,40 @@
+{
+  "name": "SMABench Pilot Seed Manifest",
+  "created": "2026-05-01",
+  "scope": "Seed benchmark classes for secure messaging app implementation attack-surface assessment.",
+  "pilot_targets": [
+    "Signal Android",
+    "Element X Android"
+  ],
+  "seed_classes": [
+    {
+      "id": "SMA-SEED-001",
+      "class": "Android manifest entrypoint inventory",
+      "evidence": "05_Real_App_Analysis_Pilot/inventories/android_manifest_component_inventory.csv",
+      "metric": "Component counts, exported status, permissions, intent actions, schemes, hosts, MIME types."
+    },
+    {
+      "id": "SMA-SEED-002",
+      "class": "Source indicator attack-surface inventory",
+      "evidence": "05_Real_App_Analysis_Pilot/inventories/attack_surface_observations.csv",
+      "metric": "Categorized occurrences for media handling, deep links, QR/device linking, storage, crypto/session, native/FFI, network/sync, WebView."
+    },
+    {
+      "id": "SMA-SEED-003",
+      "class": "Static rule scan",
+      "evidence": "05_Real_App_Analysis_Pilot/semgrep/semgrep_results_summary.csv",
+      "metric": "Informational Semgrep findings from ASEMA-specific generic rules."
+    },
+    {
+      "id": "SMA-SEED-004",
+      "class": "Prototype infrastructure validation",
+      "evidence": "04_Feasibility_Evidence_Appendix/03_test_logs/support_repo_check_results.csv",
+      "metric": "Local test/build/lint status for supporting 577i prototype libraries."
+    }
+  ],
+  "non_goals": [
+    "No exploit reproduction.",
+    "No live app or server probing.",
+    "No claim that informational static indicators are vulnerabilities."
+  ]
+}

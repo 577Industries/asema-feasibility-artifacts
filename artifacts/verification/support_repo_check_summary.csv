@@ -1,0 +1,16 @@
+repo,public_repo,command,exit_code,status,notes
+workflow-dag,https://github.com/577-Industries/workflow-dag,npm test,0,pass,Workflow compiler for reproducible multi-step assessment pipelines.
+workflow-dag,https://github.com/577-Industries/workflow-dag,npm run build,0,pass,Workflow compiler for reproducible multi-step assessment pipelines.
+workflow-dag,https://github.com/577-Industries/workflow-dag,npm run lint,0,pass,Workflow compiler for reproducible multi-step assessment pipelines.
+hashchain-audit,https://github.com/577-Industries/hashchain-audit,npm test,0,pass,Tamper-evident audit chain for evidence provenance.
+hashchain-audit,https://github.com/577-Industries/hashchain-audit,npm run build,0,pass,Tamper-evident audit chain for evidence provenance.
+hashchain-audit,https://github.com/577-Industries/hashchain-audit,npm run lint,0,pass,Tamper-evident audit chain for evidence provenance.
+tool-guardrails,https://github.com/577Industries/tool-guardrails,npm test,0,pass,Policy/approval guardrails for controlled autonomous security tooling.
+tool-guardrails,https://github.com/577Industries/tool-guardrails,npm run build,0,pass,Policy/approval guardrails for controlled autonomous security tooling.
+tool-guardrails,https://github.com/577Industries/tool-guardrails,npm run lint,0,pass,Policy/approval guardrails for controlled autonomous security tooling.
+model-router,https://github.com/577Industries/model-router,npm test,0,pass,Deterministic model/provider routing support for agentic analysis workflows.
+model-router,https://github.com/577Industries/model-router,npm run build,0,pass,Deterministic model/provider routing support for agentic analysis workflows.
+model-router,https://github.com/577Industries/model-router,npm run lint,0,pass,Deterministic model/provider routing support for agentic analysis workflows.
+agent-memory,https://github.com/577Industries/agent-memory,npm test,0,pass,Persistent agent memory substrate for reproducible analyst context.
+agent-memory,https://github.com/577Industries/agent-memory,npm run build,0,pass,Persistent agent memory substrate for reproducible analyst context.
+agent-memory,https://github.com/577Industries/agent-memory,npm run lint,0,pass,Persistent agent memory substrate for reproducible analyst context.

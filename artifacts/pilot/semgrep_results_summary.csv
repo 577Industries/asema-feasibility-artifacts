@@ -1,0 +1,3 @@
+target,exit_code,findings,json,log
+signal_android,0,239,05_Real_App_Analysis_Pilot/semgrep/signal_android_semgrep.json,05_Real_App_Analysis_Pilot/semgrep/signal_android_semgrep.log
+element_x_android,0,162,05_Real_App_Analysis_Pilot/semgrep/element_x_android_semgrep.json,05_Real_App_Analysis_Pilot/semgrep/element_x_android_semgrep.log

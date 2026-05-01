@@ -1,0 +1,36 @@
+{
+  "analysis_scope": "Public-source static analysis of Android manifests and source-code indicators. No exploit reproduction, no live target probing, no credentialed app interaction.",
+  "branch": "main",
+  "commit": "91d265e6bf16461ce92d00611e4c62674f41de63",
+  "commit_short": "91d265e6",
+  "extension_counts": {
+    ".kt": 3957,
+    ".kts": 268,
+    ".toml": 1,
+    ".xml": 2247
+  },
+  "license_note": "Apache-2.0 style project licensing; verify exact repository license before redistribution.",
+  "manifest_component_counts": {
+    "activity": 4,
+    "provider": 3,
+    "receiver": 5,
+    "service": 3,
+    "uses-permission": 20
+  },
+  "name": "Element X Android",
+  "observation_category_counts": {
+    "crypto_session_surface": 160,
+    "deep_link_uri": 160,
+    "media_file_surface": 160,
+    "native_ffi_boundary": 160,
+    "network_sync_surface": 160,
+    "qr_or_device_linking": 160,
+    "storage_keystore": 160,
+    "webview_javascript": 160
+  },
+  "rationale": "Open-source Matrix messenger built on the Matrix Rust SDK, useful as an independently implemented E2EE messaging stack.",
+  "repo_url": "https://github.com/element-hq/element-x-android.git",
+  "retrieved_date": "2026-05-01",
+  "source_file_count": 6473,
+  "target_id": "element_x_android"
+}

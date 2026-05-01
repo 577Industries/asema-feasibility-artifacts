@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ASEMA Pilot Category Summary Row",
+  "type": "object",
+  "required": [
+    "target",
+    "category",
+    "observation_count_capped",
+    "cap_note"
+  ],
+  "properties": {
+    "target": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "observation_count_capped": {
+      "type": "integer"
+    },
+    "cap_note": {
+      "type": "string"
+    },
+    "example_files": {
+      "type": "string"
+    }
+  }
+}

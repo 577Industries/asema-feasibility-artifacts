@@ -1,0 +1,6 @@
+ASEMA Feasibility Artifacts
+Copyright 2026 577 Industries
+
+This public repository contains sanitized reproducibility artifacts derived from an internal ASEMA feasibility binder. It does not include target source clones, internal proposal drafts, raw scanner JSON, or proprietary submission material.
+
+Signal Android and Element X Android are third-party open-source projects. This repository records metadata and public-source static-analysis summaries only; it does not redistribute their source code.

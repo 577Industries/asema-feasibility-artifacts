@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ASEMA Feasibility Artifacts</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">577 Industries · AegisGraph</p>
+      <h1>ASEMA Feasibility Artifacts</h1>
+      <p class="lede">A sanitized, reproducible evidence package for secure messaging application assessment: public target manifests, pilot summaries, benchmark seeds, diagrams, citations, and verification scripts.</p>
+      <div class="actions">
+        <a href="../artifacts/feasibility/ASEMA_Phase_I_Feasibility_Study_Public.md">Feasibility Study</a>
+        <a href="../artifacts/evidence_index_public.csv">Evidence Index</a>
+        <a href="https://github.com/577-Industries/asema-feasibility-artifacts">GitHub Repo</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>What This Proves</h2>
+      <div class="grid">
+        <article><strong>Real public targets</strong><span>Signal Android and Element X Android are pinned and summarized without redistributing target source code.</span></article>
+        <article><strong>Reproducible workflow</strong><span>Scripts regenerate public pilot summaries and verify checksums, schemas, and sensitive-string absence.</span></article>
+        <article><strong>Evidence discipline</strong><span>Static indicators are labeled as informational evidence, not vulnerability claims.</span></article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Evidence Map</h2>
+      <img src="assets/dp2_evidence_map.svg" alt="DP2 evidence map">
+    </section>
+
+    <section>
+      <h2>Architecture</h2>
+      <img src="assets/asema_architecture.svg" alt="AegisGraph ASEMA architecture">
+    </section>
+
+    <section>
+      <h2>Pilot Traceability</h2>
+      <img src="assets/pilot_traceability.svg" alt="Pilot traceability">
+    </section>
+
+    <section>
+      <h2>Reproduce</h2>
+      <pre><code>python3 scripts/verify_public_package.py
+python3 scripts/run_public_pilot.py --out /tmp/asema-public-pilot-output</code></pre>
+    </section>
+  </main>
+</body>
+</html>

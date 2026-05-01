@@ -1,0 +1,13 @@
+citation_id,title,source_type,url,retrieved_date,relevance
+SRC-001,DARPA SBIR Topic HR0011SB20254-12: ASEMA,Official solicitation,https://www.darpa.mil/research/opportunities/hr0011sb20254-12,2026-05-01,"Topic statement, office, deadline, and assessment/modeling framing."
+SRC-002,Signal Android GitHub repository,Open-source target repository,https://github.com/signalapp/Signal-Android,2026-05-01,Public Signal Android source used for real-app pilot.
+SRC-003,Element X Android GitHub repository,Open-source target repository,https://github.com/element-hq/element-x-android,2026-05-01,Public Element X Android source used for real-app pilot.
+SRC-004,Element Android GitHub repository,Open-source repository context,https://github.com/element-hq/element-android,2026-05-01,Legacy/classic Element Android context; pilot uses Element X.
+SRC-005,CISA Enhanced Visibility and Hardening Guidance for Communications Infrastructure,Government guidance,https://www.cisa.gov/resources-tools/resources/enhanced-visibility-and-hardening-guidance-communications-infrastructure,2026-05-01,Motivates E2EE communications and hardening context.
+SRC-006,Google Threat Intelligence Group: Signals of Trouble,Threat intelligence,https://cloud.google.com/blog/topics/threat-intelligence/russia-targeting-signal-messenger/,2026-05-01,Recent Signal targeting and device-linking/social engineering examples.
+SRC-007,Meta Security Advisory CVE-2025-55177,Vendor advisory,https://www.facebook.com/security/advisories/cve-2025-55177,2026-05-01,Recent messaging-app authorization/sync threat example.
+SRC-008,Apple iOS 18.6.2 and iPadOS 18.6.2 security content,Vendor advisory,https://support.apple.com/en-us/124925,2026-05-01,Platform parser issue chained with messaging-app exploitation in public reporting.
+SRC-009,Signal Protocol and Post-Quantum Ratchets,Vendor technical blog,https://signal.org/blog/spqr/,2026-05-01,PQC migration as app implementation attack-surface expansion.
+SRC-010,OWASP MASVS,Security standard,https://mas.owasp.org/MASVS/,2026-05-01,Baseline mobile application security control framework.
+SRC-011,NIST SP 800-218 Secure Software Development Framework,Security standard,https://csrc.nist.gov/pubs/sp/800/218/final,2026-05-01,Secure software practice baseline.
+SRC-012,WhatsApp Security Advisories 2025,Vendor advisory index,https://www.whatsapp.com/security/advisories/2025/,2026-05-01,Public closed-source SMA advisory context; not used as source-code pilot target.

@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ASEMA Target Manifest",
+  "type": "object",
+  "required": [
+    "target_id",
+    "name",
+    "repo_url",
+    "branch",
+    "commit",
+    "analysis_scope"
+  ],
+  "properties": {
+    "target_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "repo_url": {
+      "type": "string"
+    },
+    "branch": {
+      "type": "string"
+    },
+    "commit": {
+      "type": "string"
+    },
+    "commit_short": {
+      "type": "string"
+    },
+    "retrieved_date": {
+      "type": "string"
+    },
+    "analysis_scope": {
+      "type": "string"
+    },
+    "source_file_count": {
+      "type": "integer"
+    },
+    "extension_counts": {
+      "type": "object"
+    },
+    "manifest_component_counts": {
+      "type": "object"
+    },
+    "observation_category_counts": {
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,320 @@
+target,manifest,type,exported,permission_declared,has_intent_action,has_scheme,has_host,has_mime_type,notes
+signal_android,demo/contacts/src/main/AndroidManifest.xml,activity,true,no,yes,no,no,no,Android application component.
+signal_android,demo/contacts/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,demo/contacts/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,demo/contacts/src/main/AndroidManifest.xml,service,true,no,yes,no,no,no,Android application component.
+signal_android,demo/contacts/src/main/AndroidManifest.xml,service,true,no,yes,no,no,no,Android application component.
+signal_android,demo/device-transfer/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,demo/device-transfer/src/main/AndroidManifest.xml,activity,true,no,yes,no,no,no,Android application component.
+signal_android,demo/registration/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,demo/registration/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,demo/registration/src/main/AndroidManifest.xml,activity,true,no,yes,no,no,no,Android application component.
+signal_android,demo/registration/src/main/AndroidManifest.xml,service,false,no,yes,no,no,no,Android application component.
+signal_android,demo/spinner/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,demo/spinner/src/main/AndroidManifest.xml,activity,true,no,yes,no,no,no,Android application component.
+signal_android,demo/video/src/main/AndroidManifest.xml,activity,true,no,yes,no,no,no,Android application component.
+signal_android,demo/video/src/main/AndroidManifest.xml,provider,false,no,no,no,no,no,Android application component.
+signal_android,demo/debuglogs-viewer/src/main/AndroidManifest.xml,activity,true,no,yes,no,no,no,Android application component.
+signal_android,demo/camera/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,demo/camera/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,demo/camera/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,demo/camera/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,demo/camera/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,demo/camera/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,demo/camera/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,demo/camera/src/main/AndroidManifest.xml,activity,true,no,yes,no,no,no,Android application component.
+signal_android,demo/donations/src/main/AndroidManifest.xml,activity,true,no,yes,no,no,no,Android application component.
+signal_android,demo/image-editor/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,demo/image-editor/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,demo/image-editor/src/main/AndroidManifest.xml,activity,true,no,yes,no,no,no,Android application component.
+signal_android,demo/apng/src/main/AndroidManifest.xml,activity,true,no,yes,no,no,no,Android application component.
+signal_android,demo/apng/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,demo/apng/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,demo/qr/src/main/AndroidManifest.xml,activity,true,no,yes,no,no,no,Android application component.
+signal_android,demo/paging/src/main/AndroidManifest.xml,activity,true,no,yes,no,no,no,Android application component.
+signal_android,feature/registration/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,feature/registration/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,feature/registration/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,feature/registration/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,feature/registration/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,feature/registration/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,feature/registration/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,feature/registration/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,feature/media-send/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,feature/camera/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,feature/camera/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,feature/camera/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,feature/camera/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,feature/camera/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,feature/camera/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,lib/contacts/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,lib/contacts/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,lib/contacts/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,lib/contacts/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,lib/contacts/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,lib/contacts/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,lib/contacts/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,lib/device-transfer/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,lib/device-transfer/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,lib/device-transfer/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,lib/device-transfer/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,lib/device-transfer/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,lib/device-transfer/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,lib/device-transfer/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,lib/device-transfer/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,lib/device-transfer/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,lib/device-transfer/src/main/AndroidManifest.xml,service,false,no,no,no,no,no,Android application component.
+signal_android,lib/qr/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,true,no,yes,yes,yes,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,true,no,yes,no,no,yes,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,true,no,yes,yes,yes,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,true,no,yes,yes,yes,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,true,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,true,no,yes,no,no,yes,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,true,yes,yes,no,no,yes,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,true,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity-alias,true,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity-alias,true,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity-alias,true,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity-alias,true,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity-alias,true,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity-alias,true,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity-alias,true,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity-alias,true,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity-alias,true,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity-alias,true,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity-alias,true,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,activity-alias,true,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,service,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,service,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,service,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,service,true,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,service,true,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,service,true,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,service,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,service,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,service,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,service,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,service,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,service,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,service,true,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,service,false,yes,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,service,false,yes,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,service,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,service,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,service,,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,receiver,true,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,receiver,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,receiver,false,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,receiver,false,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,receiver,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,receiver,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,receiver,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,receiver,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,receiver,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,receiver,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,receiver,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,receiver,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,receiver,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,receiver,false,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,receiver,false,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,receiver,false,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,receiver,false,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,receiver,false,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,receiver,false,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,receiver,false,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,receiver,false,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,receiver,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,receiver,false,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,receiver,false,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,receiver,,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,receiver,false,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,receiver,true,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,receiver,false,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,receiver,false,no,yes,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,provider,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,provider,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,provider,false,no,no,no,no,no,Android application component.
+signal_android,app/src/main/AndroidManifest.xml,provider,false,no,no,no,no,no,Android application component.
+signal_android,app/src/benchmarkShared/AndroidManifest.xml,activity,true,no,no,no,no,no,Android application component.
+signal_android,app/src/benchmarkShared/AndroidManifest.xml,receiver,true,no,yes,no,no,no,Android application component.
+signal_android,app/src/website/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/website/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/website/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/website/AndroidManifest.xml,receiver,false,no,yes,no,no,no,Android application component.
+signal_android,app/src/website/AndroidManifest.xml,receiver,true,no,yes,no,no,no,Android application component.
+signal_android,app/src/website/AndroidManifest.xml,receiver,false,no,no,no,no,no,Android application component.
+signal_android,app/src/website/AndroidManifest.xml,receiver,false,no,no,no,no,no,Android application component.
+signal_android,app/src/quickstart/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/quickstart/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/quickstart/AndroidManifest.xml,activity,,no,no,no,no,no,Android application component.
+signal_android,app/src/instrumentation/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+signal_android,app/src/instrumentation/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+element_x_android,libraries/pushproviders/unifiedpush/src/main/AndroidManifest.xml,receiver,true,no,yes,no,no,no,Android application component.
+element_x_android,libraries/pushproviders/unifiedpush/src/main/AndroidManifest.xml,receiver,false,no,yes,no,no,no,Android application component.
+element_x_android,libraries/pushproviders/firebase/src/main/AndroidManifest.xml,service,false,no,yes,no,no,no,Android application component.
+element_x_android,libraries/push/impl/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+element_x_android,libraries/push/impl/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+element_x_android,libraries/push/impl/src/main/AndroidManifest.xml,service,false,no,no,no,no,no,Android application component.
+element_x_android,libraries/push/impl/src/main/AndroidManifest.xml,receiver,false,no,no,no,no,no,Android application component.
+element_x_android,libraries/push/impl/src/main/AndroidManifest.xml,receiver,false,no,no,no,no,no,Android application component.
+element_x_android,libraries/push/impl/src/main/AndroidManifest.xml,provider,false,no,no,no,no,no,Android application component.
+element_x_android,libraries/androidutils/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+element_x_android,libraries/androidutils/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+element_x_android,libraries/matrix/test/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+element_x_android,libraries/matrix/impl/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+element_x_android,libraries/matrix/api/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+element_x_android,features/networkmonitor/impl/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+element_x_android,features/location/impl/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+element_x_android,features/location/impl/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+element_x_android,features/call/impl/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+element_x_android,features/call/impl/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+element_x_android,features/call/impl/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+element_x_android,features/call/impl/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+element_x_android,features/call/impl/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+element_x_android,features/call/impl/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+element_x_android,features/call/impl/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+element_x_android,features/call/impl/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+element_x_android,features/call/impl/src/main/AndroidManifest.xml,activity,true,no,yes,yes,yes,no,Android application component.
+element_x_android,features/call/impl/src/main/AndroidManifest.xml,activity,false,no,no,no,no,no,Android application component.
+element_x_android,features/call/impl/src/main/AndroidManifest.xml,service,false,no,no,no,no,no,Android application component.
+element_x_android,features/call/impl/src/main/AndroidManifest.xml,receiver,false,no,no,no,no,no,Android application component.
+element_x_android,features/lockscreen/impl/src/main/AndroidManifest.xml,activity,,no,no,no,no,no,Android application component.
+element_x_android,features/messages/impl/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+element_x_android,app/src/main/AndroidManifest.xml,uses-permission,,no,no,no,no,no,Permission declaration.
+element_x_android,app/src/main/AndroidManifest.xml,activity,true,no,yes,yes,yes,yes,Android application component.
+element_x_android,app/src/main/AndroidManifest.xml,provider,false,no,no,no,no,no,Android application component.
+element_x_android,app/src/main/AndroidManifest.xml,provider,false,no,no,no,no,no,Android application component.

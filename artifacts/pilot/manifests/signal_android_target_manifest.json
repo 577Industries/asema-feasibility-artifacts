@@ -1,0 +1,40 @@
+{
+  "analysis_scope": "Public-source static analysis of Android manifests and source-code indicators. No exploit reproduction, no live target probing, no credentialed app interaction.",
+  "branch": "main",
+  "commit": "1043851423b3034728b09d4a1991608d49205963",
+  "commit_short": "1043851",
+  "extension_counts": {
+    ".gradle": 4,
+    ".java": 1895,
+    ".kt": 3516,
+    ".kts": 54,
+    ".proto": 28,
+    ".toml": 5,
+    ".xml": 2603
+  },
+  "license_note": "AGPL-3.0",
+  "manifest_component_counts": {
+    "activity": 110,
+    "activity-alias": 12,
+    "provider": 5,
+    "receiver": 34,
+    "service": 22,
+    "uses-permission": 101
+  },
+  "name": "Signal Android",
+  "observation_category_counts": {
+    "crypto_session_surface": 160,
+    "deep_link_uri": 160,
+    "media_file_surface": 160,
+    "native_ffi_boundary": 160,
+    "network_sync_surface": 160,
+    "qr_or_device_linking": 160,
+    "storage_keystore": 160,
+    "webview_javascript": 160
+  },
+  "rationale": "Mature, widely deployed open-source encrypted messenger with Android source available for reproducible pilot analysis.",
+  "repo_url": "https://github.com/signalapp/Signal-Android.git",
+  "retrieved_date": "2026-05-01",
+  "source_file_count": 8105,
+  "target_id": "signal_android"
+}
