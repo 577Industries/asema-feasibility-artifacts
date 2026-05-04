@@ -1,0 +1,467 @@
+{
+  "checks": [
+    {
+      "detail": "release_manifest.json",
+      "name": "required:release_manifest.json",
+      "ok": true
+    },
+    {
+      "detail": "checksums/SHA256SUMS",
+      "name": "required:checksums/SHA256SUMS",
+      "ok": true
+    },
+    {
+      "detail": "evidence/public_ledger.jsonl",
+      "name": "required:evidence/public_ledger.jsonl",
+      "ok": true
+    },
+    {
+      "detail": "graphs/aegis_sma_lab_differential.json",
+      "name": "required:graphs/aegis_sma_lab_differential.json",
+      "ok": true
+    },
+    {
+      "detail": "smabench/results/synthetic_results.json",
+      "name": "required:smabench/results/synthetic_results.json",
+      "ok": true
+    },
+    {
+      "detail": "recommendations/recommendation_index.json",
+      "name": "required:recommendations/recommendation_index.json",
+      "ok": true
+    },
+    {
+      "detail": "sota/comparison_summary.md",
+      "name": "required:sota/comparison_summary.md",
+      "ok": true
+    },
+    {
+      "detail": "site/public-dashboard/index.html",
+      "name": "required:site/public-dashboard/index.html",
+      "ok": true
+    },
+    {
+      "detail": "manifest version and limitations",
+      "name": "release_manifest",
+      "ok": true
+    },
+    {
+      "detail": "checksums/SHA256SUMS",
+      "name": "checksums_verify",
+      "ok": true
+    },
+    {
+      "detail": "docs/02_claim_discipline.md",
+      "name": "evidence_exists:EVID-SAFETY-001",
+      "ok": true
+    },
+    {
+      "detail": "docs/02_claim_discipline.md",
+      "name": "evidence_hash:EVID-SAFETY-001",
+      "ok": true
+    },
+    {
+      "detail": "defensive_recommendation",
+      "name": "claim_state:EVID-SAFETY-001",
+      "ok": true
+    },
+    {
+      "detail": "docs/00_buildout_traceability.md",
+      "name": "evidence_exists:EVID-LEDGER-001",
+      "ok": true
+    },
+    {
+      "detail": "docs/00_buildout_traceability.md",
+      "name": "evidence_hash:EVID-LEDGER-001",
+      "ok": true
+    },
+    {
+      "detail": "defensive_recommendation",
+      "name": "claim_state:EVID-LEDGER-001",
+      "ok": true
+    },
+    {
+      "detail": "aegis-sma-lab/traces/synthetic_baseline_trace.jsonl",
+      "name": "evidence_exists:EVID-SYNTH-BASELINE",
+      "ok": true
+    },
+    {
+      "detail": "aegis-sma-lab/traces/synthetic_baseline_trace.jsonl",
+      "name": "evidence_hash:EVID-SYNTH-BASELINE",
+      "ok": true
+    },
+    {
+      "detail": "synthetic_dynamic_observed",
+      "name": "claim_state:EVID-SYNTH-BASELINE",
+      "ok": true
+    },
+    {
+      "detail": "aegis-sma-lab/traces/synthetic_mitigated_trace.jsonl",
+      "name": "evidence_exists:EVID-SYNTH-MITIGATED",
+      "ok": true
+    },
+    {
+      "detail": "aegis-sma-lab/traces/synthetic_mitigated_trace.jsonl",
+      "name": "evidence_hash:EVID-SYNTH-MITIGATED",
+      "ok": true
+    },
+    {
+      "detail": "synthetic_dynamic_observed",
+      "name": "claim_state:EVID-SYNTH-MITIGATED",
+      "ok": true
+    },
+    {
+      "detail": "sota/comparison_summary.md",
+      "name": "evidence_exists:EVID-SOTA-001",
+      "ok": true
+    },
+    {
+      "detail": "sota/comparison_summary.md",
+      "name": "evidence_hash:EVID-SOTA-001",
+      "ok": true
+    },
+    {
+      "detail": "defensive_recommendation",
+      "name": "claim_state:EVID-SOTA-001",
+      "ok": true
+    },
+    {
+      "detail": "targets/signal_android_1043851/target_manifest.json",
+      "name": "evidence_exists:EVID-SIGNAL_ANDROID_1043851-MANIFEST",
+      "ok": true
+    },
+    {
+      "detail": "targets/signal_android_1043851/target_manifest.json",
+      "name": "evidence_hash:EVID-SIGNAL_ANDROID_1043851-MANIFEST",
+      "ok": true
+    },
+    {
+      "detail": "static_supported",
+      "name": "claim_state:EVID-SIGNAL_ANDROID_1043851-MANIFEST",
+      "ok": true
+    },
+    {
+      "detail": "static_supported",
+      "name": "static_not_vulnerability:EVID-SIGNAL_ANDROID_1043851-MANIFEST",
+      "ok": true
+    },
+    {
+      "detail": "targets/signal_android_1043851/static_summary.json",
+      "name": "evidence_exists:EVID-SIGNAL_ANDROID_1043851-STATIC",
+      "ok": true
+    },
+    {
+      "detail": "targets/signal_android_1043851/static_summary.json",
+      "name": "evidence_hash:EVID-SIGNAL_ANDROID_1043851-STATIC",
+      "ok": true
+    },
+    {
+      "detail": "static_supported",
+      "name": "claim_state:EVID-SIGNAL_ANDROID_1043851-STATIC",
+      "ok": true
+    },
+    {
+      "detail": "static_supported",
+      "name": "static_not_vulnerability:EVID-SIGNAL_ANDROID_1043851-STATIC",
+      "ok": true
+    },
+    {
+      "detail": "targets/signal_android_1043851/dependency_snapshot.json",
+      "name": "evidence_exists:EVID-SIGNAL_ANDROID_1043851-DEP",
+      "ok": true
+    },
+    {
+      "detail": "targets/signal_android_1043851/dependency_snapshot.json",
+      "name": "evidence_hash:EVID-SIGNAL_ANDROID_1043851-DEP",
+      "ok": true
+    },
+    {
+      "detail": "static_supported",
+      "name": "claim_state:EVID-SIGNAL_ANDROID_1043851-DEP",
+      "ok": true
+    },
+    {
+      "detail": "static_supported",
+      "name": "static_not_vulnerability:EVID-SIGNAL_ANDROID_1043851-DEP",
+      "ok": true
+    },
+    {
+      "detail": "targets/elementx_android_91d265e6/target_manifest.json",
+      "name": "evidence_exists:EVID-ELEMENTX_ANDROID_91D265E6-MANIFEST",
+      "ok": true
+    },
+    {
+      "detail": "targets/elementx_android_91d265e6/target_manifest.json",
+      "name": "evidence_hash:EVID-ELEMENTX_ANDROID_91D265E6-MANIFEST",
+      "ok": true
+    },
+    {
+      "detail": "static_supported",
+      "name": "claim_state:EVID-ELEMENTX_ANDROID_91D265E6-MANIFEST",
+      "ok": true
+    },
+    {
+      "detail": "static_supported",
+      "name": "static_not_vulnerability:EVID-ELEMENTX_ANDROID_91D265E6-MANIFEST",
+      "ok": true
+    },
+    {
+      "detail": "targets/elementx_android_91d265e6/static_summary.json",
+      "name": "evidence_exists:EVID-ELEMENTX_ANDROID_91D265E6-STATIC",
+      "ok": true
+    },
+    {
+      "detail": "targets/elementx_android_91d265e6/static_summary.json",
+      "name": "evidence_hash:EVID-ELEMENTX_ANDROID_91D265E6-STATIC",
+      "ok": true
+    },
+    {
+      "detail": "static_supported",
+      "name": "claim_state:EVID-ELEMENTX_ANDROID_91D265E6-STATIC",
+      "ok": true
+    },
+    {
+      "detail": "static_supported",
+      "name": "static_not_vulnerability:EVID-ELEMENTX_ANDROID_91D265E6-STATIC",
+      "ok": true
+    },
+    {
+      "detail": "targets/elementx_android_91d265e6/dependency_snapshot.json",
+      "name": "evidence_exists:EVID-ELEMENTX_ANDROID_91D265E6-DEP",
+      "ok": true
+    },
+    {
+      "detail": "targets/elementx_android_91d265e6/dependency_snapshot.json",
+      "name": "evidence_hash:EVID-ELEMENTX_ANDROID_91D265E6-DEP",
+      "ok": true
+    },
+    {
+      "detail": "static_supported",
+      "name": "claim_state:EVID-ELEMENTX_ANDROID_91D265E6-DEP",
+      "ok": true
+    },
+    {
+      "detail": "static_supported",
+      "name": "static_not_vulnerability:EVID-ELEMENTX_ANDROID_91D265E6-DEP",
+      "ok": true
+    },
+    {
+      "detail": "signal_android_1043851:e1",
+      "name": "edge_nodes:signal_android_1043851:e1",
+      "ok": true
+    },
+    {
+      "detail": "signal_android_1043851:e2",
+      "name": "edge_nodes:signal_android_1043851:e2",
+      "ok": true
+    },
+    {
+      "detail": "elementx_android_91d265e6:e1",
+      "name": "edge_nodes:elementx_android_91d265e6:e1",
+      "ok": true
+    },
+    {
+      "detail": "elementx_android_91d265e6:e2",
+      "name": "edge_nodes:elementx_android_91d265e6:e2",
+      "ok": true
+    },
+    {
+      "detail": "aegis_sma_lab_mitigated:parser:e1",
+      "name": "edge_nodes:aegis_sma_lab_mitigated:parser:e1",
+      "ok": true
+    },
+    {
+      "detail": "aegis_sma_lab_mitigated:parser:e2",
+      "name": "edge_nodes:aegis_sma_lab_mitigated:parser:e2",
+      "ok": true
+    },
+    {
+      "detail": "aegis_sma_lab_mitigated:parser:guard",
+      "name": "edge_nodes:aegis_sma_lab_mitigated:parser:guard",
+      "ok": true
+    },
+    {
+      "detail": "aegis_sma_lab_mitigated:link_preview:e1",
+      "name": "edge_nodes:aegis_sma_lab_mitigated:link_preview:e1",
+      "ok": true
+    },
+    {
+      "detail": "aegis_sma_lab_mitigated:link_preview:e2",
+      "name": "edge_nodes:aegis_sma_lab_mitigated:link_preview:e2",
+      "ok": true
+    },
+    {
+      "detail": "aegis_sma_lab_mitigated:link_preview:guard",
+      "name": "edge_nodes:aegis_sma_lab_mitigated:link_preview:guard",
+      "ok": true
+    },
+    {
+      "detail": "aegis_sma_lab_mitigated:device_link:e1",
+      "name": "edge_nodes:aegis_sma_lab_mitigated:device_link:e1",
+      "ok": true
+    },
+    {
+      "detail": "aegis_sma_lab_mitigated:device_link:e2",
+      "name": "edge_nodes:aegis_sma_lab_mitigated:device_link:e2",
+      "ok": true
+    },
+    {
+      "detail": "aegis_sma_lab_mitigated:device_link:guard",
+      "name": "edge_nodes:aegis_sma_lab_mitigated:device_link:guard",
+      "ok": true
+    },
+    {
+      "detail": "aegis_sma_lab_mitigated:media:e1",
+      "name": "edge_nodes:aegis_sma_lab_mitigated:media:e1",
+      "ok": true
+    },
+    {
+      "detail": "aegis_sma_lab_mitigated:media:e2",
+      "name": "edge_nodes:aegis_sma_lab_mitigated:media:e2",
+      "ok": true
+    },
+    {
+      "detail": "aegis_sma_lab_mitigated:media:guard",
+      "name": "edge_nodes:aegis_sma_lab_mitigated:media:guard",
+      "ok": true
+    },
+    {
+      "detail": "aegis_sma_lab_mitigated:group_state:e1",
+      "name": "edge_nodes:aegis_sma_lab_mitigated:group_state:e1",
+      "ok": true
+    },
+    {
+      "detail": "aegis_sma_lab_mitigated:group_state:e2",
+      "name": "edge_nodes:aegis_sma_lab_mitigated:group_state:e2",
+      "ok": true
+    },
+    {
+      "detail": "aegis_sma_lab_mitigated:group_state:guard",
+      "name": "edge_nodes:aegis_sma_lab_mitigated:group_state:guard",
+      "ok": true
+    },
+    {
+      "detail": "aegis_sma_lab_mitigated:pq_migration:e1",
+      "name": "edge_nodes:aegis_sma_lab_mitigated:pq_migration:e1",
+      "ok": true
+    },
+    {
+      "detail": "aegis_sma_lab_mitigated:pq_migration:e2",
+      "name": "edge_nodes:aegis_sma_lab_mitigated:pq_migration:e2",
+      "ok": true
+    },
+    {
+      "detail": "aegis_sma_lab_mitigated:pq_migration:guard",
+      "name": "edge_nodes:aegis_sma_lab_mitigated:pq_migration:guard",
+      "ok": true
+    },
+    {
+      "detail": "aegis_sma_lab_baseline:parser:e1",
+      "name": "edge_nodes:aegis_sma_lab_baseline:parser:e1",
+      "ok": true
+    },
+    {
+      "detail": "aegis_sma_lab_baseline:parser:e2",
+      "name": "edge_nodes:aegis_sma_lab_baseline:parser:e2",
+      "ok": true
+    },
+    {
+      "detail": "aegis_sma_lab_baseline:link_preview:e1",
+      "name": "edge_nodes:aegis_sma_lab_baseline:link_preview:e1",
+      "ok": true
+    },
+    {
+      "detail": "aegis_sma_lab_baseline:link_preview:e2",
+      "name": "edge_nodes:aegis_sma_lab_baseline:link_preview:e2",
+      "ok": true
+    },
+    {
+      "detail": "aegis_sma_lab_baseline:device_link:e1",
+      "name": "edge_nodes:aegis_sma_lab_baseline:device_link:e1",
+      "ok": true
+    },
+    {
+      "detail": "aegis_sma_lab_baseline:device_link:e2",
+      "name": "edge_nodes:aegis_sma_lab_baseline:device_link:e2",
+      "ok": true
+    },
+    {
+      "detail": "aegis_sma_lab_baseline:media:e1",
+      "name": "edge_nodes:aegis_sma_lab_baseline:media:e1",
+      "ok": true
+    },
+    {
+      "detail": "aegis_sma_lab_baseline:media:e2",
+      "name": "edge_nodes:aegis_sma_lab_baseline:media:e2",
+      "ok": true
+    },
+    {
+      "detail": "aegis_sma_lab_baseline:group_state:e1",
+      "name": "edge_nodes:aegis_sma_lab_baseline:group_state:e1",
+      "ok": true
+    },
+    {
+      "detail": "aegis_sma_lab_baseline:group_state:e2",
+      "name": "edge_nodes:aegis_sma_lab_baseline:group_state:e2",
+      "ok": true
+    },
+    {
+      "detail": "aegis_sma_lab_baseline:pq_migration:e1",
+      "name": "edge_nodes:aegis_sma_lab_baseline:pq_migration:e1",
+      "ok": true
+    },
+    {
+      "detail": "aegis_sma_lab_baseline:pq_migration:e2",
+      "name": "edge_nodes:aegis_sma_lab_baseline:pq_migration:e2",
+      "ok": true
+    },
+    {
+      "detail": "100.00%",
+      "name": "graph_evidence_coverage",
+      "ok": true
+    },
+    {
+      "detail": "3",
+      "name": "recommendation_count",
+      "ok": true
+    },
+    {
+      "detail": "Add explicit parser trust boundaries for remote message paths",
+      "name": "recommendation_complete:REC-SYN-001",
+      "ok": true
+    },
+    {
+      "detail": "Gate link preview and device-link handling behind capability checks",
+      "name": "recommendation_complete:REC-SYN-002",
+      "ok": true
+    },
+    {
+      "detail": "Track media and storage flows as review-priority graph paths",
+      "name": "recommendation_complete:REC-SYN-003",
+      "ok": true
+    },
+    {
+      "detail": "synthetic results",
+      "name": "smabench_all_pass",
+      "ok": true
+    },
+    {
+      "detail": "score deltas",
+      "name": "differential_deltas",
+      "ok": true
+    },
+    {
+      "detail": "composition claim",
+      "name": "sota_claim",
+      "ok": true
+    },
+    {
+      "detail": "no restricted path, token, or overclaim pattern found",
+      "name": "safety_scan",
+      "ok": true
+    }
+  ],
+  "errors": [],
+  "graph_evidence_coverage": 1.0,
+  "ok": true
+}

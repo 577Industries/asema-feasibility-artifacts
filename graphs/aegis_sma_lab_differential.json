@@ -1,0 +1,71 @@
+{
+  "deltas": [
+    {
+      "added_controls": [
+        "security_boundary node",
+        "guarded_by edge"
+      ],
+      "baseline_score": 81.0,
+      "delta": -23.5,
+      "mitigated_score": 57.5,
+      "path": "Remote message -> parser -> state update",
+      "path_id": "parser"
+    },
+    {
+      "added_controls": [
+        "security_boundary node",
+        "guarded_by edge"
+      ],
+      "baseline_score": 74.0,
+      "delta": -23.5,
+      "mitigated_score": 50.5,
+      "path": "Message link -> preview fetch policy -> renderer",
+      "path_id": "link_preview"
+    },
+    {
+      "added_controls": [
+        "security_boundary node",
+        "guarded_by edge"
+      ],
+      "baseline_score": 79.0,
+      "delta": -23.5,
+      "mitigated_score": 55.5,
+      "path": "QR/device link -> pairing token -> device registry",
+      "path_id": "device_link"
+    },
+    {
+      "added_controls": [
+        "security_boundary node",
+        "guarded_by edge"
+      ],
+      "baseline_score": 72.0,
+      "delta": -23.5,
+      "mitigated_score": 48.5,
+      "path": "Attachment -> media decoder -> storage",
+      "path_id": "media"
+    },
+    {
+      "added_controls": [
+        "security_boundary node",
+        "guarded_by edge"
+      ],
+      "baseline_score": 68.0,
+      "delta": -23.5,
+      "mitigated_score": 44.5,
+      "path": "Invite/update -> group state reducer -> notification",
+      "path_id": "group_state"
+    },
+    {
+      "added_controls": [
+        "security_boundary node",
+        "guarded_by edge"
+      ],
+      "baseline_score": 65.0,
+      "delta": -23.5,
+      "mitigated_score": 41.5,
+      "path": "Session -> PQ migration flag -> handshake stub",
+      "path_id": "pq_migration"
+    }
+  ],
+  "summary": "Mitigated synthetic paths add boundary nodes and guarded_by edges."
+}

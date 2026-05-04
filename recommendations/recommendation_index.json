@@ -1,0 +1,48 @@
+{
+  "recommendations": [
+    {
+      "category": "parser_boundary",
+      "evidence_refs": [
+        "EVID-SYNTH-MITIGATED"
+      ],
+      "graph_path_refs": [
+        "aegis_sma_lab_mitigated:parser"
+      ],
+      "recommendation_id": "REC-SYN-001",
+      "residual_risk": "Modeled control does not prove equivalent production behavior.",
+      "standards_mapping_caveat": "Mappings are planning aids, not certification claims.",
+      "title": "Add explicit parser trust boundaries for remote message paths"
+    },
+    {
+      "category": "capability_boundary",
+      "evidence_refs": [
+        "EVID-SYNTH-MITIGATED"
+      ],
+      "graph_path_refs": [
+        "aegis_sma_lab_mitigated:link_preview",
+        "aegis_sma_lab_mitigated:device_link"
+      ],
+      "recommendation_id": "REC-SYN-002",
+      "residual_risk": "Network and QR production stacks require authorized dynamic validation.",
+      "standards_mapping_caveat": "Caveat applies to MASVS and internal-control mapping.",
+      "title": "Gate link preview and device-link handling behind capability checks"
+    },
+    {
+      "category": "media_storage",
+      "evidence_refs": [
+        "EVID-SYNTH-MITIGATED",
+        "EVID-SIGNAL_ANDROID_1043851-STATIC",
+        "EVID-ELEMENTX_ANDROID_91D265E6-STATIC"
+      ],
+      "graph_path_refs": [
+        "aegis_sma_lab_mitigated:media",
+        "signal_android_1043851:entry:deep_link",
+        "elementx_android_91d265e6:entry:deep_link"
+      ],
+      "recommendation_id": "REC-SYN-003",
+      "residual_risk": "Static public summaries prioritize review but do not establish vulnerabilities.",
+      "standards_mapping_caveat": "Standards references are defensive review hints only.",
+      "title": "Track media and storage flows as review-priority graph paths"
+    }
+  ]
+}

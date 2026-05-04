@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "evidence_refs": {
+      "type": "array"
+    },
+    "graph_path_refs": {
+      "type": "array"
+    },
+    "recommendation_id": {
+      "type": "string"
+    },
+    "residual_risk": {
+      "type": "string"
+    },
+    "standards_mapping_caveat": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "recommendation_id",
+    "title",
+    "evidence_refs",
+    "graph_path_refs",
+    "residual_risk",
+    "standards_mapping_caveat"
+  ],
+  "title": "recommendation.schema.json",
+  "type": "object"
+}

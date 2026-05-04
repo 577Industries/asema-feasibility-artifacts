@@ -1,0 +1,11 @@
+{
+  "description": "QR/device link -> pairing token -> device registry",
+  "expected_outputs": [
+    "baseline_trace",
+    "mitigated_trace",
+    "score_delta"
+  ],
+  "path_id": "device_link",
+  "ring": "synthetic_public",
+  "task_id": "SMABENCH-SYN-device_link"
+}

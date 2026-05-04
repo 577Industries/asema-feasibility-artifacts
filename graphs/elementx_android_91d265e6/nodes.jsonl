@@ -1,0 +1,4 @@
+{"evidence_refs": ["EVID-ELEMENTX_ANDROID_91D265E6-MANIFEST"], "label": "Element X Android", "node_id": "elementx_android_91d265e6:app", "node_type": "asset", "target_id": "elementx_android_91d265e6"}
+{"evidence_refs": ["EVID-ELEMENTX_ANDROID_91D265E6-STATIC"], "label": "Deep link entrypoint", "node_id": "elementx_android_91d265e6:entry:deep_link", "node_type": "entrypoint", "target_id": "elementx_android_91d265e6"}
+{"evidence_refs": ["EVID-ELEMENTX_ANDROID_91D265E6-STATIC"], "label": "Message/parser surface", "node_id": "elementx_android_91d265e6:parser:message", "node_type": "parser", "target_id": "elementx_android_91d265e6"}
+{"evidence_refs": ["EVID-ELEMENTX_ANDROID_91D265E6-DEP"], "label": "Local storage surface", "node_id": "elementx_android_91d265e6:storage", "node_type": "storage", "target_id": "elementx_android_91d265e6"}

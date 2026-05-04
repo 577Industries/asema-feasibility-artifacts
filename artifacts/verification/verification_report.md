@@ -1,0 +1,96 @@
+# Public Package Verification Report
+
+Graph evidence coverage: 100.00%
+
+- PASS `required:release_manifest.json` release_manifest.json
+- PASS `required:checksums/SHA256SUMS` checksums/SHA256SUMS
+- PASS `required:evidence/public_ledger.jsonl` evidence/public_ledger.jsonl
+- PASS `required:graphs/aegis_sma_lab_differential.json` graphs/aegis_sma_lab_differential.json
+- PASS `required:smabench/results/synthetic_results.json` smabench/results/synthetic_results.json
+- PASS `required:recommendations/recommendation_index.json` recommendations/recommendation_index.json
+- PASS `required:sota/comparison_summary.md` sota/comparison_summary.md
+- PASS `required:site/public-dashboard/index.html` site/public-dashboard/index.html
+- PASS `release_manifest` manifest version and limitations
+- PASS `checksums_verify` checksums/SHA256SUMS
+- PASS `evidence_exists:EVID-SAFETY-001` docs/02_claim_discipline.md
+- PASS `evidence_hash:EVID-SAFETY-001` docs/02_claim_discipline.md
+- PASS `claim_state:EVID-SAFETY-001` defensive_recommendation
+- PASS `evidence_exists:EVID-LEDGER-001` docs/00_buildout_traceability.md
+- PASS `evidence_hash:EVID-LEDGER-001` docs/00_buildout_traceability.md
+- PASS `claim_state:EVID-LEDGER-001` defensive_recommendation
+- PASS `evidence_exists:EVID-SYNTH-BASELINE` aegis-sma-lab/traces/synthetic_baseline_trace.jsonl
+- PASS `evidence_hash:EVID-SYNTH-BASELINE` aegis-sma-lab/traces/synthetic_baseline_trace.jsonl
+- PASS `claim_state:EVID-SYNTH-BASELINE` synthetic_dynamic_observed
+- PASS `evidence_exists:EVID-SYNTH-MITIGATED` aegis-sma-lab/traces/synthetic_mitigated_trace.jsonl
+- PASS `evidence_hash:EVID-SYNTH-MITIGATED` aegis-sma-lab/traces/synthetic_mitigated_trace.jsonl
+- PASS `claim_state:EVID-SYNTH-MITIGATED` synthetic_dynamic_observed
+- PASS `evidence_exists:EVID-SOTA-001` sota/comparison_summary.md
+- PASS `evidence_hash:EVID-SOTA-001` sota/comparison_summary.md
+- PASS `claim_state:EVID-SOTA-001` defensive_recommendation
+- PASS `evidence_exists:EVID-SIGNAL_ANDROID_1043851-MANIFEST` targets/signal_android_1043851/target_manifest.json
+- PASS `evidence_hash:EVID-SIGNAL_ANDROID_1043851-MANIFEST` targets/signal_android_1043851/target_manifest.json
+- PASS `claim_state:EVID-SIGNAL_ANDROID_1043851-MANIFEST` static_supported
+- PASS `static_not_vulnerability:EVID-SIGNAL_ANDROID_1043851-MANIFEST` static_supported
+- PASS `evidence_exists:EVID-SIGNAL_ANDROID_1043851-STATIC` targets/signal_android_1043851/static_summary.json
+- PASS `evidence_hash:EVID-SIGNAL_ANDROID_1043851-STATIC` targets/signal_android_1043851/static_summary.json
+- PASS `claim_state:EVID-SIGNAL_ANDROID_1043851-STATIC` static_supported
+- PASS `static_not_vulnerability:EVID-SIGNAL_ANDROID_1043851-STATIC` static_supported
+- PASS `evidence_exists:EVID-SIGNAL_ANDROID_1043851-DEP` targets/signal_android_1043851/dependency_snapshot.json
+- PASS `evidence_hash:EVID-SIGNAL_ANDROID_1043851-DEP` targets/signal_android_1043851/dependency_snapshot.json
+- PASS `claim_state:EVID-SIGNAL_ANDROID_1043851-DEP` static_supported
+- PASS `static_not_vulnerability:EVID-SIGNAL_ANDROID_1043851-DEP` static_supported
+- PASS `evidence_exists:EVID-ELEMENTX_ANDROID_91D265E6-MANIFEST` targets/elementx_android_91d265e6/target_manifest.json
+- PASS `evidence_hash:EVID-ELEMENTX_ANDROID_91D265E6-MANIFEST` targets/elementx_android_91d265e6/target_manifest.json
+- PASS `claim_state:EVID-ELEMENTX_ANDROID_91D265E6-MANIFEST` static_supported
+- PASS `static_not_vulnerability:EVID-ELEMENTX_ANDROID_91D265E6-MANIFEST` static_supported
+- PASS `evidence_exists:EVID-ELEMENTX_ANDROID_91D265E6-STATIC` targets/elementx_android_91d265e6/static_summary.json
+- PASS `evidence_hash:EVID-ELEMENTX_ANDROID_91D265E6-STATIC` targets/elementx_android_91d265e6/static_summary.json
+- PASS `claim_state:EVID-ELEMENTX_ANDROID_91D265E6-STATIC` static_supported
+- PASS `static_not_vulnerability:EVID-ELEMENTX_ANDROID_91D265E6-STATIC` static_supported
+- PASS `evidence_exists:EVID-ELEMENTX_ANDROID_91D265E6-DEP` targets/elementx_android_91d265e6/dependency_snapshot.json
+- PASS `evidence_hash:EVID-ELEMENTX_ANDROID_91D265E6-DEP` targets/elementx_android_91d265e6/dependency_snapshot.json
+- PASS `claim_state:EVID-ELEMENTX_ANDROID_91D265E6-DEP` static_supported
+- PASS `static_not_vulnerability:EVID-ELEMENTX_ANDROID_91D265E6-DEP` static_supported
+- PASS `edge_nodes:signal_android_1043851:e1` signal_android_1043851:e1
+- PASS `edge_nodes:signal_android_1043851:e2` signal_android_1043851:e2
+- PASS `edge_nodes:elementx_android_91d265e6:e1` elementx_android_91d265e6:e1
+- PASS `edge_nodes:elementx_android_91d265e6:e2` elementx_android_91d265e6:e2
+- PASS `edge_nodes:aegis_sma_lab_mitigated:parser:e1` aegis_sma_lab_mitigated:parser:e1
+- PASS `edge_nodes:aegis_sma_lab_mitigated:parser:e2` aegis_sma_lab_mitigated:parser:e2
+- PASS `edge_nodes:aegis_sma_lab_mitigated:parser:guard` aegis_sma_lab_mitigated:parser:guard
+- PASS `edge_nodes:aegis_sma_lab_mitigated:link_preview:e1` aegis_sma_lab_mitigated:link_preview:e1
+- PASS `edge_nodes:aegis_sma_lab_mitigated:link_preview:e2` aegis_sma_lab_mitigated:link_preview:e2
+- PASS `edge_nodes:aegis_sma_lab_mitigated:link_preview:guard` aegis_sma_lab_mitigated:link_preview:guard
+- PASS `edge_nodes:aegis_sma_lab_mitigated:device_link:e1` aegis_sma_lab_mitigated:device_link:e1
+- PASS `edge_nodes:aegis_sma_lab_mitigated:device_link:e2` aegis_sma_lab_mitigated:device_link:e2
+- PASS `edge_nodes:aegis_sma_lab_mitigated:device_link:guard` aegis_sma_lab_mitigated:device_link:guard
+- PASS `edge_nodes:aegis_sma_lab_mitigated:media:e1` aegis_sma_lab_mitigated:media:e1
+- PASS `edge_nodes:aegis_sma_lab_mitigated:media:e2` aegis_sma_lab_mitigated:media:e2
+- PASS `edge_nodes:aegis_sma_lab_mitigated:media:guard` aegis_sma_lab_mitigated:media:guard
+- PASS `edge_nodes:aegis_sma_lab_mitigated:group_state:e1` aegis_sma_lab_mitigated:group_state:e1
+- PASS `edge_nodes:aegis_sma_lab_mitigated:group_state:e2` aegis_sma_lab_mitigated:group_state:e2
+- PASS `edge_nodes:aegis_sma_lab_mitigated:group_state:guard` aegis_sma_lab_mitigated:group_state:guard
+- PASS `edge_nodes:aegis_sma_lab_mitigated:pq_migration:e1` aegis_sma_lab_mitigated:pq_migration:e1
+- PASS `edge_nodes:aegis_sma_lab_mitigated:pq_migration:e2` aegis_sma_lab_mitigated:pq_migration:e2
+- PASS `edge_nodes:aegis_sma_lab_mitigated:pq_migration:guard` aegis_sma_lab_mitigated:pq_migration:guard
+- PASS `edge_nodes:aegis_sma_lab_baseline:parser:e1` aegis_sma_lab_baseline:parser:e1
+- PASS `edge_nodes:aegis_sma_lab_baseline:parser:e2` aegis_sma_lab_baseline:parser:e2
+- PASS `edge_nodes:aegis_sma_lab_baseline:link_preview:e1` aegis_sma_lab_baseline:link_preview:e1
+- PASS `edge_nodes:aegis_sma_lab_baseline:link_preview:e2` aegis_sma_lab_baseline:link_preview:e2
+- PASS `edge_nodes:aegis_sma_lab_baseline:device_link:e1` aegis_sma_lab_baseline:device_link:e1
+- PASS `edge_nodes:aegis_sma_lab_baseline:device_link:e2` aegis_sma_lab_baseline:device_link:e2
+- PASS `edge_nodes:aegis_sma_lab_baseline:media:e1` aegis_sma_lab_baseline:media:e1
+- PASS `edge_nodes:aegis_sma_lab_baseline:media:e2` aegis_sma_lab_baseline:media:e2
+- PASS `edge_nodes:aegis_sma_lab_baseline:group_state:e1` aegis_sma_lab_baseline:group_state:e1
+- PASS `edge_nodes:aegis_sma_lab_baseline:group_state:e2` aegis_sma_lab_baseline:group_state:e2
+- PASS `edge_nodes:aegis_sma_lab_baseline:pq_migration:e1` aegis_sma_lab_baseline:pq_migration:e1
+- PASS `edge_nodes:aegis_sma_lab_baseline:pq_migration:e2` aegis_sma_lab_baseline:pq_migration:e2
+- PASS `graph_evidence_coverage` 100.00%
+- PASS `recommendation_count` 3
+- PASS `recommendation_complete:REC-SYN-001` Add explicit parser trust boundaries for remote message paths
+- PASS `recommendation_complete:REC-SYN-002` Gate link preview and device-link handling behind capability checks
+- PASS `recommendation_complete:REC-SYN-003` Track media and storage flows as review-priority graph paths
+- PASS `smabench_all_pass` synthetic results
+- PASS `differential_deltas` score deltas
+- PASS `sota_claim` composition claim
+- PASS `safety_scan` no restricted path, token, or overclaim pattern found

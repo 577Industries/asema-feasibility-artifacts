@@ -1,0 +1,5 @@
+{
+  "name": "aseme-public-artifacts",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "postCreateCommand": "python3 scripts/run_public_demo.py --out out/demo"
+}

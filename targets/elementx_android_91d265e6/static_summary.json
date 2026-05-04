@@ -1,0 +1,76 @@
+{
+  "observations": [
+    {
+      "category": "deep_link_uri",
+      "claim_state": "static_supported",
+      "evidence_refs": [
+        "EVID-ELEMENTX_ANDROID_91D265E6-STATIC"
+      ],
+      "limitation": "Informational static indicator; not a vulnerability claim.",
+      "observation_id": "OBS-elementx_android_91d265e6-001",
+      "target_id": "elementx_android_91d265e6"
+    },
+    {
+      "category": "qr_or_device_linking",
+      "claim_state": "static_supported",
+      "evidence_refs": [
+        "EVID-ELEMENTX_ANDROID_91D265E6-STATIC"
+      ],
+      "limitation": "Informational static indicator; not a vulnerability claim.",
+      "observation_id": "OBS-elementx_android_91d265e6-002",
+      "target_id": "elementx_android_91d265e6"
+    },
+    {
+      "category": "media_file_surface",
+      "claim_state": "static_supported",
+      "evidence_refs": [
+        "EVID-ELEMENTX_ANDROID_91D265E6-STATIC"
+      ],
+      "limitation": "Informational static indicator; not a vulnerability claim.",
+      "observation_id": "OBS-elementx_android_91d265e6-003",
+      "target_id": "elementx_android_91d265e6"
+    },
+    {
+      "category": "crypto_session_surface",
+      "claim_state": "static_supported",
+      "evidence_refs": [
+        "EVID-ELEMENTX_ANDROID_91D265E6-STATIC"
+      ],
+      "limitation": "Informational static indicator; not a vulnerability claim.",
+      "observation_id": "OBS-elementx_android_91d265e6-004",
+      "target_id": "elementx_android_91d265e6"
+    },
+    {
+      "category": "native_ffi_boundary",
+      "claim_state": "static_supported",
+      "evidence_refs": [
+        "EVID-ELEMENTX_ANDROID_91D265E6-STATIC"
+      ],
+      "limitation": "Informational static indicator; not a vulnerability claim.",
+      "observation_id": "OBS-elementx_android_91d265e6-005",
+      "target_id": "elementx_android_91d265e6"
+    },
+    {
+      "category": "storage_keystore",
+      "claim_state": "static_supported",
+      "evidence_refs": [
+        "EVID-ELEMENTX_ANDROID_91D265E6-STATIC"
+      ],
+      "limitation": "Informational static indicator; not a vulnerability claim.",
+      "observation_id": "OBS-elementx_android_91d265e6-006",
+      "target_id": "elementx_android_91d265e6"
+    },
+    {
+      "category": "network_sync_surface",
+      "claim_state": "static_supported",
+      "evidence_refs": [
+        "EVID-ELEMENTX_ANDROID_91D265E6-STATIC"
+      ],
+      "limitation": "Informational static indicator; not a vulnerability claim.",
+      "observation_id": "OBS-elementx_android_91d265e6-007",
+      "target_id": "elementx_android_91d265e6"
+    }
+  ],
+  "semgrep_findings": 162,
+  "target_id": "elementx_android_91d265e6"
+}

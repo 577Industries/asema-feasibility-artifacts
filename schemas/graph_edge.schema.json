@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "edge_id": {
+      "type": "string"
+    },
+    "edge_type": {
+      "type": "string"
+    },
+    "evidence_refs": {
+      "type": "array"
+    },
+    "source": {
+      "type": "string"
+    },
+    "target": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "edge_id",
+    "source",
+    "target",
+    "edge_type",
+    "evidence_refs"
+  ],
+  "title": "graph_edge.schema.json",
+  "type": "object"
+}

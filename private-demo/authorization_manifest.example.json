@@ -1,0 +1,17 @@
+{
+  "authorization_id": "AUTH-DEMO-EXAMPLE",
+  "release_classification": "private_restricted",
+  "authorized_targets": [
+    "aegis_sma_lab"
+  ],
+  "expires": "2027-05-04",
+  "permitted_adapters": [
+    "adb_logcat_fixture",
+    "frida_trace_fixture",
+    "mobsf_static_fixture"
+  ],
+  "limitations": [
+    "Example only; copy to authorization_manifest.json with real approval before private package generation.",
+    "Public release artifacts must not include this file's private successor."
+  ]
+}

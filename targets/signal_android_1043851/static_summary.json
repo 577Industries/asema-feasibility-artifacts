@@ -1,0 +1,76 @@
+{
+  "observations": [
+    {
+      "category": "deep_link_uri",
+      "claim_state": "static_supported",
+      "evidence_refs": [
+        "EVID-SIGNAL_ANDROID_1043851-STATIC"
+      ],
+      "limitation": "Informational static indicator; not a vulnerability claim.",
+      "observation_id": "OBS-signal_android_1043851-001",
+      "target_id": "signal_android_1043851"
+    },
+    {
+      "category": "qr_or_device_linking",
+      "claim_state": "static_supported",
+      "evidence_refs": [
+        "EVID-SIGNAL_ANDROID_1043851-STATIC"
+      ],
+      "limitation": "Informational static indicator; not a vulnerability claim.",
+      "observation_id": "OBS-signal_android_1043851-002",
+      "target_id": "signal_android_1043851"
+    },
+    {
+      "category": "media_file_surface",
+      "claim_state": "static_supported",
+      "evidence_refs": [
+        "EVID-SIGNAL_ANDROID_1043851-STATIC"
+      ],
+      "limitation": "Informational static indicator; not a vulnerability claim.",
+      "observation_id": "OBS-signal_android_1043851-003",
+      "target_id": "signal_android_1043851"
+    },
+    {
+      "category": "crypto_session_surface",
+      "claim_state": "static_supported",
+      "evidence_refs": [
+        "EVID-SIGNAL_ANDROID_1043851-STATIC"
+      ],
+      "limitation": "Informational static indicator; not a vulnerability claim.",
+      "observation_id": "OBS-signal_android_1043851-004",
+      "target_id": "signal_android_1043851"
+    },
+    {
+      "category": "native_ffi_boundary",
+      "claim_state": "static_supported",
+      "evidence_refs": [
+        "EVID-SIGNAL_ANDROID_1043851-STATIC"
+      ],
+      "limitation": "Informational static indicator; not a vulnerability claim.",
+      "observation_id": "OBS-signal_android_1043851-005",
+      "target_id": "signal_android_1043851"
+    },
+    {
+      "category": "storage_keystore",
+      "claim_state": "static_supported",
+      "evidence_refs": [
+        "EVID-SIGNAL_ANDROID_1043851-STATIC"
+      ],
+      "limitation": "Informational static indicator; not a vulnerability claim.",
+      "observation_id": "OBS-signal_android_1043851-006",
+      "target_id": "signal_android_1043851"
+    },
+    {
+      "category": "network_sync_surface",
+      "claim_state": "static_supported",
+      "evidence_refs": [
+        "EVID-SIGNAL_ANDROID_1043851-STATIC"
+      ],
+      "limitation": "Informational static indicator; not a vulnerability claim.",
+      "observation_id": "OBS-signal_android_1043851-007",
+      "target_id": "signal_android_1043851"
+    }
+  ],
+  "semgrep_findings": 239,
+  "target_id": "signal_android_1043851"
+}

@@ -1,0 +1,40 @@
+{
+  "note": "Optional mobile-suite tools are reported but not required for public package verification.",
+  "tools": {
+    "adb": {
+      "available": false,
+      "gated_optional": true,
+      "required_for_public": false
+    },
+    "docker": {
+      "available": true,
+      "gated_optional": true,
+      "required_for_public": false
+    },
+    "frida": {
+      "available": false,
+      "gated_optional": true,
+      "required_for_public": false
+    },
+    "gradle": {
+      "available": false,
+      "gated_optional": true,
+      "required_for_public": false
+    },
+    "java": {
+      "available": true,
+      "gated_optional": false,
+      "required_for_public": true
+    },
+    "mobsfscan": {
+      "available": false,
+      "gated_optional": true,
+      "required_for_public": false
+    },
+    "node": {
+      "available": true,
+      "gated_optional": false,
+      "required_for_public": true
+    }
+  }
+}

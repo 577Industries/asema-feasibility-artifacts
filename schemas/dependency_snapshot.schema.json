@@ -1,16 +1,13 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "properties": {
-    "analysis_scope": {
+    "components": {
+      "type": "array"
+    },
+    "format": {
       "type": "string"
     },
-    "claim_boundary": {
-      "type": "string"
-    },
-    "name": {
-      "type": "string"
-    },
-    "target_class": {
+    "snapshot_id": {
       "type": "string"
     },
     "target_id": {
@@ -18,12 +15,11 @@
     }
   },
   "required": [
+    "snapshot_id",
     "target_id",
-    "name",
-    "target_class",
-    "analysis_scope",
-    "claim_boundary"
+    "format",
+    "components"
   ],
-  "title": "target_manifest.schema.json",
+  "title": "dependency_snapshot.schema.json",
   "type": "object"
 }

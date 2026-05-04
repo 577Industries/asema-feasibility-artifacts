@@ -13,6 +13,7 @@
       <h1>ASEMA Feasibility Artifacts</h1>
       <p class="lede">A sanitized, reproducible evidence package for secure messaging application assessment: public target manifests, pilot summaries, benchmark seeds, diagrams, citations, and verification scripts.</p>
       <div class="actions">
+        <a href="dashboard/">AegisGraph v0.2 Dashboard</a>
         <a href="../artifacts/feasibility/ASEMA_Phase_I_Feasibility_Study_Public.md">Feasibility Study</a>
         <a href="../artifacts/evidence_index_public.csv">Evidence Index</a>
         <a href="https://github.com/577-Industries/asema-feasibility-artifacts">GitHub Repo</a>
@@ -27,6 +28,7 @@
         <article><strong>Real public targets</strong><span>Signal Android and Element X Android are pinned and summarized without redistributing target source code.</span></article>
         <article><strong>Reproducible workflow</strong><span>Scripts regenerate public pilot summaries and verify checksums, schemas, and sensitive-string absence.</span></article>
         <article><strong>Evidence discipline</strong><span>Static indicators are labeled as informational evidence, not vulnerability claims.</span></article>
+        <article><strong>AegisGraph v0.2</strong><span>The public dashboard exposes target manifests, evidence ledger counts, graph exports, SMABench synthetic traces, and recommendation examples.</span></article>
       </div>
     </section>
 
@@ -47,8 +49,8 @@
 
     <section>
       <h2>Reproduce</h2>
-      <pre><code>python3 scripts/verify_public_package.py
-python3 scripts/run_public_pilot.py --out /tmp/asema-public-pilot-output</code></pre>
+      <pre><code>python3 scripts/run_public_demo.py --out out/demo
+python3 scripts/verify_public_package.py</code></pre>
     </section>
   </main>
 </body>

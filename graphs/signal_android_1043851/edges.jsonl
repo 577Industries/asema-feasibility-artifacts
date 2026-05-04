@@ -1,0 +1,2 @@
+{"edge_id": "signal_android_1043851:e1", "edge_type": "flows_to", "evidence_refs": ["EVID-SIGNAL_ANDROID_1043851-STATIC"], "source": "signal_android_1043851:entry:deep_link", "target": "signal_android_1043851:parser:message"}
+{"edge_id": "signal_android_1043851:e2", "edge_type": "updates", "evidence_refs": ["EVID-SIGNAL_ANDROID_1043851-DEP"], "source": "signal_android_1043851:parser:message", "target": "signal_android_1043851:storage"}

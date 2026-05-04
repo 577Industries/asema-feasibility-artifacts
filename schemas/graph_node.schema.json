@@ -1,16 +1,16 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "properties": {
-    "analysis_scope": {
+    "evidence_refs": {
+      "type": "array"
+    },
+    "label": {
       "type": "string"
     },
-    "claim_boundary": {
+    "node_id": {
       "type": "string"
     },
-    "name": {
-      "type": "string"
-    },
-    "target_class": {
+    "node_type": {
       "type": "string"
     },
     "target_id": {
@@ -18,12 +18,12 @@
     }
   },
   "required": [
+    "node_id",
     "target_id",
-    "name",
-    "target_class",
-    "analysis_scope",
-    "claim_boundary"
+    "node_type",
+    "label",
+    "evidence_refs"
   ],
-  "title": "target_manifest.schema.json",
+  "title": "graph_node.schema.json",
   "type": "object"
 }

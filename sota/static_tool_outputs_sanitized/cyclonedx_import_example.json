@@ -1,0 +1,8 @@
+{
+  "bomFormat": "CycloneDX",
+  "components": [
+    {
+      "name": "example-component"
+    }
+  ]
+}

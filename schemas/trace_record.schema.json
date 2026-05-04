@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "events": {
+      "type": "array"
+    },
+    "path_id": {
+      "type": "string"
+    },
+    "trace_id": {
+      "type": "string"
+    },
+    "variant": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "trace_id",
+    "variant",
+    "path_id",
+    "events"
+  ],
+  "title": "trace_record.schema.json",
+  "type": "object"
+}

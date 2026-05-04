@@ -1,0 +1,11 @@
+{
+  "description": "Session -> PQ migration flag -> handshake stub",
+  "expected_outputs": [
+    "baseline_trace",
+    "mitigated_trace",
+    "score_delta"
+  ],
+  "path_id": "pq_migration",
+  "ring": "synthetic_public",
+  "task_id": "SMABENCH-SYN-pq_migration"
+}

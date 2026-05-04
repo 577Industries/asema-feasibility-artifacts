@@ -1,0 +1,11 @@
+{
+  "analysis_scope": "Sanitized public-source static manifest and source-indicator summary.",
+  "branch": "public-pilot",
+  "claim_boundary": "Static public-source observations only; no vulnerability claims.",
+  "commit": "1043851-public-pilot-snapshot",
+  "legacy_v0_1_path": "artifacts/pilot/manifests/signal_android_target_manifest.json",
+  "name": "Signal Android",
+  "repo_url": "https://github.com/signalapp/Signal-Android",
+  "target_class": "real_public_source_static_summary",
+  "target_id": "signal_android_1043851"
+}

@@ -1,0 +1,49 @@
+rules:
+  - id: aegis-sma-parser-boundary
+    message: "SMA parser or deserialization boundary indicator; prioritize defensive review."
+    severity: INFO
+    languages: [generic]
+    pattern-regex: "(parse|decode|deserialize|MessageParser|JsonAdapter)"
+    metadata:
+      claim_state_limit: static_supported
+      category: parser_boundary
+  - id: aegis-sma-deep-link-entrypoint
+    message: "Deep link or URI routing indicator; prioritize entrypoint graph modeling."
+    severity: INFO
+    languages: [generic]
+    pattern-regex: "(ACTION_VIEW|android:scheme|deep.?link|Uri\\.parse)"
+    metadata:
+      claim_state_limit: static_supported
+      category: deep_link_uri
+  - id: aegis-sma-link-preview
+    message: "Link preview handling indicator; prioritize network/render boundary modeling."
+    severity: INFO
+    languages: [generic]
+    pattern-regex: "(preview|OpenGraph|thumbnail|unfurl)"
+    metadata:
+      claim_state_limit: static_supported
+      category: link_preview
+  - id: aegis-sma-device-linking
+    message: "QR or device-linking indicator; prioritize pairing-token boundary modeling."
+    severity: INFO
+    languages: [generic]
+    pattern-regex: "(qr|barcode|pairing|linked.?device|device.?link)"
+    metadata:
+      claim_state_limit: static_supported
+      category: qr_or_device_linking
+  - id: aegis-sma-media-storage
+    message: "Media or storage boundary indicator; prioritize graph path modeling."
+    severity: INFO
+    languages: [generic]
+    pattern-regex: "(Attachment|ImageDecoder|ContentResolver|FileProvider|KeyStore|DataStore|RoomDatabase)"
+    metadata:
+      claim_state_limit: static_supported
+      category: media_storage
+  - id: aegis-sma-native-ffi
+    message: "Native or FFI boundary indicator; prioritize trust-boundary modeling."
+    severity: INFO
+    languages: [generic]
+    pattern-regex: "(System\\.loadLibrary|JNI|uniffi|ffi|jniLibs|\\.so\\b)"
+    metadata:
+      claim_state_limit: static_supported
+      category: native_ffi_boundary

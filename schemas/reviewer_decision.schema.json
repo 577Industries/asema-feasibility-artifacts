@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "decision": {
+      "type": "string"
+    },
+    "decision_id": {
+      "type": "string"
+    },
+    "rationale": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "decision_id",
+    "subject",
+    "decision",
+    "rationale"
+  ],
+  "title": "reviewer_decision.schema.json",
+  "type": "object"
+}

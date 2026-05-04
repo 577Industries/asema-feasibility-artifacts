@@ -1,0 +1,18 @@
+{"evidence_refs": ["EVID-SYNTH-BASELINE"], "label": "Remote message -> parser -> state update", "node_id": "aegis_sma_lab_baseline:parser:input", "node_type": "entrypoint", "target_id": "aegis_sma_lab_baseline"}
+{"evidence_refs": ["EVID-SYNTH-BASELINE"], "label": "parser parser/handler", "node_id": "aegis_sma_lab_baseline:parser:parser", "node_type": "parser", "target_id": "aegis_sma_lab_baseline"}
+{"evidence_refs": ["EVID-SYNTH-BASELINE"], "label": "parser state update", "node_id": "aegis_sma_lab_baseline:parser:state", "node_type": "state", "target_id": "aegis_sma_lab_baseline"}
+{"evidence_refs": ["EVID-SYNTH-BASELINE"], "label": "Message link -> preview fetch policy -> renderer", "node_id": "aegis_sma_lab_baseline:link_preview:input", "node_type": "entrypoint", "target_id": "aegis_sma_lab_baseline"}
+{"evidence_refs": ["EVID-SYNTH-BASELINE"], "label": "link_preview parser/handler", "node_id": "aegis_sma_lab_baseline:link_preview:parser", "node_type": "parser", "target_id": "aegis_sma_lab_baseline"}
+{"evidence_refs": ["EVID-SYNTH-BASELINE"], "label": "link_preview state update", "node_id": "aegis_sma_lab_baseline:link_preview:state", "node_type": "state", "target_id": "aegis_sma_lab_baseline"}
+{"evidence_refs": ["EVID-SYNTH-BASELINE"], "label": "QR/device link -> pairing token -> device registry", "node_id": "aegis_sma_lab_baseline:device_link:input", "node_type": "entrypoint", "target_id": "aegis_sma_lab_baseline"}
+{"evidence_refs": ["EVID-SYNTH-BASELINE"], "label": "device_link parser/handler", "node_id": "aegis_sma_lab_baseline:device_link:parser", "node_type": "parser", "target_id": "aegis_sma_lab_baseline"}
+{"evidence_refs": ["EVID-SYNTH-BASELINE"], "label": "device_link state update", "node_id": "aegis_sma_lab_baseline:device_link:state", "node_type": "state", "target_id": "aegis_sma_lab_baseline"}
+{"evidence_refs": ["EVID-SYNTH-BASELINE"], "label": "Attachment -> media decoder -> storage", "node_id": "aegis_sma_lab_baseline:media:input", "node_type": "entrypoint", "target_id": "aegis_sma_lab_baseline"}
+{"evidence_refs": ["EVID-SYNTH-BASELINE"], "label": "media parser/handler", "node_id": "aegis_sma_lab_baseline:media:parser", "node_type": "parser", "target_id": "aegis_sma_lab_baseline"}
+{"evidence_refs": ["EVID-SYNTH-BASELINE"], "label": "media state update", "node_id": "aegis_sma_lab_baseline:media:state", "node_type": "state", "target_id": "aegis_sma_lab_baseline"}
+{"evidence_refs": ["EVID-SYNTH-BASELINE"], "label": "Invite/update -> group state reducer -> notification", "node_id": "aegis_sma_lab_baseline:group_state:input", "node_type": "entrypoint", "target_id": "aegis_sma_lab_baseline"}
+{"evidence_refs": ["EVID-SYNTH-BASELINE"], "label": "group_state parser/handler", "node_id": "aegis_sma_lab_baseline:group_state:parser", "node_type": "parser", "target_id": "aegis_sma_lab_baseline"}
+{"evidence_refs": ["EVID-SYNTH-BASELINE"], "label": "group_state state update", "node_id": "aegis_sma_lab_baseline:group_state:state", "node_type": "state", "target_id": "aegis_sma_lab_baseline"}
+{"evidence_refs": ["EVID-SYNTH-BASELINE"], "label": "Session -> PQ migration flag -> handshake stub", "node_id": "aegis_sma_lab_baseline:pq_migration:input", "node_type": "entrypoint", "target_id": "aegis_sma_lab_baseline"}
+{"evidence_refs": ["EVID-SYNTH-BASELINE"], "label": "pq_migration parser/handler", "node_id": "aegis_sma_lab_baseline:pq_migration:parser", "node_type": "parser", "target_id": "aegis_sma_lab_baseline"}
+{"evidence_refs": ["EVID-SYNTH-BASELINE"], "label": "pq_migration state update", "node_id": "aegis_sma_lab_baseline:pq_migration:state", "node_type": "state", "target_id": "aegis_sma_lab_baseline"}

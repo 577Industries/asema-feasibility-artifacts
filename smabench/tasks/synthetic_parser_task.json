@@ -1,0 +1,11 @@
+{
+  "description": "Remote message -> parser -> state update",
+  "expected_outputs": [
+    "baseline_trace",
+    "mitigated_trace",
+    "score_delta"
+  ],
+  "path_id": "parser",
+  "ring": "synthetic_public",
+  "task_id": "SMABENCH-SYN-parser"
+}

@@ -1,0 +1,11 @@
+{
+  "description": "Attachment -> media decoder -> storage",
+  "expected_outputs": [
+    "baseline_trace",
+    "mitigated_trace",
+    "score_delta"
+  ],
+  "path_id": "media",
+  "ring": "synthetic_public",
+  "task_id": "SMABENCH-SYN-media"
+}

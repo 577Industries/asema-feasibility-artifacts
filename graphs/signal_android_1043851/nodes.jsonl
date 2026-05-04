@@ -1,0 +1,4 @@
+{"evidence_refs": ["EVID-SIGNAL_ANDROID_1043851-MANIFEST"], "label": "Signal Android", "node_id": "signal_android_1043851:app", "node_type": "asset", "target_id": "signal_android_1043851"}
+{"evidence_refs": ["EVID-SIGNAL_ANDROID_1043851-STATIC"], "label": "Deep link entrypoint", "node_id": "signal_android_1043851:entry:deep_link", "node_type": "entrypoint", "target_id": "signal_android_1043851"}
+{"evidence_refs": ["EVID-SIGNAL_ANDROID_1043851-STATIC"], "label": "Message/parser surface", "node_id": "signal_android_1043851:parser:message", "node_type": "parser", "target_id": "signal_android_1043851"}
+{"evidence_refs": ["EVID-SIGNAL_ANDROID_1043851-DEP"], "label": "Local storage surface", "node_id": "signal_android_1043851:storage", "node_type": "storage", "target_id": "signal_android_1043851"}

@@ -1,0 +1,15 @@
+{
+  "components": [
+    {
+      "name": "androidx-core",
+      "scope": "public metadata"
+    },
+    {
+      "name": "kotlin-stdlib",
+      "scope": "public metadata"
+    }
+  ],
+  "format": "modeled-cyclonedx-summary",
+  "snapshot_id": "DEP-signal_android_1043851",
+  "target_id": "signal_android_1043851"
+}

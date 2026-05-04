@@ -1,0 +1,28 @@
+{
+  "artifact_classes": [
+    "target_manifest",
+    "evidence_ledger",
+    "graph_export",
+    "score_report",
+    "smabench_task",
+    "synthetic_trace",
+    "recommendation",
+    "dashboard"
+  ],
+  "checksums_file": "checksums/SHA256SUMS",
+  "limitations": [
+    "No real-app dynamic testing is included in the public release.",
+    "Static observations are not vulnerability claims.",
+    "Target source trees are not redistributed."
+  ],
+  "project": "AegisGraph ASEMA Feasibility Artifacts",
+  "public_scope": "sanitized public-source static analysis plus synthetic lab demo",
+  "release": "v0.2.0",
+  "release_date": "2026-05-04",
+  "targets": [
+    "signal_android_1043851",
+    "elementx_android_91d265e6",
+    "aegis_sma_lab_baseline",
+    "aegis_sma_lab_mitigated"
+  ]
+}

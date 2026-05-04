@@ -1,0 +1,16 @@
+{
+  "dashboard_note": "Static-only limitations are visible for real-target observations.",
+  "evidence_count": 11,
+  "limitations": [
+    "No real-app dynamic testing is included in the public release.",
+    "Static observations are not vulnerability claims.",
+    "Target source trees are not redistributed."
+  ],
+  "release": "v0.2.0",
+  "targets": [
+    "signal_android_1043851",
+    "elementx_android_91d265e6",
+    "aegis_sma_lab_baseline",
+    "aegis_sma_lab_mitigated"
+  ]
+}

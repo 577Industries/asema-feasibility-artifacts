@@ -1,0 +1,7 @@
+{
+  "analysis_scope": "Deterministic Python synthetic traces for public demonstration.",
+  "claim_boundary": "Synthetic dynamic observations only describe the modeled lab.",
+  "name": "AegisSMA-Lab",
+  "target_class": "synthetic_modeled_target",
+  "target_id": "aegis_sma_lab"
+}

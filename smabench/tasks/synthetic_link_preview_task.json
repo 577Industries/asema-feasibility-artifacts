@@ -1,0 +1,11 @@
+{
+  "description": "Message link -> preview fetch policy -> renderer",
+  "expected_outputs": [
+    "baseline_trace",
+    "mitigated_trace",
+    "score_delta"
+  ],
+  "path_id": "link_preview",
+  "ring": "synthetic_public",
+  "task_id": "SMABENCH-SYN-link_preview"
+}

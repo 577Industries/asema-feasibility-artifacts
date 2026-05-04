@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "artifact_class": {
+      "type": "string"
+    },
+    "claim_state": {
+      "enum": [
+        "candidate",
+        "static_supported",
+        "priority_validation",
+        "harness_covered",
+        "synthetic_dynamic_observed",
+        "authorized_dynamic_observed",
+        "externally_correlated",
+        "defensive_recommendation",
+        "vulnerability_claim"
+      ]
+    },
+    "evidence_id": {
+      "type": "string"
+    },
+    "path": {
+      "type": "string"
+    },
+    "sha256": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "evidence_id",
+    "artifact_class",
+    "path",
+    "sha256",
+    "claim_state"
+  ],
+  "title": "evidence_record.schema.json",
+  "type": "object"
+}

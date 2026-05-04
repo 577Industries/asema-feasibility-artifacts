@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "category": {
+      "type": "string"
+    },
+    "claim_state": {
+      "enum": [
+        "candidate",
+        "static_supported",
+        "priority_validation",
+        "harness_covered",
+        "synthetic_dynamic_observed",
+        "authorized_dynamic_observed",
+        "externally_correlated",
+        "defensive_recommendation",
+        "vulnerability_claim"
+      ]
+    },
+    "evidence_refs": {
+      "type": "array"
+    },
+    "observation_id": {
+      "type": "string"
+    },
+    "target_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "observation_id",
+    "target_id",
+    "category",
+    "claim_state",
+    "evidence_refs"
+  ],
+  "title": "static_observation.schema.json",
+  "type": "object"
+}

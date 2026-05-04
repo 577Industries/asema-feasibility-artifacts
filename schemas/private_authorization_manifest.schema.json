@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "authorization_id": {
+      "type": "string"
+    },
+    "authorized_targets": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "expires": {
+      "type": "string"
+    },
+    "limitations": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "permitted_adapters": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "release_classification": {
+      "const": "private_restricted"
+    }
+  },
+  "required": [
+    "authorization_id",
+    "release_classification",
+    "authorized_targets",
+    "expires"
+  ],
+  "title": "private_authorization_manifest.schema.json",
+  "type": "object"
+}

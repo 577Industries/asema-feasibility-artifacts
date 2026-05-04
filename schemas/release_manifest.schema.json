@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "artifact_classes": {
+      "type": "array"
+    },
+    "limitations": {
+      "type": "array"
+    },
+    "project": {
+      "type": "string"
+    },
+    "release": {
+      "type": "string"
+    },
+    "targets": {
+      "type": "array"
+    }
+  },
+  "required": [
+    "release",
+    "project",
+    "targets",
+    "artifact_classes",
+    "limitations"
+  ],
+  "title": "release_manifest.schema.json",
+  "type": "object"
+}

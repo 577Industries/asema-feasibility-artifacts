@@ -1,0 +1,114 @@
+{
+  "mean_score": 49.67,
+  "scores": [
+    {
+      "claim_state": "synthetic_dynamic_observed",
+      "evidence_refs": [
+        "EVID-SYNTH-MITIGATED"
+      ],
+      "explanation": "Deterministic 0-100 assessment-priority score from modeled graph path features; not vulnerability severity.",
+      "path_id": "parser",
+      "score": 57.5,
+      "score_vector": {
+        "boundary_weakness": 34.0,
+        "evidence_confidence": 88.0,
+        "exploit_class_proximity": 56.0,
+        "mitigation_leverage": 87.0,
+        "reachability": 91.0,
+        "sensitivity": 82.0
+      },
+      "target_id": "aegis_sma_lab_mitigated"
+    },
+    {
+      "claim_state": "synthetic_dynamic_observed",
+      "evidence_refs": [
+        "EVID-SYNTH-MITIGATED"
+      ],
+      "explanation": "Deterministic 0-100 assessment-priority score from modeled graph path features; not vulnerability severity.",
+      "path_id": "link_preview",
+      "score": 50.5,
+      "score_vector": {
+        "boundary_weakness": 30.0,
+        "evidence_confidence": 86.0,
+        "exploit_class_proximity": 47.0,
+        "mitigation_leverage": 85.0,
+        "reachability": 84.0,
+        "sensitivity": 67.0
+      },
+      "target_id": "aegis_sma_lab_mitigated"
+    },
+    {
+      "claim_state": "synthetic_dynamic_observed",
+      "evidence_refs": [
+        "EVID-SYNTH-MITIGATED"
+      ],
+      "explanation": "Deterministic 0-100 assessment-priority score from modeled graph path features; not vulnerability severity.",
+      "path_id": "device_link",
+      "score": 55.5,
+      "score_vector": {
+        "boundary_weakness": 36.0,
+        "evidence_confidence": 86.0,
+        "exploit_class_proximity": 52.0,
+        "mitigation_leverage": 90.0,
+        "reachability": 87.0,
+        "sensitivity": 81.0
+      },
+      "target_id": "aegis_sma_lab_mitigated"
+    },
+    {
+      "claim_state": "synthetic_dynamic_observed",
+      "evidence_refs": [
+        "EVID-SYNTH-MITIGATED"
+      ],
+      "explanation": "Deterministic 0-100 assessment-priority score from modeled graph path features; not vulnerability severity.",
+      "path_id": "media",
+      "score": 48.5,
+      "score_vector": {
+        "boundary_weakness": 27.0,
+        "evidence_confidence": 84.0,
+        "exploit_class_proximity": 45.0,
+        "mitigation_leverage": 84.0,
+        "reachability": 79.0,
+        "sensitivity": 74.0
+      },
+      "target_id": "aegis_sma_lab_mitigated"
+    },
+    {
+      "claim_state": "synthetic_dynamic_observed",
+      "evidence_refs": [
+        "EVID-SYNTH-MITIGATED"
+      ],
+      "explanation": "Deterministic 0-100 assessment-priority score from modeled graph path features; not vulnerability severity.",
+      "path_id": "group_state",
+      "score": 44.5,
+      "score_vector": {
+        "boundary_weakness": 23.0,
+        "evidence_confidence": 83.0,
+        "exploit_class_proximity": 40.0,
+        "mitigation_leverage": 82.0,
+        "reachability": 73.0,
+        "sensitivity": 72.0
+      },
+      "target_id": "aegis_sma_lab_mitigated"
+    },
+    {
+      "claim_state": "synthetic_dynamic_observed",
+      "evidence_refs": [
+        "EVID-SYNTH-MITIGATED"
+      ],
+      "explanation": "Deterministic 0-100 assessment-priority score from modeled graph path features; not vulnerability severity.",
+      "path_id": "pq_migration",
+      "score": 41.5,
+      "score_vector": {
+        "boundary_weakness": 20.0,
+        "evidence_confidence": 82.0,
+        "exploit_class_proximity": 38.0,
+        "mitigation_leverage": 86.0,
+        "reachability": 70.0,
+        "sensitivity": 77.0
+      },
+      "target_id": "aegis_sma_lab_mitigated"
+    }
+  ],
+  "target_id": "aegis_sma_lab_mitigated"
+}

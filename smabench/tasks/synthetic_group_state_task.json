@@ -1,0 +1,11 @@
+{
+  "description": "Invite/update -> group state reducer -> notification",
+  "expected_outputs": [
+    "baseline_trace",
+    "mitigated_trace",
+    "score_delta"
+  ],
+  "path_id": "group_state",
+  "ring": "synthetic_public",
+  "task_id": "SMABENCH-SYN-group_state"
+}

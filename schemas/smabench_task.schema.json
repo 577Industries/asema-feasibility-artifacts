@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "expected_outputs": {
+      "type": "array"
+    },
+    "path_id": {
+      "type": "string"
+    },
+    "ring": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "task_id",
+    "ring",
+    "path_id",
+    "expected_outputs"
+  ],
+  "title": "smabench_task.schema.json",
+  "type": "object"
+}

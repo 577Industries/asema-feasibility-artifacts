@@ -1,0 +1,9 @@
+.pytest_cache/
+__pycache__/
+*.pyc
+.venv/
+out/
+apps/local-demo/web/node_modules/
+apps/local-demo/web/dist/
+npm-debug.log*
+private-demo/authorization_manifest.json
