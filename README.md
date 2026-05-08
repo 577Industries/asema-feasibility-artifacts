@@ -1,27 +1,51 @@
-# ASEMA Feasibility Artifacts
+# AegisGraph v0.3 — ASEMA DP2 Sanitized Public Release
 
-Public reproducibility artifacts for 577 Industries' AegisGraph approach to DARPA ASEMA: Assessing Security of Encrypted Messaging Applications.
+> 577 Industries' AegisGraph platform provides graph-based application-layer assessment evidence for Secure Messaging Applications (SMAs), addressing DARPA topic HR0011SB20254-12 ASEMA.
 
-This repository is an evaluator-facing evidence layer. It publishes sanitized feasibility artifacts, target manifests, pilot summaries, benchmark seeds, diagrams, citations, schemas, deterministic synthetic traces, graph exports, recommendations, and reproducibility scripts. It does not publish internal proposal binders, cloned target source trees, raw scanner JSON, proprietary drafts, exploit material, or real-app dynamic traces.
+## What This Release Contains
 
-## v0.2 Quickstart
+- **Evidence package** (`evidence/`): the AegisGraph v0.3 evidence JSON (12 evidence_refs, 6 graph_threads, 12 recommendations, 7-tool SOTA matrix, 2 pinned targets), the CETM (Claim → Evidence Traceability Matrix; 69 claims, 0 implicit), and validators.
+- **Reproducibility report** (`reports/traceability_matrix.{json,md}`): SPEC.md → DSIP requirement → on-disk evidence → proposal claim crosswalk; 53 rows.
+- **Figures** (`figures/F*.png`): 7-figure visual pack (F1 architecture, F2 claim-state machine, F3 evidence flow, F4 graph path, F5 score vector, F6 SOTA matrix, F7 recommendation contract).
+- **Sanitized polydiff regression** (`polydiff_regression_report.sanitized.json`): URL-parser disagreement evidence with `tier_p1_status: "pass"` and 8 historical-CVE rediscoveries.
+- **Manifest** (`manifest.json`) and **exclusion documentation** (`EXCLUSIONS.md`).
+- **License**: Apache-2.0.
 
-```bash
-python3 scripts/run_public_demo.py --out out/demo
-python3 scripts/verify_public_package.py
+## What This Release DOES NOT Contain (see `EXCLUSIONS.md`)
+
+- Crash-triggering input bytes from ReproChain (only hashes + structure).
+- Pre-disclosure findings outside disclosure-policy authorization.
+- Raw target source code (Signal Android, Element X Android).
+- Live target probes / production-app traces.
+- Credentials, private paths, customer/partner names.
+
+## Quick Verification
+
+```
+git clone <this-repo>
+cd <this-repo>/release/v0.3.0
+node evidence/validate-evidence.mjs   # safety_scan: passed
+node evidence/validate-cetm.mjs evidence/cetm.json   # issues_count: 0
+sha256sum -c evidence/checksums.sha256   # all OK
 ```
 
-The demo produces target manifests, a public evidence ledger, graph JSONL, score reports, SMABench synthetic results, a differential report, recommendations, SOTA comparison outputs, a dashboard at `site/public-dashboard/index.html`, checksums, and verification reports.
+## What Reviewers Should Note
 
-## Scope Discipline
+- **Honest scope discipline**: every claim in the v0.3 evidence is anchored (A) to a hashed artifact, expected (E) to be produced by Phase II evidence streams, or planned (P) for Phase II execution. NO implicit claims — the validator rejects any.
+- **Static reachability ≠ exploitation**: where ReproChain reaches the libwebp CVE-2023-4863 surface in Signal Android and Element X Android, that is reachability evidence, NOT exploitation evidence.
+- **PolyDiff parser disagreements ≠ vulnerabilities**: security-relevance is asserted only after the documented classifier rules in favor.
+- **Score vectors are assessment-priority**, NOT vulnerability-severity: see `aegisgraph-v0.3-evidence.json#score_model` and master proposal §5.6.
 
-- No exploit reproduction.
-- No live app or server probing.
-- No credentialed app interaction.
-- No closed-source reverse engineering.
-- No target source redistribution.
-- Static observations are not vulnerability claims.
+## v0.2 → v0.3 Delta
 
-## Legacy v0.1 Artifacts
+See `RELEASE_NOTES.md` for the changelog.
 
-The `artifacts/` directory is retained for compatibility with the v0.1 public package. Canonical v0.2 data lives in `targets/`, `evidence/`, `graphs/`, `smabench/`, `recommendations/`, `sota/`, `site/`, and `checksums/`.
+## License
+
+Apache-2.0.
+
+## Pointers
+
+- AegisGraph engineering platform (open-source): https://github.com/577Industries/aegisgraph
+- DARPA topic: HR0011SB20254-12 (Assessing Security of Encrypted Messaging Applications, ASEMA)
+- Master proposal narrative: cited by hash in this release; full text in submission package

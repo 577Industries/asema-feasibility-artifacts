@@ -1,0 +1,34 @@
+{
+  "artifacts": [
+    {
+      "path": "extraction/output/manifest.json",
+      "sha256": "e86470edad13150b76c05cf6655943b07c19fa6eb399cc15e3592e13bdee4e98"
+    },
+    {
+      "path": "polydiff/regression/report.json",
+      "sha256": "06931acd032cc6659b93cdbe11bc38bf5abfa6037350bec4db0e86e716935dc3"
+    },
+    {
+      "path": "smabench/results/latest/results.json",
+      "sha256": "d8a7aef164ddf599000c79dc0ca4ae1fa6575ebe4feedcf682754d8aaf23c03c"
+    },
+    {
+      "path": "validation-report.json",
+      "sha256": "93a747e038fe57d115358845186de3608b543eb1468618d587681f952dbf9263"
+    },
+    {
+      "path": "exports/public-sanitized/polydiff_regression_report.sanitized.json",
+      "sha256": "baa5aa929648c370a9306c86bf47d90a88d13652a6b5c580411ca1439b73b87b"
+    }
+  ],
+  "dry_run": false,
+  "excluded_documentation_at": "EXCLUSIONS.md",
+  "generated_at": "2026-05-05T00:00:00Z",
+  "generated_by": "aegisgraph-tier3-research",
+  "release_authorized": true,
+  "release_note": "Both environment authorization and sanitize-check passed; this manifest may be promoted by the operator after a final human review.",
+  "safety_posture": "sanitized_candidate",
+  "tool_output_type": "public_sanitized_export",
+  "validation_status": "pass",
+  "version": "v1.0"
+}
