@@ -1,45 +1,132 @@
-# AegisGraph v0.3 Release Notes
+# AegisGraph v0.4 Release Notes
 
-**Tag**: v0.3.0-asema-dp2-feasibility
-**Date**: 2026-05-08
+**Tag**: release/v0.4.0
+**Date**: 2026-05-13
+**Predecessor**: v0.3.0 (tag `v0.3.0-asema-dp2-feasibility`, 2026-05-08)
 **License**: Apache-2.0
+**Engineering integration tip at cut**: `665d10f`
 
-## v0.2 → v0.3 Delta
+## v0.3 -> v0.4 Delta
 
-### Added
+v0.4 is **additive**: every v0.3 evidence record continues to validate.
+No v0.3 claim is retracted; no v0.3 file is modified. The v0.4 release
+adds six discovery engines, formal schema-v2 additive surfaces for their
+output, and the validator-v2 sanitize-check rule extensions that gate
+the public projection.
 
-- **ReproChain CVE-2023-4863 evidence**: vendored vulnerable + fixed libwebp commit pins (`7ba44f80...` / `902bc919...` from libwebp v1.3.2), AddressSanitizer + libFuzzer harness sources, 5-node static reachability graphs for Signal Android (MmsAttachment → Glide → BitmapFactory.decodeStream → ImageDecoder → libwebp) and Element X Android (Coil → ImageDecoderDecoder → libwebp). Pre-disclosure simulation framing: AegisGraph would have **prioritized** this surface for fuzzing/audit, NOT discovered the bug.
-- **PolyDiff differential parser fuzzing**: 7 parser-wrapper directories (Python urllib + WHATWG-URL Python built; JDK URI, OkHttp, Rust url, Go net/url, libcurl source + Dockerfile + smoke tests shipped — build cleanly in pinned devcontainer). 41 historical regression cases with 13 CVE/disclosure references; 8 historical-CVE rediscoveries via current 2 wrappers; 12+ rediscoveries when the remaining 5 wrappers build in devcontainer. `tier_p1_status: "pass"`.
-- **Real CodeQL/Semgrep/MobSF extraction infrastructure**: 8 CodeQL queries, 4 Semgrep rules, AndroidManifest analyzer (XXE-safe via lxml hardening), MobSF Docker integration (offline mode; honest skip statuses). Phase 0 placeholder strings eliminated; test contract forbids regression.
-- **SMABench 6 Ring 1 generators**: 10k URLs, 32 QR PNGs, 1k deeplinks, 200 sync envelopes, 16 valid media samples, 60 PQ traces. Byte-deterministic; repeatability hash recorded.
-- **Hardened validator**: 12 substantive + 6 structural sanitize-check rules, traceability matrix generator, --non-mutating mode for third-party verification, strict-tooling fail-closed.
-- **Fact-vector v2 schema** (45 axes; additive — v1 records continue to validate).
-- **7-figure visual pack** in `figures/`.
-- **Public-export human gate**: `release_authorized=False` until BOTH `AEGISGRAPH_RELEASE_AUTHORIZED=1` AND `validator/sanitize_check.py` passes.
+### Added — discovery engines
+
+- **PolyDiff Extended (6 families)**: image, opengraph, deeplink, qr,
+  proto families joined the URL family from v0.3 (M2.1-M2.6). 16
+  anchored historical bugs across the new families; each tier-P1 status
+  passes. The image family anchors include CVE-2023-4863 (libwebp) plus
+  3 additional historical decoder bugs. All disagreement entries in
+  `polydiff_regression_report.sanitized.json` use sha256 prefixes only;
+  no witness bytes redistributed.
+- **HarnessGen (M5.1 + M5.2 + libwebp scaffold)**: 5 harnesses
+  scaffolded — libwebp native (libFuzzer), Signal LinkPreviewUtil
+  (Jazzer/JVM), matrix-rust-sdk MessageType (cargo-fuzz), plus 2
+  additional native + JVM templates. Each compiles in the pinned
+  devcontainer. No 24h fuzz run executed for v0.4; `crashes[]` is empty
+  by design (lands at v0.5 after first run + counsel review).
+- **InvariantCheck library v1 (M3.3 + M5.3 + full encode)**: 15
+  invariants total — INV-01 .. INV-15. M3.3 shipped 5; M5.3 added 10.
+  Three M5.3 additions are fully CodeQL/Semgrep-encoded (INV-02
+  notification leak, INV-05 key storage no keystore, INV-08 clipboard
+  paste to send). The remaining 7 ship as rich-comment stubs scheduled
+  for M7 ground-truth completion. `invariant_violations[]` is empty in
+  the public projection by design; SARIF results stay engineering-
+  private per plan §10 and Rule 8.
+- **CrossSMA 24-cell matrix (M4.1)**: 4 targets (signal-android,
+  element-x-android verified; wire-android, telegram-android stubs) x
+  6 structural patterns. 6 AG-XSMA-* candidates exported with
+  `validation_state: "structural_only"` pending harness/dynamic
+  confirmation.
+- **Disclosure pipeline scaffold (M3.4)**: hash-chained
+  `aegisgraph/disclosure/ledger.py` (uses the same `verify_hash_chain`
+  as evidence records), `vendor_registry.yaml`, Jinja2 templates for
+  vendor initial email / reproduction steps / CVE request (Chrome CNA,
+  MITRE direct, GitHub Security Advisory variants). `disclosure_events[]`
+  is empty in the public projection by design pending counsel review.
+
+### Added — public artifact schema (v0.4 additive arrays)
+
+- `discovery_runs[]` — 8 representative engine-execution records
+- `disagreements[]` — 6 entries (one per active PolyDiff family)
+- `crashes[]` — empty (HarnessGen scaffolds only at v0.4 cut)
+- `invariant_violations[]` — empty (real SARIF stays engineering-private)
+- `cross_target_candidates[]` — 6 entries from the 24-cell matrix
+- `disclosure_events[]` — empty (counsel review blocks; v0.5)
+
+### Added — validator-v2 (sanitize-check rule extensions)
+
+Lands on engineering branch `stream/validator-export` (commit `2aeb225`).
+Per plan §10:
+- 5 new BLOCKING_PATTERNS: `vendor_contact_in_public_artifact`,
+  `disclosure_embargoed_leak`, `raw_stack_trace`,
+  `target_source_snippet`, `crosssma_target_redistribution`.
+- 3 new sanitize_check rules:
+  - **Rule 7** disclosure ledger redaction (event_type whitelist =
+    {cve_assigned, cve_published, disclosure_public}; vendor_contact
+    org-id-only; notes_hash null in public exports)
+  - **Rule 8** SARIF source-snippet redaction (location to repo_url +
+    commit + path + start_line only; no source_snippet field anywhere)
+  - **Rule 9** crash record completeness (crash_sha256 required; no
+    payload-bearing fields including the v0.4-extended `raw_witness` and
+    `raw_corpus_input`).
+
+### Added — CETM v0.4
+
+`evidence/cetm.json` updated to 82 claims (69 v0.3 + 13 new engine
+families: PolyDiff x 5 families, HarnessGen, HarnessGen crashes
+(planned), InvariantCheck library v1, InvariantCheck violations
+(planned), CrossSMA matrix, CrossSMA candidates, disclosure scaffold,
+validator-v2).
+
+### Added — traceability matrix v0.4
+
+`reports/traceability_matrix.{json,md}` extended with 13 v0.4 engine
+rows: 66 total (39 ok, 17 claim-without-evidence, 5 evidence-without-
+claim, 5 planned). Target counts hold within plan §10 v0.4 envelope.
 
 ### Changed
 
-- Master proposal expanded with §4.4 (4-novelty list), §6.6 (ReproChain), §6.7 (PolyDiff), §13 (KSA crosswalk acknowledging PI vulnerability-research gap), §12.1.1 (customer discovery commitment), §12.5 (DARPA insertion targets).
-- CETM (Claim → Evidence Traceability Matrix) now governs every proposal claim with status A/E/P; no implicit claims allowed.
+- `manifest.json`: `release.version: "v0.4"`, `release_authorized: true`,
+  `validation_status: "pass"`, `safety_posture: "sanitized_candidate"`,
+  `tool_output_type: "public_sanitized_export"`, additional artifact
+  entries for the new v0.4 files.
+- `EXCLUSIONS.md`: extended with engineering-private categories
+  (`aegisgraph/disclosure/{ledger.jsonl,vendor_registry.yaml,outgoing/,
+  templates/}`, `aegisgraph/invariants/library/codeql/**`,
+  `aegisgraph/invariants/library/semgrep/**`, `harnessgen/runs-private/**`,
+  raw stack traces, source_snippet long fields, attacker URLs in
+  cross_target_candidate, reviewed_embargoed records).
 
-### Fixed
+### Removed / retracted
 
-- Compliance Matrix renumbering aligned to actual master §1–§17 structure.
-- Submission binder stale dual-master resolved.
-- Public Link Register format updated to anchor-by-hash.
+None. v0.4 is strictly additive.
 
 ### Known limitations (documented honestly)
 
-- Host environments without Clang 18 / CodeQL CLI 2.20.6 / Java 21 / Docker / Go 1.22 / Rust 1.79 will report `build_status="blocked_pending_toolchain"` for ReproChain and limited extraction coverage. The pinned devcontainer (per `01_TIER3_RESEARCH/.../devcontainer/Dockerfile`) ships with all required tools.
-- 5 of 7 PolyDiff parser wrappers (Java/Kotlin/Rust/Go/C) require devcontainer compilation; current host has 2 of 7 built.
+- `crashes[]` and `invariant_violations[]` ship empty by design. They
+  fill at v0.5 (HarnessGen 24h fuzz runs + counsel-cleared AG-IV-*
+  records).
+- `disclosure_events[]` ships empty by design. Real disclosure ledger
+  entries land at v0.5 once at least one finding clears counsel review,
+  vendor coordination, and embargo expiry.
+- Sanitize-check Rule 8 forbids `source_snippet` fields — public
+  AG-IV-* records reference SARIF files by URI only; reviewers needing
+  the full SARIF body must work via the engineering channel.
 
 ### Compliance discipline
 
 - No live target probing.
 - No raw target source redistribution.
-- No crash-inducing input bytes.
+- No crash-inducing input bytes (Rule 5 + Rule 9 enforced).
 - No credentials / no PII.
-- Static observations bounded as reachability evidence, NOT vulnerability claims.
+- No vendor contact emails in public artifacts (new BLOCKING_PATTERN).
+- Static observations bounded as reachability evidence, NOT
+  vulnerability claims.
 
 ## License
 

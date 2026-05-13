@@ -19,14 +19,38 @@
     {
       "path": "exports/public-sanitized/polydiff_regression_report.sanitized.json",
       "sha256": "baa5aa929648c370a9306c86bf47d90a88d13652a6b5c580411ca1439b73b87b"
+    },
+    {
+      "path": "evidence/aegisgraph-v0.4-evidence.json",
+      "sha256": "a2fef12c4b720c9a01af91496e268641d01d66b1e077221342d9d7d932dc8f87"
+    },
+    {
+      "path": "evidence/cetm.json",
+      "sha256": "3887c6ae970d9e6ed61417118f19a049b6ffe78427b1f9ca058c602fec70e581"
+    },
+    {
+      "path": "polydiff_regression_report.sanitized.json",
+      "sha256": "ccf0d7175b97aa25ebad6c15c7e6bf712c453a085385533377cf41bcb44207bb"
+    },
+    {
+      "path": "reports/traceability_matrix.json",
+      "sha256": "fdf5b050aa254d316917d4c58dd2167f80048bdc9ae4b44418e2d9a37a82d990"
+    },
+    {
+      "path": "reports/traceability_matrix.md",
+      "sha256": "adb413bd314592d053e28af6835f775b34ac648496dec434efc41d2bc389e520"
     }
   ],
   "dry_run": false,
   "excluded_documentation_at": "EXCLUSIONS.md",
-  "generated_at": "2026-05-05T00:00:00Z",
+  "generated_at": "2026-05-13T00:00:00Z",
   "generated_by": "aegisgraph-tier3-research",
+  "release": {
+    "predecessor": "v0.3",
+    "version": "v0.4"
+  },
   "release_authorized": true,
-  "release_note": "Both environment authorization and sanitize-check passed; this manifest may be promoted by the operator after a final human review.",
+  "release_note": "v0.4 additive sanitized public release; every v0.3 evidence record continues to validate. Engineering integration commit: 665d10f. Validator-v2 (sanitize-check Rules 7/8/9 + 5 new BLOCKING_PATTERNS) landed on stream/validator-export.",
   "safety_posture": "sanitized_candidate",
   "tool_output_type": "public_sanitized_export",
   "validation_status": "pass",

@@ -1,12 +1,21 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "_doc": "AegisGraph ASEMA DP2 — Claim → Evidence Traceability Matrix. Every claim in master proposal v0.3 is enumerated. Status taxonomy: A = anchored today and validator passes; E = anchored to engineering-stream output that lands by submission; P = planned/Phase II with limitation language. Forbidden status: I (implicit/unanchored).",
-  "_source_master": "01_master_proposal/AegisGraph_ASEMA_DP2_Master_Proposal_v0.3.md",
-  "_generated_on": "2026-05-07",
+  "_doc": "AegisGraph ASEMA DP2 — Claim → Evidence Traceability Matrix (v0.4). Additive amendment of v0.3: every v0.3 claim preserved verbatim with same claim_id, source_location, claim_text, and status; v0.4 only appends new claim families. Status taxonomy unchanged: A = anchored today and validator passes; E = anchored to engineering-stream output that lands by submission; P = planned/Phase II with limitation language. Forbidden status: I (implicit/unanchored). v0.4 new families: C-SCHEMA-V2, C-NEW-HG, C-NEW-IC, C-NEW-CS, C-NEW-DP, C-NEW-CD, C-NEW-PD-EXT, C-DISC-V1..V5, C-SOTA-DELTA.",
+  "_source_master": "01_master_proposal/AegisGraph_ASEMA_DP2_Master_Proposal_v0.4.md",
+  "_amends": "01_master_proposal/AegisGraph_ASEMA_DP2_Master_Proposal_v0.3.md",
+  "_generated_on": "2026-05-12",
+  "_additive_promise": "Every v0.3 claim in cetm.json is preserved in v0.4 with the same claim_id, source_location (still pointing to v0.3 master line numbers), claim_text, and status. No v0.3 claim is retracted, downgraded, edited, or re-numbered. Only new claims are appended.",
+  "_integration_commit_tip_at_v04_cut": "4d03d7d85c979d46d6f258039f4136dba53388ba",
+  "_adrs_referenced": [
+    "ADR-0006 (disclosure ownership; PI as named owner)",
+    "ADR-0010 (additive-only schema evolution)",
+    "ADR-0013 (schema v2 discovery-graph additive extension)",
+    "ADR-0014 (hash-chained coordinated-disclosure ledger)"
+  ],
   "_status_counts_at_generation": {
-    "A": 41,
-    "E": 7,
-    "P": 9
+    "A": 52,
+    "E": 9,
+    "P": 21
   },
   "claims": [
     {
@@ -767,6 +776,149 @@
       "verification_command": null,
       "status": "A",
       "limitation_language": "Reference register at submission-binder/ASEMA_DP2_Reference_Register.md must reconcile to all 31."
+    },
+    {
+      "claim_id": "C-SCHEMA-V2",
+      "source_location": "01_master_proposal/AegisGraph_ASEMA_DP2_Master_Proposal_v0.4.md:§5.3",
+      "claim_text": "Schema v2 is an additive discovery-graph extension to the v0.3 evidence schema (ADR-0013): adds 6 new node types (discovery_run, crash, disagreement, invariant_violation, cross_target_candidate, disclosure_event), 6 new edge relationships (produced_by_engine, corroborates, escalated_to_disclosure, propagates_to, confirmed_runtime, embargoed_until), 2 new claim states (reviewed_embargoed, disclosed_public), and 2 optional score-vector dimensions (engine_corroboration, exploitability_evidence). Backward-compatibility is enforced by tests/test_schema_v1_v2_compatibility.py — an 89-case regression asserting every v1 record re-validates under v2 with byte-stable hash chains.",
+      "evidence_artifact": "tests/test_schema_v1_v2_compatibility.py @ integration:4d03d7d85c979d46d6f258039f4136dba53388ba + schema range 0f67505…529a341 (ADR-0013 accepted in commit 79adace888f523f592547451730a96f50fa3d93c)",
+      "evidence_hash": null,
+      "owner_stream": "Engineering (stream/integration M1.2)",
+      "verification_command": "python3 -m pytest tests/test_schema_v1_v2_compatibility.py",
+      "status": "A",
+      "limitation_language": "Additive-only per ADR-0010; v0.3 records continue to validate unchanged. New v2 fields are optional; only Phase II–emitted records populate them. Engineering-stream evidence — not redistributed into this CETM verbatim; reviewer accesses via stream/integration repository."
+    },
+    {
+      "claim_id": "C-NEW-HG",
+      "source_location": "01_master_proposal/AegisGraph_ASEMA_DP2_Master_Proposal_v0.4.md:§5.2,§5.8.2",
+      "claim_text": "HarnessGen (Engine 2): graph-driven fuzz harness generation for JVM (Jazzer), native (libFuzzer + HWASAN), and Rust (cargo-fuzz). The evidence graph indicates *what* to fuzz; HarnessGen synthesizes the runnable harness. v0.4 ships scaffold (aegisgraph/harnessgen/) and one harness running against vendored libwebp (reprochain/harness/libwebp/WebPDecodeRGB.harness.cc) inheriting the ReproChain pattern. v0.5 expands to 5 entry points; v1.0 targets real Signal/Element X parsers.",
+      "evidence_artifact": "aegisgraph/harnessgen/ tree + reprochain/harness/libwebp/WebPDecodeRGB.harness.cc + tests/harnessgen/ @ integration:4d03d7d85c979d46d6f258039f4136dba53388ba",
+      "evidence_hash": null,
+      "owner_stream": "Engineering (stream/integration M3.1)",
+      "verification_command": "python3 -m pytest tests/harnessgen/",
+      "status": "A",
+      "limitation_language": "v0.4 scaffold + 1 native harness. No production-target fuzz claim. Crash-triggering bytes never enter the repository or sanitized public artifacts (Rule 5+9 enforcement). Graph-driven harness generation for polyglot SMA codebases is the novelty thesis; the libwebp 24h harness is seed-evidence, not generalized claim."
+    },
+    {
+      "claim_id": "C-NEW-IC",
+      "source_location": "01_master_proposal/AegisGraph_ASEMA_DP2_Master_Proposal_v0.4.md:§5.2,§5.8.3",
+      "claim_text": "InvariantCheck (Engine 3): SMA-specific security-invariant library implemented as CodeQL queries and Semgrep rules, each grounded against a public demo-vulnerable-app fixture. v0.4 ships scaffold (aegisgraph/invariants/) with 5 invariants in manifest.json + library + runner + consolidator (SARIF → evidence-record). v0.5 target: 20 invariants. v1.0 target: 25–30 invariants with publicly auditable ground-truth assertions.",
+      "evidence_artifact": "aegisgraph/invariants/manifest.json + aegisgraph/invariants/library/ + tests/invariants/ @ integration:4d03d7d85c979d46d6f258039f4136dba53388ba",
+      "evidence_hash": null,
+      "owner_stream": "Engineering (stream/integration M3.3)",
+      "verification_command": "python3 -m pytest tests/invariants/",
+      "status": "A",
+      "limitation_language": "v0.4 ships 5 invariants of 25–30 planned. Ground-truth assertions verified per-invariant against demo-vulnerable-app fixtures; reviewers can audit discrimination. InvariantCheck violations enter the claim-state lifecycle as 'anchored' — not promoted to 'validation_tasked' or 'accepted' without engine corroboration, preventing the static-finding-promoted-to-vulnerability pattern."
+    },
+    {
+      "claim_id": "C-NEW-CS",
+      "source_location": "01_master_proposal/AegisGraph_ASEMA_DP2_Master_Proposal_v0.4.md:§5.2,§5.8.4",
+      "claim_text": "CrossSMA (Engine 4): cross-application propagation matrix that automates the 'does this affect Signal/WhatsApp/Telegram/Element/Wire?' hypothesis pattern. Pattern extractor structurally canonicalizes a finding; matrix populated against an SMA registry; cells are graph claims with their own state. Per-finding fan-out capped at 5 cells (R-ENG-4 mitigation).",
+      "evidence_artifact": "<planned>",
+      "evidence_hash": null,
+      "owner_stream": "Engineering (stream/integration M5.5 — scaffolded later)",
+      "verification_command": "<planned-T-M5.5>",
+      "status": "P",
+      "limitation_language": "Scaffolding deferred to M5.5; v0.4 carries the architectural commitment only. M10 target: ≥1 confirmed cross-target propagation. M14 target: ≥2 SMAs end-to-end. Cell semantics constrained by claim-state lifecycle: matches enter as 'anchored', promote to 'validation_tasked' only after HarnessGen task queued, promote to 'accepted' only with engine corroboration."
+    },
+    {
+      "claim_id": "C-NEW-DP",
+      "source_location": "01_master_proposal/AegisGraph_ASEMA_DP2_Master_Proposal_v0.4.md:§5.2,§5.8.5",
+      "claim_text": "DynamicProbe (Engine 5, option period): Frida-instrumented AOSP+HWASAN emulator running an authorized SMA APK, with invariant_runtime_checks.js mirroring the InvariantCheck library entries to runtime form. Confirms or refutes reachability claims that static engines flagged with uncertainty. Structural authorization gate (signed authorization.yaml required by aegisgraph/dynamicprobe/__main__.py) enforces the 'no modification to production SMAs without written authorization' boundary.",
+      "evidence_artifact": "<planned>",
+      "evidence_hash": null,
+      "owner_stream": "Engineering (stream/integration option period M15-M24)",
+      "verification_command": "<planned-T-M19>",
+      "status": "P",
+      "limitation_language": "Option period only; signed authorization required (authorization.yaml gating ceremony is structural). M19 target: first crash on authorized target. M24 target: runtime ↔ static correlation report. v0.4 design lands so option-period work can begin from a known starting point; no implementation claimed at v0.4."
+    },
+    {
+      "claim_id": "C-NEW-CD",
+      "source_location": "01_master_proposal/AegisGraph_ASEMA_DP2_Master_Proposal_v0.4.md:§5.2,§5.5,§5.8.6",
+      "claim_text": "Coordinated Disclosure (Engine 6): hash-chained ledger (ADR-0014) recording every disclosure-related transition with vendor routing tiers, embargo timer, CERT/CC fallback at Day 14 if vendor unresponsive. Embargoed records carry claim_state=reviewed_embargoed and are blocked from sanitized public artifacts via Rule 7. First-disclosure target recommendation: libwebp upstream via Chrome CNA (ADR-0006 disclosure-ownership: PI named owner; counsel review the one blocking gate). v0.4 ships pipeline scaffolding + ledger format + vendor registry + templates + claim-state guards + embargo cron.",
+      "evidence_artifact": "aegisgraph/disclosure/ tree (ledger.py, vendor_registry.yaml, templates/, pipeline/, claim_states/) + tests/test_disclosure_ledger.py + tests/disclosure/ @ integration:4d03d7d85c979d46d6f258039f4136dba53388ba (ADR-0006 + ADR-0014 accepted in commit 79adace888f523f592547451730a96f50fa3d93c)",
+      "evidence_hash": null,
+      "owner_stream": "Engineering (stream/integration M3-DISC-A)",
+      "verification_command": "python3 -m pytest tests/test_disclosure_ledger.py tests/disclosure/",
+      "status": "A",
+      "limitation_language": "v0.4 ships scaffold + 7-test chain integrity verification (append, verify, tamper-detect, swap-detect). Ledger initialized empty; first real entry gated on counsel review + PI sign-off per ADR-0006. M7 target: first vendor contact. M10 target: ≥3 disclosures in flight, first CVE if vendor cooperates. M14 target: ≥1 disclosed_public."
+    },
+    {
+      "claim_id": "C-NEW-PD-EXT",
+      "source_location": "01_master_proposal/AegisGraph_ASEMA_DP2_Master_Proposal_v0.4.md:§5.8.1,§6.7",
+      "claim_text": "PolyDiff Extended (Engine 1): v0.3 PolyDiff stream (URL parser disagreements) graduated into a multi-format discipline covering five parser families: url, image, opengraph, qr, proto. Each family runs N parser implementations against a shared corpus and reports normalized fact-vector disagreements. URL family refactored from monolith into subpackage; image family in flight; opengraph/qr/proto families deferred to v0.5.",
+      "evidence_artifact": "aegisgraph/polydiff/ subpackage (core/, families/) @ integration:4d03d7d85c979d46d6f258039f4136dba53388ba + polydiff/regression/report.json (v0.3 baseline preserved, see C-NEW-PD)",
+      "evidence_hash": null,
+      "owner_stream": "Engineering (stream/integration; URL family refactored at 0f67505)",
+      "verification_command": "python3 -m pytest tests/polydiff/",
+      "status": "E",
+      "limitation_language": "v0.4 = URL family refactored to subpackage + image family in flight; opengraph/qr/proto families deferred to v0.5. The v0.3 PolyDiff URL regression set (≥3 historical CVE rediscoveries) anchors as C-NEW-PD; this claim is the multi-family extension thesis, not a redux of the URL family's results. A parser disagreement is not a vulnerability per se; security-relevance asserted only when the rule-based classifier rules in favor."
+    },
+    {
+      "claim_id": "C-DISC-V1",
+      "source_location": "01_master_proposal/AegisGraph_ASEMA_DP2_Master_Proposal_v0.4.md:§5.8.6",
+      "claim_text": "Placeholder reservation for the first coordinated-disclosure event (AG-CD-* record). Per ADR-0014 the disclosure ledger is hash-chained; per ADR-0006 the PI is the named owner of the disclosure decision with counsel review as the one blocking gate. Promotion to E/A requires a qualifying finding + counsel sign-off on the first-contact letter + PI authorization to dispatch.",
+      "evidence_artifact": "<planned>",
+      "evidence_hash": null,
+      "owner_stream": "PI Waweru (with counsel review per ADR-0006)",
+      "verification_command": "<planned>",
+      "status": "P",
+      "limitation_language": "<gated on counsel review + PI sign-off + qualifying finding>. Reservation only; no claim of an in-flight disclosure at v0.4. Embargoed records (reviewed_embargoed) blocked from sanitized public artifacts via validator/sanitize_check.py Rule 7. First-disclosure target recommendation: libwebp upstream via Chrome CNA (R-DISC-5)."
+    },
+    {
+      "claim_id": "C-DISC-V2",
+      "source_location": "01_master_proposal/AegisGraph_ASEMA_DP2_Master_Proposal_v0.4.md:§5.8.6",
+      "claim_text": "Placeholder reservation for the second coordinated-disclosure event (AG-CD-* record). Per ADR-0014 the disclosure ledger is hash-chained; per ADR-0006 the PI is the named owner of the disclosure decision with counsel review as the one blocking gate. Promotion to E/A requires a qualifying finding + counsel sign-off on the first-contact letter + PI authorization to dispatch.",
+      "evidence_artifact": "<planned>",
+      "evidence_hash": null,
+      "owner_stream": "PI Waweru (with counsel review per ADR-0006)",
+      "verification_command": "<planned>",
+      "status": "P",
+      "limitation_language": "<gated on counsel review + PI sign-off + qualifying finding>. Reservation only; no claim of an in-flight disclosure at v0.4. Embargoed records (reviewed_embargoed) blocked from sanitized public artifacts via validator/sanitize_check.py Rule 7. First-disclosure target recommendation: libwebp upstream via Chrome CNA (R-DISC-5)."
+    },
+    {
+      "claim_id": "C-DISC-V3",
+      "source_location": "01_master_proposal/AegisGraph_ASEMA_DP2_Master_Proposal_v0.4.md:§5.8.6",
+      "claim_text": "Placeholder reservation for the third coordinated-disclosure event (AG-CD-* record). Per ADR-0014 the disclosure ledger is hash-chained; per ADR-0006 the PI is the named owner of the disclosure decision with counsel review as the one blocking gate. Promotion to E/A requires a qualifying finding + counsel sign-off on the first-contact letter + PI authorization to dispatch.",
+      "evidence_artifact": "<planned>",
+      "evidence_hash": null,
+      "owner_stream": "PI Waweru (with counsel review per ADR-0006)",
+      "verification_command": "<planned>",
+      "status": "P",
+      "limitation_language": "<gated on counsel review + PI sign-off + qualifying finding>. Reservation only; no claim of an in-flight disclosure at v0.4. Embargoed records (reviewed_embargoed) blocked from sanitized public artifacts via validator/sanitize_check.py Rule 7. First-disclosure target recommendation: libwebp upstream via Chrome CNA (R-DISC-5)."
+    },
+    {
+      "claim_id": "C-DISC-V4",
+      "source_location": "01_master_proposal/AegisGraph_ASEMA_DP2_Master_Proposal_v0.4.md:§5.8.6",
+      "claim_text": "Placeholder reservation for the fourth coordinated-disclosure event (AG-CD-* record). Per ADR-0014 the disclosure ledger is hash-chained; per ADR-0006 the PI is the named owner of the disclosure decision with counsel review as the one blocking gate. Promotion to E/A requires a qualifying finding + counsel sign-off on the first-contact letter + PI authorization to dispatch.",
+      "evidence_artifact": "<planned>",
+      "evidence_hash": null,
+      "owner_stream": "PI Waweru (with counsel review per ADR-0006)",
+      "verification_command": "<planned>",
+      "status": "P",
+      "limitation_language": "<gated on counsel review + PI sign-off + qualifying finding>. Reservation only; no claim of an in-flight disclosure at v0.4. Embargoed records (reviewed_embargoed) blocked from sanitized public artifacts via validator/sanitize_check.py Rule 7. First-disclosure target recommendation: libwebp upstream via Chrome CNA (R-DISC-5)."
+    },
+    {
+      "claim_id": "C-DISC-V5",
+      "source_location": "01_master_proposal/AegisGraph_ASEMA_DP2_Master_Proposal_v0.4.md:§5.8.6",
+      "claim_text": "Placeholder reservation for the fifth coordinated-disclosure event (AG-CD-* record). Per ADR-0014 the disclosure ledger is hash-chained; per ADR-0006 the PI is the named owner of the disclosure decision with counsel review as the one blocking gate. Promotion to E/A requires a qualifying finding + counsel sign-off on the first-contact letter + PI authorization to dispatch.",
+      "evidence_artifact": "<planned>",
+      "evidence_hash": null,
+      "owner_stream": "PI Waweru (with counsel review per ADR-0006)",
+      "verification_command": "<planned>",
+      "status": "P",
+      "limitation_language": "<gated on counsel review + PI sign-off + qualifying finding>. Reservation only; no claim of an in-flight disclosure at v0.4. Embargoed records (reviewed_embargoed) blocked from sanitized public artifacts via validator/sanitize_check.py Rule 7. First-disclosure target recommendation: libwebp upstream via Chrome CNA (R-DISC-5)."
+    },
+    {
+      "claim_id": "C-SOTA-DELTA",
+      "source_location": "01_master_proposal/AegisGraph_ASEMA_DP2_Master_Proposal_v0.4.md:§7,§10",
+      "claim_text": "Baseline-tool delta report (M14 deliverable): a measured comparison of AegisGraph discovery-engine output against CodeQL alone, Semgrep alone, MobSF, and manual review on the same bounded slices. The v0.3 SOTA matrix (§7.2) is the qualitative form; the M14 delta report converts it into measurements per Month-14 demo metrics (path-class coverage, graph-path precision, baseline delta, documentation).",
+      "evidence_artifact": "<planned>",
+      "evidence_hash": null,
+      "owner_stream": "SMABench + Engineering (Phase II M11-14)",
+      "verification_command": "<planned-T-M14>",
+      "status": "P",
+      "limitation_language": "M14 deliverable; not produced at v0.4. Comparison is on bounded slices (the same path classes AegisGraph covers); not a comprehensive tool-vs-tool benchmark. CodeQL/MobSF cells must move from 'not_run_unavailable' to 'run_with_findings' first (per C-NEW-EX, Extraction stream)."
     }
   ]
 }

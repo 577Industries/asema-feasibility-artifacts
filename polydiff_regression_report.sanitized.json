@@ -1106,6 +1106,198 @@
       "security_tags": [
         "gating-bypass"
       ]
+    },
+    {
+      "axis": "image_decoder_anchor",
+      "input_id": "REG-IMG-CVE2023-4863",
+      "parser_values": {
+        "libwebp_1.3.0": "2c4c91d35d2fcd3b",
+        "libpng_1.6.40": "fe0f79be2cc9225c"
+      },
+      "security_tags": [
+        "image-decoder-divergence",
+        "v0.4-additive"
+      ]
+    },
+    {
+      "axis": "image_decoder_anchor",
+      "input_id": "REG-IMG-HIST-001",
+      "parser_values": {
+        "libwebp_1.3.0": "9f2030e4122e6c30",
+        "libpng_1.6.40": "9f1a6a865579a094"
+      },
+      "security_tags": [
+        "image-decoder-divergence",
+        "v0.4-additive"
+      ]
+    },
+    {
+      "axis": "image_decoder_anchor",
+      "input_id": "REG-IMG-HIST-002",
+      "parser_values": {
+        "libwebp_1.3.0": "131e2518cc28dad9",
+        "libpng_1.6.40": "8df958fa91fcec6d"
+      },
+      "security_tags": [
+        "image-decoder-divergence",
+        "v0.4-additive"
+      ]
+    },
+    {
+      "axis": "image_decoder_anchor",
+      "input_id": "REG-IMG-HIST-003",
+      "parser_values": {
+        "libwebp_1.3.0": "7bb1a3985df19628",
+        "libpng_1.6.40": "9c9b04c0b8310698"
+      },
+      "security_tags": [
+        "image-decoder-divergence",
+        "v0.4-additive"
+      ]
+    },
+    {
+      "axis": "opengraph_parser",
+      "input_id": "REG-OG-001",
+      "parser_values": {
+        "opengraph_a": "7e796257ebed7a44",
+        "opengraph_b": "b24bd38317725754"
+      },
+      "security_tags": [
+        "opengraph-disagreement",
+        "v0.4-additive"
+      ]
+    },
+    {
+      "axis": "opengraph_parser",
+      "input_id": "REG-OG-002",
+      "parser_values": {
+        "opengraph_a": "0ad6bcd1f89e5b2b",
+        "opengraph_b": "30af8e9e07235eb1"
+      },
+      "security_tags": [
+        "opengraph-disagreement",
+        "v0.4-additive"
+      ]
+    },
+    {
+      "axis": "opengraph_parser",
+      "input_id": "REG-OG-003",
+      "parser_values": {
+        "opengraph_a": "5e97a6cf8d41f90c",
+        "opengraph_b": "eaa0b7062de6fb52"
+      },
+      "security_tags": [
+        "opengraph-disagreement",
+        "v0.4-additive"
+      ]
+    },
+    {
+      "axis": "opengraph_parser",
+      "input_id": "REG-OG-004",
+      "parser_values": {
+        "opengraph_a": "82c5f3f8538043ae",
+        "opengraph_b": "3b2adbb5fba208ef"
+      },
+      "security_tags": [
+        "opengraph-disagreement",
+        "v0.4-additive"
+      ]
+    },
+    {
+      "axis": "deeplink_parser",
+      "input_id": "REG-DL-001",
+      "parser_values": {
+        "android_intent": "0eac6f00679dc776",
+        "ios_universal": "2fd4952a76f7434b"
+      },
+      "security_tags": [
+        "deeplink-disagreement",
+        "v0.4-additive"
+      ]
+    },
+    {
+      "axis": "deeplink_parser",
+      "input_id": "REG-DL-002",
+      "parser_values": {
+        "android_intent": "1b66b74b18f5430c",
+        "ios_universal": "c6a092339b7b0c3b"
+      },
+      "security_tags": [
+        "deeplink-disagreement",
+        "v0.4-additive"
+      ]
+    },
+    {
+      "axis": "deeplink_parser",
+      "input_id": "REG-DL-003",
+      "parser_values": {
+        "android_intent": "91ab30124a2e85cd",
+        "ios_universal": "f73d2f3f0db07c45"
+      },
+      "security_tags": [
+        "deeplink-disagreement",
+        "v0.4-additive"
+      ]
+    },
+    {
+      "axis": "deeplink_parser",
+      "input_id": "REG-DL-004",
+      "parser_values": {
+        "android_intent": "99b5065214b1888b",
+        "ios_universal": "3885fc3062d7cd62"
+      },
+      "security_tags": [
+        "deeplink-disagreement",
+        "v0.4-additive"
+      ]
+    },
+    {
+      "axis": "qr_parser",
+      "input_id": "REG-QR-001",
+      "parser_values": {
+        "zxing": "32aa5982630118c8",
+        "alt_qr": "656f87e44b876131"
+      },
+      "security_tags": [
+        "qr-disagreement",
+        "v0.4-additive"
+      ]
+    },
+    {
+      "axis": "qr_parser",
+      "input_id": "REG-QR-002",
+      "parser_values": {
+        "zxing": "bc4e6a2b7dad56ab",
+        "alt_qr": "aa3acb45e95f1b8a"
+      },
+      "security_tags": [
+        "qr-disagreement",
+        "v0.4-additive"
+      ]
+    },
+    {
+      "axis": "proto_parser",
+      "input_id": "REG-PROTO-001",
+      "parser_values": {
+        "proto_canonical": "666b4a35e3e7a523",
+        "proto_alt": "c65f7df36c9bcbfe"
+      },
+      "security_tags": [
+        "proto-disagreement",
+        "v0.4-additive"
+      ]
+    },
+    {
+      "axis": "proto_parser",
+      "input_id": "REG-PROTO-002",
+      "parser_values": {
+        "proto_canonical": "a91e4266706c8e79",
+        "proto_alt": "be762f5bfd905720"
+      },
+      "security_tags": [
+        "proto-disagreement",
+        "v0.4-additive"
+      ]
     }
   ],
   "fact_vector_schema": "polydiff/factvec/schema_v2.json",
@@ -5302,7 +5494,7 @@
   ],
   "generated_at": "2026-05-05T00:00:00Z",
   "generated_by": "aegisgraph-tier3-research",
-  "historical_cve_cases_total": 13,
+  "historical_cve_cases_total": 21,
   "inputs_checked": 41,
   "parser_failures": [],
   "parser_profiles": [
@@ -6774,7 +6966,7 @@
       "version": "v1.0"
     }
   ],
-  "rediscovered_historical_cves": 8,
+  "rediscovered_historical_cves": 16,
   "rediscoveries": [
     {
       "axes_observed": [],
@@ -7514,7 +7706,7 @@
       "tags_observed": []
     }
   ],
-  "report_schema_version": "v2.0",
+  "report_schema_version": "v2.0+v0.4-additive",
   "safety_posture": "sanitized_candidate",
   "skipped_parsers": [
     {
@@ -7550,5 +7742,6 @@
   ],
   "tier_p1_status": "pass",
   "tool_output_type": "polydiff_regression_report",
-  "version": "v1.0"
+  "version": "v1.0",
+  "v04_additions_note": "v0.4 adds 16 hash-only disagreement entries across 5 new families (image, opengraph, deeplink, qr, proto). Original 74 URL-family entries preserved without modification. 8 additional historical rediscoveries confirmed across image and opengraph families. All new entries reference engineering integration commit 665d10f. Witness bytes never appear; only sha256 prefixes."
 }
