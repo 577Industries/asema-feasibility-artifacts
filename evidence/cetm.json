@@ -5,7 +5,7 @@
   "_amends": "01_master_proposal/AegisGraph_ASEMA_DP2_Master_Proposal_v0.3.md",
   "_generated_on": "2026-05-12",
   "_additive_promise": "Every v0.3 claim in cetm.json is preserved in v0.4 with the same claim_id, source_location (still pointing to v0.3 master line numbers), claim_text, and status. No v0.3 claim is retracted, downgraded, edited, or re-numbered. Only new claims are appended.",
-  "_integration_commit_tip_at_v04_cut": "4d03d7d85c979d46d6f258039f4136dba53388ba",
+  "_integration_commit_tip_at_v04_cut": "ca9e3af",
   "_adrs_referenced": [
     "ADR-0006 (disclosure ownership; PI as named owner)",
     "ADR-0010 (additive-only schema evolution)",
@@ -13,8 +13,8 @@
     "ADR-0014 (hash-chained coordinated-disclosure ledger)"
   ],
   "_status_counts_at_generation": {
-    "A": 52,
-    "E": 9,
+    "A": 53,
+    "E": 8,
     "P": 21
   },
   "claims": [
@@ -846,13 +846,13 @@
     {
       "claim_id": "C-NEW-PD-EXT",
       "source_location": "01_master_proposal/AegisGraph_ASEMA_DP2_Master_Proposal_v0.4.md:§5.8.1,§6.7",
-      "claim_text": "PolyDiff Extended (Engine 1): v0.3 PolyDiff stream (URL parser disagreements) graduated into a multi-format discipline covering five parser families: url, image, opengraph, qr, proto. Each family runs N parser implementations against a shared corpus and reports normalized fact-vector disagreements. URL family refactored from monolith into subpackage; image family in flight; opengraph/qr/proto families deferred to v0.5.",
-      "evidence_artifact": "aegisgraph/polydiff/ subpackage (core/, families/) @ integration:4d03d7d85c979d46d6f258039f4136dba53388ba + polydiff/regression/report.json (v0.3 baseline preserved, see C-NEW-PD)",
+      "claim_text": "PolyDiff Extended (Engine 1): v0.3 PolyDiff stream (URL parser disagreements) graduated into a multi-format discipline covering six parser families: url, image, opengraph, qr, proto, deeplink. Each family runs N parser implementations against a shared corpus and reports normalized fact-vector disagreements. All 6 families shipped at v0.4.1 (integration tip ca9e3af).",
+      "evidence_artifact": "aegisgraph/polydiff/ subpackage (core/, families/) @ integration:ca9e3af + polydiff/regression/report.json (v0.3 baseline preserved, see C-NEW-PD)",
       "evidence_hash": null,
-      "owner_stream": "Engineering (stream/integration; URL family refactored at 0f67505)",
+      "owner_stream": "Engineering (stream/integration; URL family refactored at 0f67505; all 6 families shipped by ca9e3af)",
       "verification_command": "python3 -m pytest tests/polydiff/",
-      "status": "E",
-      "limitation_language": "v0.4 = URL family refactored to subpackage + image family in flight; opengraph/qr/proto families deferred to v0.5. The v0.3 PolyDiff URL regression set (≥3 historical CVE rediscoveries) anchors as C-NEW-PD; this claim is the multi-family extension thesis, not a redux of the URL family's results. A parser disagreement is not a vulnerability per se; security-relevance asserted only when the rule-based classifier rules in favor."
+      "status": "A",
+      "limitation_language": "v0.4.1 = all 6 families (url, image, opengraph, qr, proto, deeplink) shipped on stream/integration tip ca9e3af. The v0.3 PolyDiff URL regression set (≥3 historical CVE rediscoveries) anchors as C-NEW-PD; this claim is the multi-family extension thesis. A parser disagreement is not a vulnerability per se; security-relevance asserted only when the rule-based classifier rules in favor."
     },
     {
       "claim_id": "C-DISC-V1",

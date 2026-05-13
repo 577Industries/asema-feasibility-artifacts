@@ -1,0 +1,14 @@
+{
+  "categories_covered": [],
+  "findings_count": 0,
+  "generated_at": "2026-05-05T00:00:00Z",
+  "generated_by": "aegisgraph-tier3-research",
+  "safety_posture": "sanitized_candidate",
+  "status": "scaffold_pending",
+  "target": "element-x",
+  "target_id": "elementx_android@91d265e6",
+  "tool": "aegisgraph",
+  "tool_output_type": "baseline_delta_aegisgraph_coverage",
+  "tool_version": "invariants-v3 + polydiff-extended",
+  "version": "v1.0"
+}

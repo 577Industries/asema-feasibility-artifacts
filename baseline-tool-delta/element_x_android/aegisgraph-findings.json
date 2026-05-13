@@ -1,0 +1,14 @@
+{
+  "findings": [],
+  "findings_count": 0,
+  "generated_at": "2026-05-05T00:00:00Z",
+  "generated_by": "aegisgraph-tier3-research",
+  "safety_posture": "sanitized_candidate",
+  "target": "element-x",
+  "target_commit": "91d265e6",
+  "target_id": "elementx_android@91d265e6",
+  "target_repo_url": "https://github.com/element-hq/element-x-android",
+  "tool": "aegisgraph",
+  "tool_output_type": "baseline_delta_aegisgraph_findings",
+  "version": "v1.0"
+}

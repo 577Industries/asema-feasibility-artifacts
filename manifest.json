@@ -25,20 +25,36 @@
       "sha256": "a2fef12c4b720c9a01af91496e268641d01d66b1e077221342d9d7d932dc8f87"
     },
     {
+      "path": "evidence/aegisgraph-v1.0-evidence.json",
+      "sha256": "dc724cef7ffd75acae6aba43d4e0f3bc75d198358adc6f9061bfe272c4f930fc"
+    },
+    {
       "path": "evidence/cetm.json",
-      "sha256": "3887c6ae970d9e6ed61417118f19a049b6ffe78427b1f9ca058c602fec70e581"
+      "sha256": "4629a2859e4345777a32eb96e58a5225a7e96ef31a125c1ae7f142887beb40be"
     },
     {
       "path": "polydiff_regression_report.sanitized.json",
       "sha256": "ccf0d7175b97aa25ebad6c15c7e6bf712c453a085385533377cf41bcb44207bb"
     },
     {
+      "path": "polydiff_regression_report.sanitized.v1.0.json",
+      "sha256": "4b949a508d68636b4e0a8bc1fc9c4dbc33fefffd0aa90bab86adf8448aeae6b1"
+    },
+    {
       "path": "reports/traceability_matrix.json",
-      "sha256": "fdf5b050aa254d316917d4c58dd2167f80048bdc9ae4b44418e2d9a37a82d990"
+      "sha256": "ad160375a815c1aed97606a4836283597a2d85e39b0c793413f5f44e21ca6555"
     },
     {
       "path": "reports/traceability_matrix.md",
-      "sha256": "adb413bd314592d053e28af6835f775b34ac648496dec434efc41d2bc389e520"
+      "sha256": "405368c5fa9c5e96196087f91dc79fda1ab07b1b332a6e1131f6e8dcf688816d"
+    },
+    {
+      "path": "baseline-tool-delta/delta-report.json",
+      "sha256": "b532321e617faa21e9f55eef6ba309aef4ce3be70fce815123b740b3a62c0ccc"
+    },
+    {
+      "path": "baseline-tool-delta/delta-report.md",
+      "sha256": "c8e48b961007da96d0aaa936c08041be634de75b2c99d8963ef7c6fbb6ab4ea3"
     }
   ],
   "dry_run": false,
@@ -46,11 +62,14 @@
   "generated_at": "2026-05-13T00:00:00Z",
   "generated_by": "aegisgraph-tier3-research",
   "release": {
-    "predecessor": "v0.3",
-    "version": "v0.4"
+    "predecessor": "v0.4",
+    "version": "v1.0",
+    "cut_date": "2026-05-13",
+    "engineering_integration_commit": "d91c1df",
+    "additive_promise": "Every v0.4 evidence record continues to validate. v1.0 adds: 15/15 production InvariantCheck invariants (was 12/15); 5/5 HarnessGen entry points scaffolded (was 1/5); CrossSMA validated cell AG-XSMA-VALIDATED-SIG-GP-001-ELX; baseline-tool delta report scaffold; reviewer workbench CLI; M14 demo dry-run script; F15-F22 figure pack; master proposal v1.0."
   },
   "release_authorized": true,
-  "release_note": "v0.4 additive sanitized public release; every v0.3 evidence record continues to validate. Engineering integration commit: 665d10f. Validator-v2 (sanitize-check Rules 7/8/9 + 5 new BLOCKING_PATTERNS) landed on stream/validator-export.",
+  "release_note": "v1.0 sanitized public release; final engineering wrap-up (M7 + M8-M10 + M11-M14). Every v0.3 and v0.4 evidence record continues to validate. Engineering integration tip: d91c1df on stream/integration (1030 tests passed, 19 skipped). Master proposal v1.0 PDF SHA: 1ed7a5afe4a4b2ff659afa307e7bb391c724c16365d7a693d51121b9e073716b. 0 disclosure events (counsel-blocked, honest).",
   "safety_posture": "sanitized_candidate",
   "tool_output_type": "public_sanitized_export",
   "validation_status": "pass",

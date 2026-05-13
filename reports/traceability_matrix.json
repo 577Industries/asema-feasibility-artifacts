@@ -1,6 +1,7 @@
 {
-  "generated_at": "2026-05-05T00:00:00Z",
+  "generated_at": "2026-05-13T00:00:00Z",
   "generated_by": "validator-export",
+  "generated_on": "2026-05-13",
   "rows": [
     {
       "artifact_path": "",
@@ -427,108 +428,180 @@
       "status": "ok"
     },
     {
-      "spec_section": "6.7",
       "artifact_path": "evidence/aegisgraph-v0.4-evidence.json#discovery_runs[?engine=polydiff]",
+      "dsip_requirement": "DSIP-PII-EVIDENCE",
+      "notes": "PolyDiff URL family \u2014 7 wrappers, 8 historical CVE rediscoveries; tier P1 pass",
       "proposal_claim": "C-NEW-POLYDIFF-URL-V04",
-      "dsip_requirement": "DSIP-PII-EVIDENCE",
-      "status": "ok",
-      "notes": "PolyDiff URL family \u2014 7 wrappers, 8 historical CVE rediscoveries; tier P1 pass"
+      "spec_section": "6.7",
+      "status": "ok"
     },
     {
-      "spec_section": "6.7",
       "artifact_path": "evidence/aegisgraph-v0.4-evidence.json#discovery_runs[?family=image]",
+      "dsip_requirement": "DSIP-PII-EVIDENCE",
+      "notes": "PolyDiff image family anchored to CVE-2023-4863 + 3 historical bugs",
       "proposal_claim": "C-NEW-POLYDIFF-IMAGE-V04",
-      "dsip_requirement": "DSIP-PII-EVIDENCE",
-      "status": "ok",
-      "notes": "PolyDiff image family anchored to CVE-2023-4863 + 3 historical bugs"
+      "spec_section": "6.7",
+      "status": "ok"
     },
     {
-      "spec_section": "6.7",
       "artifact_path": "evidence/aegisgraph-v0.4-evidence.json#discovery_runs[?family=deeplink]",
+      "dsip_requirement": "DSIP-PII-EVIDENCE",
+      "notes": "PolyDiff deeplink family \u2014 Android intent + iOS universal link wrappers, 4 anchored cases",
       "proposal_claim": "C-NEW-POLYDIFF-DEEPLINK-V04",
-      "dsip_requirement": "DSIP-PII-EVIDENCE",
-      "status": "ok",
-      "notes": "PolyDiff deeplink family \u2014 Android intent + iOS universal link wrappers, 4 anchored cases"
+      "spec_section": "6.7",
+      "status": "ok"
     },
     {
-      "spec_section": "6.7",
       "artifact_path": "evidence/aegisgraph-v0.4-evidence.json#discovery_runs[?family=opengraph]",
+      "dsip_requirement": "DSIP-PII-EVIDENCE",
+      "notes": "PolyDiff opengraph family \u2014 4 historical bugs anchored",
       "proposal_claim": "C-NEW-POLYDIFF-OG-V04",
-      "dsip_requirement": "DSIP-PII-EVIDENCE",
-      "status": "ok",
-      "notes": "PolyDiff opengraph family \u2014 4 historical bugs anchored"
-    },
-    {
       "spec_section": "6.7",
+      "status": "ok"
+    },
+    {
       "artifact_path": "evidence/aegisgraph-v0.4-evidence.json#discovery_runs[?family=qr%2Bproto]",
+      "dsip_requirement": "DSIP-PII-EVIDENCE",
+      "notes": "PolyDiff qr + proto families complete the 6-family lineup",
       "proposal_claim": "C-NEW-POLYDIFF-QR-PROTO-V04",
-      "dsip_requirement": "DSIP-PII-EVIDENCE",
-      "status": "ok",
-      "notes": "PolyDiff qr + proto families complete the 6-family lineup"
+      "spec_section": "6.7",
+      "status": "ok"
     },
     {
-      "spec_section": "6.8",
       "artifact_path": "evidence/aegisgraph-v0.4-evidence.json#discovery_runs[?engine=harnessgen]",
+      "dsip_requirement": "DSIP-PII-EVIDENCE",
+      "notes": "HarnessGen libwebp native harness scaffolded; 4 additional harnesses (Signal LinkPreviewUtil, matrix-rust-sdk MessageType, +2 more)",
       "proposal_claim": "C-NEW-HARNESSGEN-LIBWEBP-V04",
-      "dsip_requirement": "DSIP-PII-EVIDENCE",
-      "status": "ok",
-      "notes": "HarnessGen libwebp native harness scaffolded; 4 additional harnesses (Signal LinkPreviewUtil, matrix-rust-sdk MessageType, +2 more)"
-    },
-    {
       "spec_section": "6.8",
+      "status": "ok"
+    },
+    {
       "artifact_path": "evidence/aegisgraph-v0.4-evidence.json#crashes",
+      "dsip_requirement": "DSIP-PII-EVIDENCE",
+      "notes": "Crash records land at v0.5 after first 24h fuzz run + counsel review (empty by design at v0.4)",
       "proposal_claim": "C-NEW-HARNESSGEN-CRASHES-V05",
-      "dsip_requirement": "DSIP-PII-EVIDENCE",
-      "status": "planned",
-      "notes": "Crash records land at v0.5 after first 24h fuzz run + counsel review (empty by design at v0.4)"
+      "spec_section": "6.8",
+      "status": "planned"
     },
     {
-      "spec_section": "6.9",
       "artifact_path": "evidence/aegisgraph-v0.4-evidence.json#discovery_runs[?engine=invariantcheck]",
+      "dsip_requirement": "DSIP-PII-EVIDENCE",
+      "notes": "InvariantCheck library v1 \u2014 15 invariants total (5 fully encoded, 10 rich stubs)",
       "proposal_claim": "C-NEW-INVARIANTCHECK-LIB-V1",
-      "dsip_requirement": "DSIP-PII-EVIDENCE",
-      "status": "ok",
-      "notes": "InvariantCheck library v1 \u2014 15 invariants total (5 fully encoded, 10 rich stubs)"
-    },
-    {
       "spec_section": "6.9",
+      "status": "ok"
+    },
+    {
       "artifact_path": "evidence/aegisgraph-v0.4-evidence.json#invariant_violations",
+      "dsip_requirement": "DSIP-PII-EVIDENCE",
+      "notes": "AG-IV-* records land at v0.5 once ground-truthed on demo-vulnerable-app and Rule 8 location redaction applies (empty in public at v0.4)",
       "proposal_claim": "C-NEW-INVARIANTCHECK-VIOLATIONS-V05",
-      "dsip_requirement": "DSIP-PII-EVIDENCE",
-      "status": "planned",
-      "notes": "AG-IV-* records land at v0.5 once ground-truthed on demo-vulnerable-app and Rule 8 location redaction applies (empty in public at v0.4)"
+      "spec_section": "6.9",
+      "status": "planned"
     },
     {
-      "spec_section": "6.10",
       "artifact_path": "evidence/aegisgraph-v0.4-evidence.json#discovery_runs[?engine=crosssma]",
+      "dsip_requirement": "DSIP-PII-EVIDENCE",
+      "notes": "CrossSMA 24-cell matrix: 4 targets x 6 patterns; structural-only validation_state",
       "proposal_claim": "C-NEW-CROSSSMA-MATRIX-V04",
-      "dsip_requirement": "DSIP-PII-EVIDENCE",
-      "status": "ok",
-      "notes": "CrossSMA 24-cell matrix: 4 targets x 6 patterns; structural-only validation_state"
-    },
-    {
       "spec_section": "6.10",
+      "status": "ok"
+    },
+    {
       "artifact_path": "evidence/aegisgraph-v0.4-evidence.json#cross_target_candidates",
+      "dsip_requirement": "DSIP-PII-EVIDENCE",
+      "notes": "6 AG-XSMA-* candidates anchored to v0.4 PolyDiff families",
       "proposal_claim": "C-NEW-CROSSSMA-CANDIDATES-V04",
-      "dsip_requirement": "DSIP-PII-EVIDENCE",
-      "status": "ok",
-      "notes": "6 AG-XSMA-* candidates anchored to v0.4 PolyDiff families"
+      "spec_section": "6.10",
+      "status": "ok"
     },
     {
-      "spec_section": "10",
       "artifact_path": "evidence/aegisgraph-v0.4-evidence.json#disclosure_events",
-      "proposal_claim": "C-NEW-DISCLOSURE-SCAFFOLD-V04",
       "dsip_requirement": "DSIP-PII-COMPLIANCE",
-      "status": "planned",
-      "notes": "Disclosure pipeline scaffold landed (ledger.py, vendor_registry.yaml, templates/); real entries land at v0.5 (empty in public at v0.4)"
+      "notes": "Disclosure pipeline scaffold landed (ledger.py, vendor_registry.yaml, templates/); real entries land at v0.5 (empty in public at v0.4)",
+      "proposal_claim": "C-NEW-DISCLOSURE-SCAFFOLD-V04",
+      "spec_section": "10",
+      "status": "planned"
     },
     {
-      "spec_section": "10",
       "artifact_path": "manifest.json#safety_posture",
-      "proposal_claim": "C-NEW-VALIDATOR-V2-V04",
       "dsip_requirement": "DSIP-PII-EVIDENCE",
-      "status": "ok",
-      "notes": "validator-v2 \u2014 sanitize-check Rules 7/8/9 + 5 new BLOCKING_PATTERNS land on stream/validator-export"
+      "notes": "validator-v2 \u2014 sanitize-check Rules 7/8/9 + 5 new BLOCKING_PATTERNS land on stream/validator-export",
+      "proposal_claim": "C-NEW-VALIDATOR-V2-V04",
+      "spec_section": "10",
+      "status": "ok"
+    },
+    {
+      "artifact_path": "evidence/aegisgraph-v1.0-evidence.json#cross_target_candidates[?candidate_id=AG-XSMA-VALIDATED-SIG-GP-001-ELX]",
+      "dsip_requirement": "DSIP-PII-EVIDENCE",
+      "notes": "CrossSMA validated cell \u2014 1 of 24 cells confirmed_reachable; Wire/Telegram deferred_to_M22.1 honestly",
+      "proposal_claim": "C-NEW-CROSSSMA-VALIDATED-V10",
+      "spec_section": "6.10",
+      "status": "ok"
+    },
+    {
+      "artifact_path": "evidence/aegisgraph-v1.0-evidence.json#discovery_runs[?engine=harnessgen]",
+      "dsip_requirement": "DSIP-PII-EVIDENCE",
+      "notes": "HarnessGen 5/5 entry points scaffolded: libwebp + libavif native; Signal LinkPreviewUtil + Element X MediaRepository JVM; matrix-rust-sdk MessageType Rust",
+      "proposal_claim": "C-NEW-HARNESSGEN-5OF5-V10",
+      "spec_section": "6.8",
+      "status": "ok"
+    },
+    {
+      "artifact_path": "baseline-tool-delta/delta-report.json",
+      "dsip_requirement": "DSIP-PII-EVIDENCE",
+      "notes": "Baseline-tool delta report scaffold (CodeQL/Semgrep/MobSF vs AegisGraph); MOBSF-LIMITED.md honestly recorded (APK absent under anchor-only policy)",
+      "proposal_claim": "C-NEW-BASELINE-DELTA-V10",
+      "spec_section": "5",
+      "status": "ok"
+    },
+    {
+      "artifact_path": "baseline-tool-delta/signal_android/MOBSF-LIMITED.md",
+      "dsip_requirement": "DSIP-PII-EVIDENCE",
+      "notes": "MOBSF-LIMITED honest record for Signal Android target \u2014 APK absent under anchor-only policy",
+      "proposal_claim": "C-NEW-BASELINE-DELTA-V10",
+      "spec_section": "5",
+      "status": "ok"
+    },
+    {
+      "artifact_path": "baseline-tool-delta/element_x_android/MOBSF-LIMITED.md",
+      "dsip_requirement": "DSIP-PII-EVIDENCE",
+      "notes": "MOBSF-LIMITED honest record for Element X Android target \u2014 APK absent under anchor-only policy",
+      "proposal_claim": "C-NEW-BASELINE-DELTA-V10",
+      "spec_section": "5",
+      "status": "ok"
+    },
+    {
+      "artifact_path": "evidence/aegisgraph-v1.0-evidence.json#m14_demo_dryrun_summary",
+      "dsip_requirement": "DSIP-PII-EVIDENCE",
+      "notes": "M14 demo dry-run script (scripts/m14_demo_dryrun.sh) \u2014 end-to-end pipeline orchestration; status_counts: 5 success / 1 skipped_runner_blocked / 1 skipped_counsel_blocked",
+      "proposal_claim": "C-NEW-M14-DRYRUN-V10",
+      "spec_section": "9",
+      "status": "ok"
+    },
+    {
+      "artifact_path": "evidence/aegisgraph-v1.0-evidence.json#invariant_violations",
+      "dsip_requirement": "DSIP-PII-EVIDENCE",
+      "notes": "InvariantCheck reached 15/15 production invariants (was 12/15 at v0.4); SARIF stays engineering-private; public AG-IV-* records held pending Rule 8 redaction + counsel review",
+      "proposal_claim": "C-NEW-INVARIANTCHECK-15OF15-V10",
+      "spec_section": "6.9",
+      "status": "ok"
+    },
+    {
+      "artifact_path": "(engineering-private)",
+      "dsip_requirement": "DSIP-PII-EVIDENCE",
+      "notes": "Reviewer workbench CLI + make reviewer-packet shipped on stream/integration (M8-M10); reviewer-packet contents land engineering-private",
+      "proposal_claim": "C-NEW-WORKBENCH-CLI-V10",
+      "spec_section": "8",
+      "status": "ok"
+    },
+    {
+      "artifact_path": "evidence/aegisgraph-v1.0-evidence.json#disclosure_events",
+      "dsip_requirement": "DSIP-PII-COMPLIANCE",
+      "notes": "Disclosure pipeline scaffold complete; ledger entries zero pending T-M1.4/T-M1.5 counsel review (honest)",
+      "proposal_claim": "C-NEW-DISCLOSURE-V10",
+      "spec_section": "10",
+      "status": "planned"
     }
   ],
   "safety_posture": "sanitized_candidate",
@@ -855,14 +928,14 @@
     }
   ],
   "summary": {
-    "ok": 39,
     "claim_without_evidence": 17,
     "evidence_without_claim": 5,
+    "ok": 39,
     "planned": 5,
     "total": 66
   },
   "tool_output_type": "traceability_matrix",
-  "version": "v1.0",
-  "generated_on": "2026-05-13",
-  "v04_additions_note": "Extended with 13 v0.4 engine rows (PolyDiff\u00d75 families, HarnessGen, InvariantCheck library v1, CrossSMA 24-cell matrix, disclosure scaffold, validator-v2). Status counts updated."
+  "v04_additions_note": "Extended with 13 v0.4 engine rows (PolyDiff\u00d75 families, HarnessGen, InvariantCheck library v1, CrossSMA 24-cell matrix, disclosure scaffold, validator-v2). Status counts updated.",
+  "v10_additions_note": "v1.0 rows added (9): CrossSMA validated cell, HarnessGen 5/5 entry points, baseline-tool delta + MOBSF-LIMITED records, M14 demo dry-run summary, InvariantCheck 15/15 production, reviewer workbench, disclosure pipeline scaffold (planned).",
+  "version": "v1.0"
 }

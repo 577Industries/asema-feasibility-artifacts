@@ -1,0 +1,92 @@
+{
+  "added_by_aegisgraph": {},
+  "deliverable": "baseline-tool-delta-report",
+  "findings_total": 0,
+  "generated_at": "2026-05-05T00:00:00Z",
+  "generated_by": "aegisgraph-tier3-research",
+  "milestone": "M14",
+  "overlap_matrix": {},
+  "per_target_summary": {
+    "element-x": {
+      "added_by_aegisgraph_total": 0,
+      "categories": [],
+      "metadata": {
+        "commit": "91d265e6",
+        "name": "Element X Android",
+        "repo_url": "https://github.com/element-hq/element-x-android",
+        "target_id": "elementx_android@91d265e6"
+      },
+      "tools": {
+        "aegisgraph": {
+          "findings_count": 0,
+          "reason": "AegisGraph invariant + polydiff execution deferred to self-hosted runner (T-M4.1)",
+          "status": "scaffold_pending",
+          "tool_version": "invariants-v3 + polydiff-extended"
+        },
+        "codeql": {
+          "findings_count": 0,
+          "reason": "codeql CLI not on PATH",
+          "status": "binary_missing",
+          "tool_version": null
+        },
+        "mobsf": {
+          "findings_count": 0,
+          "reason": "no APK available under anchor-only policy",
+          "status": "apk_missing",
+          "tool_version": null
+        },
+        "semgrep": {
+          "findings_count": 0,
+          "reason": "source_root_missing: anchor-only source tree absent",
+          "status": "failed",
+          "tool_version": null
+        }
+      }
+    },
+    "signal": {
+      "added_by_aegisgraph_total": 0,
+      "categories": [],
+      "metadata": {
+        "commit": "1043851",
+        "name": "Signal Android",
+        "repo_url": "https://github.com/signalapp/Signal-Android",
+        "target_id": "signal_android@1043851"
+      },
+      "tools": {
+        "aegisgraph": {
+          "findings_count": 0,
+          "reason": "AegisGraph invariant + polydiff execution deferred to self-hosted runner (T-M4.1)",
+          "status": "scaffold_pending",
+          "tool_version": "invariants-v3 + polydiff-extended"
+        },
+        "codeql": {
+          "findings_count": 0,
+          "reason": "codeql CLI not on PATH",
+          "status": "binary_missing",
+          "tool_version": null
+        },
+        "mobsf": {
+          "findings_count": 0,
+          "reason": "no APK available under anchor-only policy",
+          "status": "apk_missing",
+          "tool_version": null
+        },
+        "semgrep": {
+          "findings_count": 0,
+          "reason": "source_root_missing: anchor-only source tree absent",
+          "status": "failed",
+          "tool_version": null
+        }
+      }
+    }
+  },
+  "safety_posture": "sanitized_candidate",
+  "tool_output_type": "baseline_tool_delta_report",
+  "tools_compared": [
+    "codeql",
+    "semgrep",
+    "mobsf",
+    "aegisgraph"
+  ],
+  "version": "v1.0"
+}

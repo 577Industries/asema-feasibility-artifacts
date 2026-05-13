@@ -1,0 +1,1417 @@
+{
+  "release": {
+    "version": "v1.0",
+    "predecessor": "v0.4",
+    "generated_on": "2026-05-13",
+    "engineering_integration_commit": "d91c1df",
+    "posture": "bounded public-source static and reachability-supported evidence; no live services, exploit reproduction, credentials, user data, or raw target source redistribution",
+    "scope_guard": "AegisGraph evaluates candidate controls in synthetic or authorized harnesses and produces evidence-backed recommendations. It does not modify production secure messaging applications or add defensive layers.",
+    "additive_promise": "Every v0.3 AND v0.4 evidence record continues to validate without modification. v1.0 promotes invariant_violations and crashes arrays from empty-by-design to empty-but-with-engineering-private SARIF + harness scaffolds (still no live fuzz crashes; HarnessGen scaffolds shipped); adds cross_target_candidates_validated summary referencing the AG-XSMA-VALIDATED-SIG-GP-001-ELX cell; adds m14_demo_dryrun_summary referencing the M14 demo dry-run manifest structurally."
+  },
+  "score_model": {
+    "remote_reachability": 15,
+    "attacker_controllability": 12,
+    "parser_media_link_device_complexity": 12,
+    "sensitive_boundary_crossing": 14,
+    "state_session_group_pq_sensitivity": 10,
+    "evidence_strength": 10,
+    "unvalidated_dynamic_gap": 8,
+    "dependency_exposure": 6,
+    "mitigation_leverage": 8,
+    "reproducibility_confidence": 5
+  },
+  "targets": [
+    {
+      "id": "signal-android",
+      "name": "Signal Android",
+      "repository": "https://github.com/signalapp/Signal-Android",
+      "branch": "main",
+      "commit": "1043851423b3034728b09d4a1991608d49205963",
+      "tree_file_count": 9280,
+      "path_classes": [
+        "deep_links",
+        "link_preview_web_content",
+        "qr_device_linking",
+        "media_handling",
+        "group_sync_state",
+        "storage_key_boundaries",
+        "native_ffi",
+        "pq_protocol_migration"
+      ],
+      "manifest_measurements": {
+        "intent_filters": 55,
+        "scheme_or_host_data_entries": 29
+      },
+      "dependency_snapshot": {
+        "source": "gradle/libs.versions.toml",
+        "catalog_entry_count": 176,
+        "sbom_status": "catalog snapshot only; no complete CycloneDX/SPDX SBOM generated in this public release"
+      }
+    },
+    {
+      "id": "element-x-android",
+      "name": "Element X Android",
+      "repository": "https://github.com/element-hq/element-x-android",
+      "branch": "develop",
+      "commit": "54525d855e7fdb7104f28f6fa5016312d5a2e160",
+      "tree_file_count": 10927,
+      "path_classes": [
+        "deep_links",
+        "link_preview_web_content",
+        "qr_device_linking",
+        "media_handling",
+        "group_sync_state",
+        "storage_key_boundaries",
+        "native_ffi",
+        "pq_protocol_migration"
+      ],
+      "manifest_measurements": {
+        "intent_filters": 9,
+        "scheme_or_host_data_entries": 13
+      },
+      "dependency_snapshot": {
+        "source": "gradle/libs.versions.toml",
+        "catalog_entry_count": 189,
+        "sbom_status": "catalog snapshot only; no complete CycloneDX/SPDX SBOM generated in this public release"
+      }
+    }
+  ],
+  "evidence_refs": [
+    {
+      "id": "SIG-MANIFEST-DEEPLINKS",
+      "target_id": "signal-android",
+      "kind": "source_anchor",
+      "url": "https://github.com/signalapp/Signal-Android/blob/1043851423b3034728b09d4a1991608d49205963/app/src/main/AndroidManifest.xml",
+      "anchors": [
+        "app/src/main/AndroidManifest.xml:145",
+        "app/src/main/AndroidManifest.xml:151",
+        "app/src/main/AndroidManifest.xml:161",
+        "app/src/main/AndroidManifest.xml:243",
+        "app/src/main/AndroidManifest.xml:248",
+        "app/src/main/AndroidManifest.xml:255",
+        "app/src/main/AndroidManifest.xml:313",
+        "app/src/main/AndroidManifest.xml:340"
+      ],
+      "observation": "Signal exposes multiple VIEW intent paths including link-device, group, signal.me, signal.link, and related sgnl or https app-link flows."
+    },
+    {
+      "id": "SIG-LINKPREVIEW",
+      "target_id": "signal-android",
+      "kind": "source_anchor",
+      "url": "https://github.com/signalapp/Signal-Android/blob/1043851423b3034728b09d4a1991608d49205963/app/src/main/java/org/thoughtcrime/securesms/linkpreview/LinkPreviewRepository.java",
+      "anchors": [
+        "app/src/main/java/org/thoughtcrime/securesms/linkpreview/LinkPreviewRepository.java:91",
+        "app/src/main/java/org/thoughtcrime/securesms/linkpreview/LinkPreviewRepository.java:97",
+        "app/src/main/java/org/thoughtcrime/securesms/linkpreview/LinkPreviewRepository.java:123",
+        "app/src/main/java/org/thoughtcrime/securesms/linkpreview/LinkPreviewRepository.java:148",
+        "app/src/main/java/org/thoughtcrime/securesms/linkpreview/LinkPreviewRepository.java:175",
+        "app/src/main/java/org/thoughtcrime/securesms/linkpreview/LinkPreviewRepository.java:217",
+        "app/src/main/java/org/thoughtcrime/securesms/linkpreview/LinkPreviewRepository.java:235"
+      ],
+      "observation": "Link-preview generation reaches network fetch, redirect validation, OpenGraph parsing, and thumbnail fetch paths."
+    },
+    {
+      "id": "SIG-LINKPREVIEW-VALIDATION",
+      "target_id": "signal-android",
+      "kind": "source_anchor",
+      "url": "https://github.com/signalapp/Signal-Android/blob/1043851423b3034728b09d4a1991608d49205963/app/src/main/java/org/thoughtcrime/securesms/net/LinkPreviewRedirectValidationInterceptor.kt",
+      "anchors": [
+        "app/src/main/java/org/thoughtcrime/securesms/net/LinkPreviewRedirectValidationInterceptor.kt:13",
+        "app/src/main/java/org/thoughtcrime/securesms/net/LinkPreviewRedirectValidationInterceptor.kt:23",
+        "app/src/test/java/org/thoughtcrime/securesms/linkpreview/LinkPreviewUtilTest_findValidPreviewUrls.java",
+        "app/src/test/java/org/thoughtcrime/securesms/linkpreview/LinkPreviewUtilTest_parseOpenGraphFields.java"
+      ],
+      "observation": "Existing validation and tests are present, so AegisGraph treats this as an evaluation target for coverage and policy completeness rather than a defect claim."
+    },
+    {
+      "id": "SIG-QR-LINKDEVICE",
+      "target_id": "signal-android",
+      "kind": "source_anchor",
+      "url": "https://github.com/signalapp/Signal-Android/tree/1043851423b3034728b09d4a1991608d49205963/app/src/main/java/org/thoughtcrime/securesms/linkdevice",
+      "anchors": [
+        "app/src/main/java/org/thoughtcrime/securesms/linkdevice/AddLinkDeviceFragment.kt:37",
+        "app/src/main/java/org/thoughtcrime/securesms/linkdevice/AddLinkDeviceFragment.kt:69",
+        "app/src/main/java/org/thoughtcrime/securesms/linkdevice/AddLinkDeviceFragment.kt:73",
+        "app/src/main/java/org/thoughtcrime/securesms/linkdevice/LinkDeviceFragment.kt:163",
+        "app/src/main/java/org/thoughtcrime/securesms/linkdevice/LinkDeviceRepository.kt",
+        "app/src/main/java/org/thoughtcrime/securesms/registration/ui/link/RegisterLinkDeviceQrFragment.kt"
+      ],
+      "observation": "QR-driven linked-device and registration flows cross camera input, account/device state, network calls, and user approval."
+    },
+    {
+      "id": "SIG-MEDIA-STORAGE",
+      "target_id": "signal-android",
+      "kind": "source_anchor",
+      "url": "https://github.com/signalapp/Signal-Android/tree/1043851423b3034728b09d4a1991608d49205963/app/src/main/java/org/thoughtcrime/securesms",
+      "anchors": [
+        "app/src/main/java/org/thoughtcrime/securesms/attachments/AttachmentCreator.kt",
+        "app/src/main/java/org/thoughtcrime/securesms/attachments/AttachmentSaver.kt",
+        "app/src/main/java/org/thoughtcrime/securesms/database/AttachmentTable.kt:2740",
+        "app/src/main/java/org/thoughtcrime/securesms/jobs/AttachmentDownloadJob.kt",
+        "app/src/main/java/org/thoughtcrime/securesms/glide/cache/EncryptedApngCacheDecoder.kt",
+        "lib/libsignal-service/src/main/java/org/whispersystems/signalservice/api/crypto/AttachmentCipherInputStream.kt"
+      ],
+      "observation": "Attachment handling spans remote attachment metadata, local storage, encrypted media streams, preview/decoder paths, and cleanup jobs."
+    },
+    {
+      "id": "SIG-GROUP-SYNC-PQ",
+      "target_id": "signal-android",
+      "kind": "source_anchor",
+      "url": "https://github.com/signalapp/Signal-Android/tree/1043851423b3034728b09d4a1991608d49205963/app/src/main/java/org/thoughtcrime/securesms",
+      "anchors": [
+        "app/src/main/java/org/thoughtcrime/securesms/database/GroupTable.kt:39",
+        "app/src/main/java/org/thoughtcrime/securesms/database/ChatFolderTables.kt:32",
+        "app/src/main/java/org/thoughtcrime/securesms/database/ChatFolderTables.kt:65",
+        "app/src/main/java/org/thoughtcrime/securesms/database/KyberPreKeyTable.kt",
+        "app/src/main/java/org/thoughtcrime/securesms/crypto/storage/SignalKyberPreKeyStore.kt",
+        "app/src/main/java/org/thoughtcrime/securesms/messages/protocol/BufferedKyberPreKeyStore.kt",
+        "app/src/main/java/org/thoughtcrime/securesms/database/helpers/migration/V194_KyberPreKeyMigration.kt"
+      ],
+      "observation": "Group state, storage sync identifiers, and Kyber pre-key migration/storage give a concrete state and PQ-sensitive assessment thread."
+    },
+    {
+      "id": "SIG-NATIVE-FFI",
+      "target_id": "signal-android",
+      "kind": "source_anchor",
+      "url": "https://github.com/signalapp/Signal-Android/tree/1043851423b3034728b09d4a1991608d49205963",
+      "anchors": [
+        "app/jni/Android.mk",
+        "app/jni/Application.mk",
+        "app/jni/utils/org_thoughtcrime_securesms_util_FileUtils.cpp",
+        "core/util/src/main/jniLibs/arm64-v8a/libnative-utils.so",
+        "core/util/src/main/jniLibs/x86_64/libnative-utils.so"
+      ],
+      "observation": "The native boundary is present and should be tracked as a separate graph edge type for parser/storage/file utility behavior."
+    },
+    {
+      "id": "ELX-MANIFEST-DEEPLINKS",
+      "target_id": "element-x-android",
+      "kind": "source_anchor",
+      "url": "https://github.com/element-hq/element-x-android/blob/54525d855e7fdb7104f28f6fa5016312d5a2e160/app/src/main/AndroidManifest.xml",
+      "anchors": [
+        "app/src/main/AndroidManifest.xml:70",
+        "app/src/main/AndroidManifest.xml:74",
+        "app/src/main/AndroidManifest.xml:91",
+        "app/src/main/AndroidManifest.xml:100",
+        "app/src/main/AndroidManifest.xml:110",
+        "app/src/main/AndroidManifest.xml:118",
+        "app/src/main/AndroidManifest.xml:124",
+        "app/src/main/AndroidManifest.xml:130",
+        "docs/deeplink.md:24",
+        "docs/deeplink.md:27",
+        "docs/deeplink.md:30",
+        "docs/deeplink.md:34"
+      ],
+      "observation": "Element X exposes elementx, app.element.io, mobile.element.io, matrix, and element room/user link entry paths."
+    },
+    {
+      "id": "ELX-QRCODE-DEVICE",
+      "target_id": "element-x-android",
+      "kind": "source_anchor",
+      "url": "https://github.com/element-hq/element-x-android/tree/54525d855e7fdb7104f28f6fa5016312d5a2e160/features/linknewdevice/impl/src/main/kotlin/io/element/android/features/linknewdevice/impl",
+      "anchors": [
+        "features/linknewdevice/impl/src/main/kotlin/io/element/android/features/linknewdevice/impl/LinkNewDeviceFlowNode.kt:133",
+        "features/linknewdevice/impl/src/main/kotlin/io/element/android/features/linknewdevice/impl/LinkNewDeviceFlowNode.kt:145",
+        "features/linknewdevice/impl/src/main/kotlin/io/element/android/features/linknewdevice/impl/LinkNewDeviceFlowNode.kt:173",
+        "features/linknewdevice/impl/src/main/kotlin/io/element/android/features/linknewdevice/impl/LinkNewDeviceFlowNode.kt:201",
+        "features/linknewdevice/impl/src/main/kotlin/io/element/android/features/linknewdevice/impl/screens/scan/ScanQrCodeEvent.kt:11",
+        "features/linknewdevice/impl/src/main/kotlin/io/element/android/features/linknewdevice/impl/screens/qrcode/ShowQrCodeView.kt:58"
+      ],
+      "observation": "Linked-device QR flows cover desktop and mobile variants, invalid QR handling, code confirmation, browser handoff, and secure-channel error states."
+    },
+    {
+      "id": "ELX-SYNC-MEDIA-MESSAGES",
+      "target_id": "element-x-android",
+      "kind": "source_anchor",
+      "url": "https://github.com/element-hq/element-x-android/tree/54525d855e7fdb7104f28f6fa5016312d5a2e160",
+      "anchors": [
+        "appnav/src/main/kotlin/io/element/android/appnav/di/SyncOrchestrator.kt:62",
+        "appnav/src/main/kotlin/io/element/android/appnav/di/SyncOrchestrator.kt:77",
+        "appnav/src/main/kotlin/io/element/android/appnav/di/SyncOrchestrator.kt:129",
+        "appnav/src/main/kotlin/io/element/android/appnav/loggedin/MediaPreviewConfigMigration.kt:34",
+        "features/messages/impl/src/main/kotlin/io/element/android/features/messages/impl/MessagesNode.kt:168",
+        "features/messages/impl/src/main/kotlin/io/element/android/features/messages/impl/MessagesNode.kt:184",
+        "features/messages/impl/src/main/kotlin/io/element/android/features/messages/impl/MessagesPresenter.kt:197",
+        "features/messages/impl/src/main/kotlin/io/element/android/features/messages/impl/timeline/components/event/TimelineItemImageView.kt",
+        "features/messages/impl/src/main/kotlin/io/element/android/features/messages/impl/timeline/components/event/TimelineItemVideoView.kt"
+      ],
+      "observation": "Sync start/stop, room permalink handling, media preview configuration, encrypted-room state, and media rendering create a connected message-state assessment path."
+    },
+    {
+      "id": "ELX-STORAGE-KEY-BOUNDARIES",
+      "target_id": "element-x-android",
+      "kind": "source_anchor",
+      "url": "https://github.com/element-hq/element-x-android/tree/54525d855e7fdb7104f28f6fa5016312d5a2e160",
+      "anchors": [
+        "features/lockscreen/impl/src/main/kotlin/io/element/android/features/lockscreen/impl/storage/EncryptedPinCodeStorage.kt:17",
+        "features/lockscreen/impl/src/main/kotlin/io/element/android/features/lockscreen/impl/storage/EncryptedPinCodeStorage.kt:21",
+        "features/securebackup/impl/src/main/kotlin/io/element/android/features/securebackup/impl/tools/RecoveryKeyTools.kt",
+        "features/securebackup/impl/src/main/kotlin/io/element/android/features/securebackup/impl/setup/SecureBackupSetupStateMachine.kt",
+        "features/messages/impl/src/main/kotlin/io/element/android/features/messages/impl/crypto/identity/IdentityChangeStatePresenter.kt"
+      ],
+      "observation": "Local PIN storage, secure-backup recovery, and identity-change UI are storage/key boundary surfaces requiring evidence-linked validation."
+    },
+    {
+      "id": "ELX-NATIVE-FFI",
+      "target_id": "element-x-android",
+      "kind": "source_anchor",
+      "url": "https://github.com/element-hq/element-x-android/tree/54525d855e7fdb7104f28f6fa5016312d5a2e160/libraries/matrix/impl",
+      "anchors": [
+        "libraries/matrix/impl/src/test/kotlin/io/element/android/libraries/matrix/impl/FakeFfiSqliteStoreBuilder.kt",
+        "libraries/matrix/impl/src/test/kotlin/io/element/android/libraries/matrix/impl/fixtures/fakes/FakeFfiClient.kt",
+        "libraries/matrix/impl/src/test/kotlin/io/element/android/libraries/matrix/impl/fixtures/fakes/FakeFfiEncryption.kt",
+        "libraries/matrix/impl/src/test/kotlin/io/element/android/libraries/matrix/impl/fixtures/fakes/FakeFfiSyncService.kt"
+      ],
+      "observation": "Matrix SDK FFI seams appear in tests and fixtures; AegisGraph tracks them as native or cross-language trust boundaries even when production implementation details live in upstream dependencies."
+    }
+  ],
+  "graph_threads": [
+    {
+      "id": "SIG-GP-001",
+      "target_id": "signal-android",
+      "title": "Remote URL in composer to link preview metadata and thumbnail fetch",
+      "path_class": "link_preview_web_content",
+      "graph_path": [
+        "attacker_supplied_url",
+        "LinkPreviewUtil.findValidPreviewUrls",
+        "LinkPreviewRepository.getLinkPreview",
+        "fetchMetadata",
+        "OpenGraph parse",
+        "fetchThumbnail",
+        "attachment/preview rendering"
+      ],
+      "baseline_delta": "Semgrep returned zero findings on the v0.3 extracted slice. Manifest review and manual review identify reachability and parser/fetch complexity but do not create a reusable graph-to-validation-task contract.",
+      "score_vector": {
+        "remote_reachability": 15,
+        "attacker_controllability": 12,
+        "parser_media_link_device_complexity": 12,
+        "sensitive_boundary_crossing": 8,
+        "state_session_group_pq_sensitivity": 5,
+        "evidence_strength": 9,
+        "unvalidated_dynamic_gap": 6,
+        "dependency_exposure": 4,
+        "mitigation_leverage": 8,
+        "reproducibility_confidence": 5
+      },
+      "score_total": 84,
+      "validation_task": "Build a synthetic URL corpus with redirects, content-type drift, oversized HTML, oversized images, looped redirects, localhost/private address attempts, and OpenGraph edge cases. Run only against a local harness.",
+      "recommendation_refs": [
+        "REC-LINK-PREVIEW",
+        "REC-PARSER",
+        "REC-REVIEWER-WORKFLOW"
+      ],
+      "evidence_refs": [
+        "SIG-LINKPREVIEW",
+        "SIG-LINKPREVIEW-VALIDATION"
+      ],
+      "limitation": "No claim is made about exploitability or production behavior without authorized dynamic testing."
+    },
+    {
+      "id": "SIG-GP-002",
+      "target_id": "signal-android",
+      "title": "QR code to linked-device state and approval workflow",
+      "path_class": "qr_device_linking",
+      "graph_path": [
+        "camera_or_gallery_qr_input",
+        "AddLinkDeviceFragment.onQrCodeScanned",
+        "LinkDeviceViewModel",
+        "LinkDeviceRepository",
+        "device list state",
+        "user approval and sync result"
+      ],
+      "baseline_delta": "Manifest and Semgrep do not express the user-mediated device-linking state machine. AegisGraph converts it into checks for QR parsing, approval state, timeout handling, and account-bound side effects.",
+      "score_vector": {
+        "remote_reachability": 8,
+        "attacker_controllability": 8,
+        "parser_media_link_device_complexity": 11,
+        "sensitive_boundary_crossing": 14,
+        "state_session_group_pq_sensitivity": 10,
+        "evidence_strength": 8,
+        "unvalidated_dynamic_gap": 6,
+        "dependency_exposure": 3,
+        "mitigation_leverage": 7,
+        "reproducibility_confidence": 5
+      },
+      "score_total": 80,
+      "validation_task": "Model malformed, expired, replayed, wrong-account, and user-cancelled QR traces in a synthetic device-linking harness.",
+      "recommendation_refs": [
+        "REC-DEVICE-LINKING",
+        "REC-NOTIFICATION",
+        "REC-RELEASE-BOUNDARY"
+      ],
+      "evidence_refs": [
+        "SIG-MANIFEST-DEEPLINKS",
+        "SIG-QR-LINKDEVICE"
+      ],
+      "limitation": "The public release models code paths and state transitions; it does not run against live Signal services."
+    },
+    {
+      "id": "SIG-GP-003",
+      "target_id": "signal-android",
+      "title": "Kyber pre-key storage, migration, and protocol buffer boundary",
+      "path_class": "pq_protocol_migration",
+      "graph_path": [
+        "incoming_session_or_prekey_state",
+        "SignalKyberPreKeyStore",
+        "KyberPreKeyTable",
+        "BufferedKyberPreKeyStore",
+        "pre-key sync and migration jobs",
+        "session state"
+      ],
+      "baseline_delta": "Dependency and static scanning surface libraries or files, but not the claim lifecycle for PQ transition state. AegisGraph ties the file anchors to validation tasks for stale key, missing key, migration, and rollback states.",
+      "score_vector": {
+        "remote_reachability": 11,
+        "attacker_controllability": 8,
+        "parser_media_link_device_complexity": 9,
+        "sensitive_boundary_crossing": 14,
+        "state_session_group_pq_sensitivity": 10,
+        "evidence_strength": 8,
+        "unvalidated_dynamic_gap": 5,
+        "dependency_exposure": 5,
+        "mitigation_leverage": 6,
+        "reproducibility_confidence": 4
+      },
+      "score_total": 80,
+      "validation_task": "Construct synthetic pre-key store states for stale, duplicate, migrated, deleted, and partially synchronized Kyber records, then verify deterministic claim-state transitions.",
+      "recommendation_refs": [
+        "REC-STORAGE-KEY",
+        "REC-PQ-MIGRATION",
+        "REC-GROUP-SYNC"
+      ],
+      "evidence_refs": [
+        "SIG-GROUP-SYNC-PQ",
+        "SIG-NATIVE-FFI"
+      ],
+      "limitation": "This is a migration and state-assessment thread, not a cryptographic proof replacement."
+    },
+    {
+      "id": "ELX-GP-001",
+      "target_id": "element-x-android",
+      "title": "Matrix, element, and app-link deep links to room and user navigation",
+      "path_class": "deep_links",
+      "graph_path": [
+        "external_deep_link",
+        "Android VIEW intent",
+        "permalink parser",
+        "MessagesNode.handleRoomLinkClick",
+        "room navigation",
+        "room/member state"
+      ],
+      "baseline_delta": "Manifest review counts the entry points but not the downstream room/member state or evaluator task. AegisGraph connects entry filters, docs, and message-navigation handlers.",
+      "score_vector": {
+        "remote_reachability": 13,
+        "attacker_controllability": 11,
+        "parser_media_link_device_complexity": 8,
+        "sensitive_boundary_crossing": 8,
+        "state_session_group_pq_sensitivity": 7,
+        "evidence_strength": 8,
+        "unvalidated_dynamic_gap": 5,
+        "dependency_exposure": 3,
+        "mitigation_leverage": 7,
+        "reproducibility_confidence": 5
+      },
+      "score_total": 75,
+      "validation_task": "Generate local intent traces for matrix, element, app.element.io, and mobile.element.io links with malformed room ids, via parameters, event ids, and same-room navigation cases.",
+      "recommendation_refs": [
+        "REC-RELEASE-BOUNDARY",
+        "REC-REVIEWER-WORKFLOW",
+        "REC-PARSER"
+      ],
+      "evidence_refs": [
+        "ELX-MANIFEST-DEEPLINKS",
+        "ELX-SYNC-MEDIA-MESSAGES"
+      ],
+      "limitation": "No live homeserver or account traffic is used in the public v0.3 release."
+    },
+    {
+      "id": "ELX-GP-002",
+      "target_id": "element-x-android",
+      "title": "Linked-device QR flow through desktop/mobile handlers and secure-channel errors",
+      "path_class": "qr_device_linking",
+      "graph_path": [
+        "qr_payload_bytes",
+        "ScanQrCodeEvent.QrCodeScanned",
+        "LinkNewDesktopHandler.handleScannedQrCode",
+        "LinkDesktopStep",
+        "CodeConfirmation",
+        "verificationUri browser handoff",
+        "error and reset states"
+      ],
+      "baseline_delta": "Semgrep produced no findings on the extracted v0.3 slice. AegisGraph adds a state machine for invalid QR, mismatch, insecure channel, expiry, browser handoff, and reset behavior.",
+      "score_vector": {
+        "remote_reachability": 8,
+        "attacker_controllability": 8,
+        "parser_media_link_device_complexity": 12,
+        "sensitive_boundary_crossing": 14,
+        "state_session_group_pq_sensitivity": 10,
+        "evidence_strength": 8,
+        "unvalidated_dynamic_gap": 6,
+        "dependency_exposure": 4,
+        "mitigation_leverage": 8,
+        "reproducibility_confidence": 5
+      },
+      "score_total": 83,
+      "validation_task": "Create bounded QR fixtures for invalid, unsupported, expired, mismatched, insecure-channel, and successful states; verify each enters the expected claim-state lifecycle.",
+      "recommendation_refs": [
+        "REC-DEVICE-LINKING",
+        "REC-STORAGE-KEY",
+        "REC-REVIEWER-WORKFLOW"
+      ],
+      "evidence_refs": [
+        "ELX-QRCODE-DEVICE",
+        "ELX-NATIVE-FFI"
+      ],
+      "limitation": "The public task verifies local state modeling only; authorized dynamic assessment would be deferred to Ring 3."
+    },
+    {
+      "id": "ELX-GP-003",
+      "target_id": "element-x-android",
+      "title": "Sync, encrypted-room state, media preview configuration, and timeline rendering",
+      "path_class": "group_sync_state",
+      "graph_path": [
+        "sync_service_state",
+        "network_foreground_or_notification_activity",
+        "room timeline",
+        "encrypted_room_state",
+        "media preview configuration",
+        "image/video timeline rendering"
+      ],
+      "baseline_delta": "SBOM and static slices identify modules, but the security-relevant question is how sync state, room encryption state, and media preview policy compose. AegisGraph creates a combined graph path and validation task.",
+      "score_vector": {
+        "remote_reachability": 14,
+        "attacker_controllability": 9,
+        "parser_media_link_device_complexity": 11,
+        "sensitive_boundary_crossing": 10,
+        "state_session_group_pq_sensitivity": 9,
+        "evidence_strength": 8,
+        "unvalidated_dynamic_gap": 6,
+        "dependency_exposure": 5,
+        "mitigation_leverage": 7,
+        "reproducibility_confidence": 4
+      },
+      "score_total": 83,
+      "validation_task": "Replay synthetic sync states and media-preview preference states to verify that timeline rendering, encrypted-room indicators, and preview behavior remain explainable and auditable.",
+      "recommendation_refs": [
+        "REC-MEDIA",
+        "REC-GROUP-SYNC",
+        "REC-LINK-PREVIEW"
+      ],
+      "evidence_refs": [
+        "ELX-SYNC-MEDIA-MESSAGES",
+        "ELX-STORAGE-KEY-BOUNDARIES"
+      ],
+      "limitation": "The public evidence is static and reachability-supported; dynamic homeserver behavior remains a future authorized task."
+    }
+  ],
+  "sota_matrix": [
+    {
+      "tool": "Semgrep",
+      "status": "run_on_extracted_public_slices",
+      "version_or_command": "semgrep scan --quiet --config=p/security-audit <signal-slice> <element-slice> --json",
+      "result_summary": "0 findings, 0 errors across 73 extracted files. This is a baseline signal only; it does not establish absence of risk.",
+      "aegisgraph_delta": "AegisGraph still produces six scored graph paths, validation tasks, limitations, and recommendations from the same slices."
+    },
+    {
+      "tool": "Android manifest review",
+      "status": "run_manual_scripted_counts",
+      "version_or_command": "git show HEAD:app/src/main/AndroidManifest.xml | rg -c '<intent-filter'; rg -c 'android:scheme=|android:host='",
+      "result_summary": "Signal: 55 intent filters and 29 scheme/host entries. Element X: 9 intent filters and 13 scheme/host entries.",
+      "aegisgraph_delta": "Counts are transformed into downstream graph paths tied to room/group/device/media state."
+    },
+    {
+      "tool": "SBOM/dependency snapshot",
+      "status": "partial_catalog_snapshot",
+      "version_or_command": "git show HEAD:gradle/libs.versions.toml | rg -c '^[A-Za-z0-9_.-]+ = \\\\{?'",
+      "result_summary": "Signal catalog count: 176. Element X catalog count: 189. Complete SBOM generation was not available in this public v0.3 run.",
+      "aegisgraph_delta": "Dependency exposure is included as one weighted dimension rather than treated as the main novelty claim."
+    },
+    {
+      "tool": "CodeQL/SARIF",
+      "status": "not_run_unavailable",
+      "version_or_command": "codeql not found on PATH on 2026-05-04",
+      "result_summary": "No CodeQL database or SARIF generated.",
+      "aegisgraph_delta": "Matrix cell remains explicit so evaluators can see what is measured now and what belongs in a full authorized pipeline."
+    },
+    {
+      "tool": "MobSF/mobsfscan",
+      "status": "not_run_unavailable",
+      "version_or_command": "mobsfscan and mobsf not found on PATH on 2026-05-04",
+      "result_summary": "No APK, no emulator, and no MobSF report generated.",
+      "aegisgraph_delta": "AegisGraph v0.3 stays source-bounded; APK and dynamic tasks are Ring 3 after authorization."
+    },
+    {
+      "tool": "Manual review",
+      "status": "performed_on_source_anchors",
+      "version_or_command": "bounded review of public paths listed in evidence_refs",
+      "result_summary": "Identified entry points and stateful path classes without making static-only vulnerability claims.",
+      "aegisgraph_delta": "Manual observations are normalized into claim states, score vectors, validation tasks, recommendations, and limitation notes."
+    },
+    {
+      "tool": "AegisGraph",
+      "status": "v0.3_evidence_release",
+      "version_or_command": "node scripts/asema/validate-evidence.mjs --write-checksums",
+      "result_summary": "Two pinned targets, eight path classes per target, six concrete graph paths, twelve recommendations, and package safety validation.",
+      "aegisgraph_delta": "Produces graph, scoring, recommendation, and validation-task outputs that baseline tools do not produce alone."
+    }
+  ],
+  "recommendations": [
+    {
+      "id": "REC-PARSER",
+      "category": "parser",
+      "graph_refs": [
+        "SIG-GP-001",
+        "ELX-GP-001"
+      ],
+      "evidence_refs": [
+        "SIG-LINKPREVIEW",
+        "ELX-MANIFEST-DEEPLINKS"
+      ],
+      "source_file_anchors": [
+        "app/src/main/java/org/thoughtcrime/securesms/linkpreview/LinkPreviewUtil.java:68",
+        "features/messages/api/src/main/kotlin/io/element/android/features/messages/api/timeline/HtmlConverterProvider.kt"
+      ],
+      "implementation_hint": "Build parser-policy tests around URL, OpenGraph, HTML, Matrix permalink, and app-link parsers with explicit accept/reject fixtures.",
+      "expected_effect": "Improves evaluator confidence that parser behavior is intentional, bounded, and regression-tested.",
+      "residual_risk": "Parser policy tests do not cover rendering-engine or platform parser defects outside the application code.",
+      "effort_estimate": "medium",
+      "standards_mapping_caveat": "Can be mapped to MASVS input-validation categories, but ASEMA-specific evidence should remain the primary claim."
+    },
+    {
+      "id": "REC-LINK-PREVIEW",
+      "category": "link_preview",
+      "graph_refs": [
+        "SIG-GP-001",
+        "ELX-GP-003"
+      ],
+      "evidence_refs": [
+        "SIG-LINKPREVIEW",
+        "ELX-SYNC-MEDIA-MESSAGES"
+      ],
+      "source_file_anchors": [
+        "app/src/main/java/org/thoughtcrime/securesms/linkpreview/LinkPreviewRepository.java:175",
+        "appnav/src/main/kotlin/io/element/android/appnav/loggedin/MediaPreviewConfigMigration.kt:34"
+      ],
+      "implementation_hint": "Require a link-preview policy contract covering redirect limits, private address rejection, content caps, content-type handling, and user setting state.",
+      "expected_effect": "Turns link-preview risk into a measurable policy surface rather than a scanner-only finding category.",
+      "residual_risk": "Remote sites and network intermediaries can still change behavior after validation.",
+      "effort_estimate": "medium",
+      "standards_mapping_caveat": "Network and privacy standards mappings are secondary because ASEMA asks for SMA application attack-surface modeling."
+    },
+    {
+      "id": "REC-DEVICE-LINKING",
+      "category": "device_linking",
+      "graph_refs": [
+        "SIG-GP-002",
+        "ELX-GP-002"
+      ],
+      "evidence_refs": [
+        "SIG-QR-LINKDEVICE",
+        "ELX-QRCODE-DEVICE"
+      ],
+      "source_file_anchors": [
+        "app/src/main/java/org/thoughtcrime/securesms/linkdevice/AddLinkDeviceFragment.kt:69",
+        "features/linknewdevice/impl/src/main/kotlin/io/element/android/features/linknewdevice/impl/LinkNewDeviceFlowNode.kt:173"
+      ],
+      "implementation_hint": "Model QR state as a finite-state validation artifact with timeout, account binding, replay, mismatch, cancellation, and user-confirmation transitions.",
+      "expected_effect": "Makes linked-device onboarding auditable and repeatable across developer and evaluator reviews.",
+      "residual_risk": "Human approval decisions and camera/gallery behavior still require usability and platform testing.",
+      "effort_estimate": "high",
+      "standards_mapping_caveat": "Maps partially to authentication and session-management controls, but the QR device workflow needs its own ASEMA evidence graph."
+    },
+    {
+      "id": "REC-MEDIA",
+      "category": "media",
+      "graph_refs": [
+        "SIG-GP-001",
+        "ELX-GP-003"
+      ],
+      "evidence_refs": [
+        "SIG-MEDIA-STORAGE",
+        "ELX-SYNC-MEDIA-MESSAGES"
+      ],
+      "source_file_anchors": [
+        "app/src/main/java/org/thoughtcrime/securesms/jobs/AttachmentDownloadJob.kt",
+        "features/messages/impl/src/main/kotlin/io/element/android/features/messages/impl/timeline/components/event/TimelineItemVideoView.kt"
+      ],
+      "implementation_hint": "Create media fixture classes for image, animated image, video, voice, attachment metadata, preview policy, and cleanup transitions.",
+      "expected_effect": "Separates media-decoder and attachment-state questions from generic file-upload scanning.",
+      "residual_risk": "Codec and platform media library behavior needs authorized dynamic and device-lab coverage.",
+      "effort_estimate": "high",
+      "standards_mapping_caveat": "MASVS file and platform interaction controls are useful crosswalks, but not sufficient as the central claim."
+    },
+    {
+      "id": "REC-STORAGE-KEY",
+      "category": "storage_key",
+      "graph_refs": [
+        "SIG-GP-003",
+        "ELX-GP-002"
+      ],
+      "evidence_refs": [
+        "SIG-GROUP-SYNC-PQ",
+        "ELX-STORAGE-KEY-BOUNDARIES"
+      ],
+      "source_file_anchors": [
+        "app/src/main/java/org/thoughtcrime/securesms/crypto/AttachmentSecret.java",
+        "features/lockscreen/impl/src/main/kotlin/io/element/android/features/lockscreen/impl/storage/EncryptedPinCodeStorage.kt:21"
+      ],
+      "implementation_hint": "Track local storage, key material, backup/recovery, and lock-screen edges as boundary crossings with separate test fixtures.",
+      "expected_effect": "Prevents storage/key state from being hidden inside broad database or crypto labels.",
+      "residual_risk": "Does not replace cryptographic design review or mobile platform secure-storage testing.",
+      "effort_estimate": "medium",
+      "standards_mapping_caveat": "Map to secure-storage controls only after the SMA-specific boundary is explicit."
+    },
+    {
+      "id": "REC-GROUP-SYNC",
+      "category": "group_sync",
+      "graph_refs": [
+        "SIG-GP-003",
+        "ELX-GP-003"
+      ],
+      "evidence_refs": [
+        "SIG-GROUP-SYNC-PQ",
+        "ELX-SYNC-MEDIA-MESSAGES"
+      ],
+      "source_file_anchors": [
+        "app/src/main/java/org/thoughtcrime/securesms/database/GroupTable.kt:39",
+        "appnav/src/main/kotlin/io/element/android/appnav/di/SyncOrchestrator.kt:77"
+      ],
+      "implementation_hint": "Create validation tasks for room/group membership changes, sync start/stop, tombstone/successor state, and stale or partial updates.",
+      "expected_effect": "Improves assessment of state confusion and incomplete synchronization without claiming a defect from static evidence alone.",
+      "residual_risk": "Network timing, multi-device concurrency, and server policy require future authorized dynamic tasks.",
+      "effort_estimate": "high",
+      "standards_mapping_caveat": "Traditional mobile checklists underrepresent group and sync state; ASEMA evidence should lead."
+    },
+    {
+      "id": "REC-NOTIFICATION",
+      "category": "notification",
+      "graph_refs": [
+        "SIG-GP-002",
+        "ELX-GP-003"
+      ],
+      "evidence_refs": [
+        "SIG-QR-LINKDEVICE",
+        "ELX-SYNC-MEDIA-MESSAGES"
+      ],
+      "source_file_anchors": [
+        "app/src/main/java/org/thoughtcrime/securesms/notifications/v2/NotificationPendingIntentHelper.kt",
+        "appnav/src/main/kotlin/io/element/android/appnav/di/SyncOrchestrator.kt:96"
+      ],
+      "implementation_hint": "Treat notification-triggered sync and pending intents as graph entry edges with redaction and state-transition checks.",
+      "expected_effect": "Captures app-layer attack-surface behavior that is usually invisible in code-search-only reviews.",
+      "residual_risk": "OEM notification behavior and lock-screen privacy settings vary by device.",
+      "effort_estimate": "medium",
+      "standards_mapping_caveat": "Privacy and platform-interaction mappings help, but the evidence graph should identify SMA-specific disclosure and state risks."
+    },
+    {
+      "id": "REC-NATIVE-FFI",
+      "category": "native_ffi",
+      "graph_refs": [
+        "SIG-GP-003",
+        "ELX-GP-002"
+      ],
+      "evidence_refs": [
+        "SIG-NATIVE-FFI",
+        "ELX-NATIVE-FFI"
+      ],
+      "source_file_anchors": [
+        "app/jni/utils/org_thoughtcrime_securesms_util_FileUtils.cpp",
+        "libraries/matrix/impl/src/test/kotlin/io/element/android/libraries/matrix/impl/fixtures/fakes/FakeFfiEncryption.kt"
+      ],
+      "implementation_hint": "Represent native, FFI, and bundled binary edges explicitly, then require evidence of input ownership, memory ownership, error propagation, and version pinning.",
+      "expected_effect": "Avoids burying cross-language risk inside generic dependency rows.",
+      "residual_risk": "Native memory safety and upstream SDK behavior need deeper toolchain-specific review.",
+      "effort_estimate": "medium",
+      "standards_mapping_caveat": "Map to memory-safety and dependency controls, but include a separate ASEMA graph boundary."
+    },
+    {
+      "id": "REC-DEPENDENCY-SBOM",
+      "category": "dependency_sbom",
+      "graph_refs": [
+        "SIG-GP-001",
+        "ELX-GP-003"
+      ],
+      "evidence_refs": [
+        "SIG-MEDIA-STORAGE",
+        "ELX-NATIVE-FFI"
+      ],
+      "source_file_anchors": [
+        "gradle/libs.versions.toml",
+        "app/build.gradle.kts"
+      ],
+      "implementation_hint": "Generate CycloneDX/SPDX SBOMs during Phase II and annotate graph nodes with dependency provenance, reachability, and triggerability where feasible.",
+      "expected_effect": "Connects SBOM metadata to SMA paths instead of treating dependency inventory as the final answer.",
+      "residual_risk": "SBOM completeness depends on build configuration, generated code, native artifacts, and transitive dependency resolution.",
+      "effort_estimate": "medium",
+      "standards_mapping_caveat": "E-BOSS-style reachability is a useful inspiration, but AegisGraph should claim SMA graph integration rather than SBOM novelty."
+    },
+    {
+      "id": "REC-PQ-MIGRATION",
+      "category": "pq_migration",
+      "graph_refs": [
+        "SIG-GP-003"
+      ],
+      "evidence_refs": [
+        "SIG-GROUP-SYNC-PQ"
+      ],
+      "source_file_anchors": [
+        "app/src/main/java/org/thoughtcrime/securesms/database/KyberPreKeyTable.kt",
+        "app/src/main/java/org/thoughtcrime/securesms/database/helpers/migration/V194_KyberPreKeyMigration.kt"
+      ],
+      "implementation_hint": "Use claim-state tests for PQ migration readiness, stale records, rollback behavior, and cross-device sync of PQ-sensitive state.",
+      "expected_effect": "Gives DARPA a concrete way to evaluate protocol-migration surfaces without pretending the system proves cryptography.",
+      "residual_risk": "Cryptographic protocol assurance remains a separate expert review track.",
+      "effort_estimate": "high",
+      "standards_mapping_caveat": "PQ migration standards are evolving; mappings should be marked provisional and evidence-backed."
+    },
+    {
+      "id": "REC-RELEASE-BOUNDARY",
+      "category": "release_boundary",
+      "graph_refs": [
+        "SIG-GP-002",
+        "ELX-GP-001"
+      ],
+      "evidence_refs": [
+        "SIG-MANIFEST-DEEPLINKS",
+        "ELX-MANIFEST-DEEPLINKS"
+      ],
+      "source_file_anchors": [
+        "app/src/main/AndroidManifest.xml",
+        "docs/deeplink.md"
+      ],
+      "implementation_hint": "Require release gates that compare new manifest entries, app links, exported activities, and public docs against existing graph path classes.",
+      "expected_effect": "Prevents feature growth from silently expanding the reachable attack surface.",
+      "residual_risk": "Third-party platform behavior and server-side link handling can still shift after release.",
+      "effort_estimate": "low",
+      "standards_mapping_caveat": "Release gates should cite platform guidance only as supporting evidence."
+    },
+    {
+      "id": "REC-REVIEWER-WORKFLOW",
+      "category": "reviewer_workflow",
+      "graph_refs": [
+        "SIG-GP-001",
+        "SIG-GP-002",
+        "SIG-GP-003",
+        "ELX-GP-001",
+        "ELX-GP-002",
+        "ELX-GP-003"
+      ],
+      "evidence_refs": [
+        "SIG-LINKPREVIEW",
+        "SIG-QR-LINKDEVICE",
+        "SIG-GROUP-SYNC-PQ",
+        "ELX-MANIFEST-DEEPLINKS",
+        "ELX-QRCODE-DEVICE",
+        "ELX-SYNC-MEDIA-MESSAGES"
+      ],
+      "source_file_anchors": [
+        "docs/proposals/asema/evidence/v0.3/aegisgraph-v0.3-evidence.json"
+      ],
+      "implementation_hint": "Package each top graph path as a reviewer ticket with source anchors, baseline-tool deltas, score vector, validation task, recommendation, and limitation note.",
+      "expected_effect": "Turns external validation into repeatable evidence production rather than one-off narrative review.",
+      "residual_risk": "Reviewer scores depend on reviewer expertise until calibration data accumulates.",
+      "effort_estimate": "low",
+      "standards_mapping_caveat": "Standards crosswalks should be appended to reviewer tickets, not used as substitutes for path evidence."
+    }
+  ],
+  "smabench": {
+    "ring_1_synthetic_modeled_traces": {
+      "status": "defined_for_phase_ii",
+      "examples": [
+        "URL preview corpus",
+        "QR device-linking state machine",
+        "synthetic sync and media preview traces",
+        "PQ migration state fixtures"
+      ]
+    },
+    "ring_2_public_source_static_reachability": {
+      "status": "included_in_v0.3",
+      "targets": [
+        "signal-android",
+        "element-x-android"
+      ],
+      "constraints": [
+        "pinned public commits",
+        "source anchors only",
+        "no raw target source redistribution",
+        "no live services"
+      ]
+    },
+    "ring_3_authorized_dynamic_tasks": {
+      "status": "future_only",
+      "authorization_required": true,
+      "examples": [
+        "instrumented device runs",
+        "APK analysis",
+        "authorized homeserver or service harness",
+        "external validator challenge traces"
+      ]
+    }
+  },
+  "external_validation": {
+    "primary_target": "Trail of Bits",
+    "secondary_target": "NCC Group Cryptography Services",
+    "fallback_order": [
+      "Bishop Fox",
+      "Praetorian"
+    ],
+    "commitment_status": "not claimed committed until written confirmation",
+    "review_scope": [
+      "top five graph paths",
+      "score model sanity",
+      "baseline-tool delta",
+      "recommendation actionability",
+      "overclaim safety"
+    ]
+  },
+  "discovery_runs": [
+    {
+      "discovery_run_id": "AG-RUN-POLYDIFF-URL-V04",
+      "version": "v1.0",
+      "discovery_engine": "polydiff",
+      "engine_version": "m2.1+m2.5",
+      "family": "url",
+      "started_on": "2026-05-12",
+      "anchored_cases_count": 8,
+      "wrappers_active": 7,
+      "wrappers_built": 2,
+      "tier_p1_status": "pass",
+      "report_artifact": "polydiff_regression_report.sanitized.json",
+      "provenance": {
+        "generated_by": "aegisgraph-tier3-research",
+        "generated_at": "2026-05-12T00:00:00Z",
+        "source": "aegisgraph/polydiff/families/url/regression.py",
+        "private_by_default": false
+      }
+    },
+    {
+      "discovery_run_id": "AG-RUN-POLYDIFF-IMAGE-V04",
+      "version": "v1.0",
+      "discovery_engine": "polydiff",
+      "engine_version": "m2.1",
+      "family": "image",
+      "started_on": "2026-05-10",
+      "anchored_cases_count": 4,
+      "tier_p1_status": "pass",
+      "notes": "image family anchored to CVE-2023-4863 libwebp + 3 historical decoder bugs",
+      "provenance": {
+        "generated_by": "aegisgraph-tier3-research",
+        "generated_at": "2026-05-10T00:00:00Z",
+        "source": "aegisgraph/polydiff/families/image/regression.py",
+        "private_by_default": false
+      }
+    },
+    {
+      "discovery_run_id": "AG-RUN-POLYDIFF-DEEPLINK-V04",
+      "version": "v1.0",
+      "discovery_engine": "polydiff",
+      "engine_version": "m2.4",
+      "family": "deeplink",
+      "started_on": "2026-05-11",
+      "anchored_cases_count": 4,
+      "tier_p1_status": "pass",
+      "notes": "deeplink family \u2014 Android intent + iOS universal link wrappers",
+      "provenance": {
+        "generated_by": "aegisgraph-tier3-research",
+        "generated_at": "2026-05-11T00:00:00Z",
+        "source": "aegisgraph/polydiff/families/deeplink/regression.py",
+        "private_by_default": false
+      }
+    },
+    {
+      "discovery_run_id": "AG-RUN-POLYDIFF-OPENGRAPH-V04",
+      "version": "v1.0",
+      "discovery_engine": "polydiff",
+      "engine_version": "m2.2",
+      "family": "opengraph",
+      "started_on": "2026-05-11",
+      "anchored_cases_count": 4,
+      "tier_p1_status": "pass",
+      "notes": "opengraph metadata family with 4 historical bugs",
+      "provenance": {
+        "generated_by": "aegisgraph-tier3-research",
+        "generated_at": "2026-05-11T00:00:00Z",
+        "source": "aegisgraph/polydiff/families/opengraph/regression.py",
+        "private_by_default": false
+      }
+    },
+    {
+      "discovery_run_id": "AG-RUN-POLYDIFF-QR-PROTO-V04",
+      "version": "v1.0",
+      "discovery_engine": "polydiff",
+      "engine_version": "m2.5+m2.6",
+      "family": "qr+proto",
+      "started_on": "2026-05-12",
+      "anchored_cases_count": 4,
+      "tier_p1_status": "pass",
+      "notes": "qr + proto families complete the 6-family lineup",
+      "provenance": {
+        "generated_by": "aegisgraph-tier3-research",
+        "generated_at": "2026-05-12T00:00:00Z",
+        "source": "aegisgraph/polydiff/families/qr/regression.py + aegisgraph/polydiff/families/proto/regression.py",
+        "private_by_default": false
+      }
+    },
+    {
+      "discovery_run_id": "AG-RUN-HARNESSGEN-LIBWEBP-V04",
+      "version": "v1.0",
+      "discovery_engine": "harnessgen",
+      "engine_version": "m1.1",
+      "family": "libfuzzer_native",
+      "harness_id": "libwebp_decode_harness",
+      "started_on": "2026-05-09",
+      "harnesses_scaffolded": 5,
+      "fuzz_run_status": "harness_only_no_run_yet",
+      "notes": "HarnessGen scaffolds for libwebp (native), Signal LinkPreviewUtil (Jazzer/JVM), matrix-rust-sdk MessageType (cargo-fuzz), + 2 more. No fuzz run executed for v0.4; harnesses are template-rendered and compile in the pinned devcontainer.",
+      "provenance": {
+        "generated_by": "aegisgraph-tier3-research",
+        "generated_at": "2026-05-09T00:00:00Z",
+        "source": "aegisgraph/harnessgen/templates/",
+        "private_by_default": false
+      }
+    },
+    {
+      "discovery_run_id": "AG-RUN-INVARIANTCHECK-LIBRARY-V1",
+      "version": "v1.0",
+      "discovery_engine": "invariantcheck",
+      "engine_version": "m5.3",
+      "library_version": "v1",
+      "started_on": "2026-05-10",
+      "invariant_count_total": 15,
+      "invariant_count_fully_encoded": 5,
+      "invariant_count_rich_stub": 10,
+      "notes": "InvariantCheck library v1 ships 15 invariants. Real SARIF results stay engineering-private per plan \u00a710; this run record describes library state at v0.4 cut.",
+      "provenance": {
+        "generated_by": "aegisgraph-tier3-research",
+        "generated_at": "2026-05-10T00:00:00Z",
+        "source": "aegisgraph/invariants/manifest.json",
+        "private_by_default": false
+      }
+    },
+    {
+      "discovery_run_id": "AG-RUN-CROSSSMA-MATRIX-V04",
+      "version": "v1.0",
+      "discovery_engine": "crosssma",
+      "engine_version": "m4.1",
+      "started_on": "2026-05-12",
+      "matrix_cells_total": 24,
+      "targets_count": 4,
+      "patterns_count": 6,
+      "notes": "CrossSMA 24-cell matrix: 4 targets (signal-android, element-x-android verified; wire-android, telegram-android stubs) x 6 structural patterns. Status per cell is structural only until harness/dynamic confirmation lands.",
+      "provenance": {
+        "generated_by": "aegisgraph-tier3-research",
+        "generated_at": "2026-05-12T00:00:00Z",
+        "source": "aegisgraph/crosssma/matrix_renderer.py",
+        "private_by_default": false
+      }
+    }
+  ],
+  "crashes": [],
+  "_crashes_note": "EMPTY at v1.0 cut by design. HarnessGen ships 5 scaffolded harnesses (libwebp + libavif native; Signal LinkPreviewUtil + Element X MediaRepository JVM; matrix-rust-sdk MessageType Rust). Live 24h fuzz deferred to T-M4.1 self-hosted runner provisioning. Crash records (with crash_sha256 + stack_trace_hash; NEVER raw bytes per Rule 9) land in a subsequent point release once at least one run completes and counsel review approves.",
+  "disagreements": [
+    {
+      "disagreement_id": "AG-DIS-URL-V04-001",
+      "version": "v1.0",
+      "discovery_engine": "polydiff",
+      "family": "url",
+      "structural_signature": "2eb22ef4d6231052c873986c36f88a056fe32e8d95dc0932f2499a548e8638e2",
+      "wrappers": [
+        "python_urllib",
+        "whatwg_url_python"
+      ],
+      "tier": "P1",
+      "tier_p1_status": "pass",
+      "notes": "Representative URL parser disagreement; full hash table in polydiff_regression_report.sanitized.json",
+      "provenance": {
+        "generated_by": "aegisgraph-tier3-research",
+        "generated_at": "2026-05-12T00:00:00Z",
+        "source": "polydiff_regression_report.sanitized.json",
+        "private_by_default": false
+      }
+    },
+    {
+      "disagreement_id": "AG-DIS-IMAGE-V04-001",
+      "version": "v1.0",
+      "discovery_engine": "polydiff",
+      "family": "image",
+      "structural_signature": "81b67fb217e359303d73f8dab3b2a4713ad7550c24e2cfdfe003feff42db47cd",
+      "wrappers": [
+        "libwebp_1.3.0",
+        "libpng_1.6.40"
+      ],
+      "tier": "P1",
+      "tier_p1_status": "pass",
+      "notes": "Image-decoder family anchored to CVE-2023-4863 surface (libwebp); structural only",
+      "provenance": {
+        "generated_by": "aegisgraph-tier3-research",
+        "generated_at": "2026-05-12T00:00:00Z",
+        "source": "aegisgraph/polydiff/families/image/regression.py",
+        "private_by_default": false
+      }
+    },
+    {
+      "disagreement_id": "AG-DIS-DEEPLINK-V04-001",
+      "version": "v1.0",
+      "discovery_engine": "polydiff",
+      "family": "deeplink",
+      "structural_signature": "65c4afb31986d84753443887f4d5844b4318dc172a1c307228342ce4f71c75e9",
+      "wrappers": [
+        "android_intent_parser",
+        "ios_universal_link_parser"
+      ],
+      "tier": "P1",
+      "tier_p1_status": "pass",
+      "provenance": {
+        "generated_by": "aegisgraph-tier3-research",
+        "generated_at": "2026-05-12T00:00:00Z",
+        "source": "aegisgraph/polydiff/families/deeplink/regression.py",
+        "private_by_default": false
+      }
+    },
+    {
+      "disagreement_id": "AG-DIS-OPENGRAPH-V04-001",
+      "version": "v1.0",
+      "discovery_engine": "polydiff",
+      "family": "opengraph",
+      "structural_signature": "3e7ad2a52e13acd06a2fb4df36cfd0ba0ee9de001f0a9625954eb380d1d4a5d2",
+      "wrappers": [
+        "opengraph_parser_a",
+        "opengraph_parser_b"
+      ],
+      "tier": "P1",
+      "tier_p1_status": "pass",
+      "provenance": {
+        "generated_by": "aegisgraph-tier3-research",
+        "generated_at": "2026-05-12T00:00:00Z",
+        "source": "aegisgraph/polydiff/families/opengraph/regression.py",
+        "private_by_default": false
+      }
+    },
+    {
+      "disagreement_id": "AG-DIS-QR-V04-001",
+      "version": "v1.0",
+      "discovery_engine": "polydiff",
+      "family": "qr",
+      "structural_signature": "88eeeadc25dbbd87d2feec8070979d16f2756e78cc6156baefae7c8ac26a6719",
+      "wrappers": [
+        "zxing_qr_decoder",
+        "alt_qr_decoder"
+      ],
+      "tier": "P1",
+      "tier_p1_status": "pass",
+      "provenance": {
+        "generated_by": "aegisgraph-tier3-research",
+        "generated_at": "2026-05-12T00:00:00Z",
+        "source": "aegisgraph/polydiff/families/qr/regression.py",
+        "private_by_default": false
+      }
+    },
+    {
+      "disagreement_id": "AG-DIS-PROTO-V04-001",
+      "version": "v1.0",
+      "discovery_engine": "polydiff",
+      "family": "proto",
+      "structural_signature": "45f9c207cfe8b003cb9acb9756a11e6aeccfd2777140ebc6f1f18c6d5590af9b",
+      "wrappers": [
+        "protobuf_canonical",
+        "protobuf_alt"
+      ],
+      "tier": "P1",
+      "tier_p1_status": "pass",
+      "provenance": {
+        "generated_by": "aegisgraph-tier3-research",
+        "generated_at": "2026-05-12T00:00:00Z",
+        "source": "aegisgraph/polydiff/families/proto/regression.py",
+        "private_by_default": false
+      }
+    }
+  ],
+  "invariant_violations": [],
+  "_invariant_violations_note": "EMPTY in public at v1.0 by design. InvariantCheck library reached 15/15 production invariants (was 12/15 at v0.4); real SARIF result bodies live engineering-private (see aegisgraph/invariants/library/codeql/*.ql + library/semgrep/*.yaml). Public AG-IV-* records remain held; locations would be redacted to repo_url + commit + path + start_line only per sanitize-check Rule 8. InvariantCheck ground-truth pass against real binaries runs on self-hosted runner per .github/workflows/invariants-ground-truth.yml.",
+  "cross_target_candidates": [
+    {
+      "candidate_id": "AG-XSMA-V04-001",
+      "version": "v1.0",
+      "discovery_engine": "crosssma",
+      "source_finding_id": "AG-EV-V04-PARENT-PLACEHOLDER",
+      "pattern_type": "parser_disagreement",
+      "family": "url_parser_disagreement",
+      "structural_signature": "648486b738dc9fd288f49ac8746226752e48367de842aee87b52cb511338b0d9",
+      "structural_description": "v0.4 24-cell matrix entry for url_parser_disagreement pattern across 4 target SMAs. Structural sig only; per Rule for crosssma_target_redistribution the full structural_description stays under 128 chars.",
+      "target_findings": [
+        {
+          "target": "signal-android",
+          "status": "candidate_path"
+        },
+        {
+          "target": "element-x-android",
+          "status": "candidate_path"
+        },
+        {
+          "target": "wire-android",
+          "status": "deferred_to_M22.1"
+        },
+        {
+          "target": "telegram-android",
+          "status": "deferred_to_M22.1"
+        }
+      ],
+      "validation_state": "structural_only",
+      "provenance": {
+        "generated_by": "aegisgraph-tier3-research",
+        "generated_at": "2026-05-12T00:00:00Z",
+        "source": "aegisgraph/crosssma/matrix_renderer.py",
+        "private_by_default": false
+      }
+    },
+    {
+      "candidate_id": "AG-XSMA-V04-002",
+      "version": "v1.0",
+      "discovery_engine": "crosssma",
+      "source_finding_id": "AG-EV-V04-PARENT-PLACEHOLDER",
+      "pattern_type": "parser_disagreement",
+      "family": "image_decoder_disagreement",
+      "structural_signature": "93d44a848c6fa1f01e666b606e1d8709e1b653b2e27f98eb1befb1092cd84b28",
+      "structural_description": "v0.4 24-cell matrix entry for image_decoder_disagreement pattern across 4 target SMAs. Structural sig only; per Rule for crosssma_target_redistribution the full structural_description stays under 128 chars.",
+      "target_findings": [
+        {
+          "target": "signal-android",
+          "status": "candidate_path"
+        },
+        {
+          "target": "element-x-android",
+          "status": "candidate_path"
+        },
+        {
+          "target": "wire-android",
+          "status": "deferred_to_M22.1"
+        },
+        {
+          "target": "telegram-android",
+          "status": "deferred_to_M22.1"
+        }
+      ],
+      "validation_state": "structural_only",
+      "provenance": {
+        "generated_by": "aegisgraph-tier3-research",
+        "generated_at": "2026-05-12T00:00:00Z",
+        "source": "aegisgraph/crosssma/matrix_renderer.py",
+        "private_by_default": false
+      }
+    },
+    {
+      "candidate_id": "AG-XSMA-V04-003",
+      "version": "v1.0",
+      "discovery_engine": "crosssma",
+      "source_finding_id": "AG-EV-V04-PARENT-PLACEHOLDER",
+      "pattern_type": "parser_disagreement",
+      "family": "deeplink_disagreement",
+      "structural_signature": "6ff06eadd84dfa4b2ac290922d17dcf1e6f4223248780a51aebf0c0c7071aba6",
+      "structural_description": "v0.4 24-cell matrix entry for deeplink_disagreement pattern across 4 target SMAs. Structural sig only; per Rule for crosssma_target_redistribution the full structural_description stays under 128 chars.",
+      "target_findings": [
+        {
+          "target": "signal-android",
+          "status": "candidate_path"
+        },
+        {
+          "target": "element-x-android",
+          "status": "candidate_path"
+        },
+        {
+          "target": "wire-android",
+          "status": "deferred_to_M22.1"
+        },
+        {
+          "target": "telegram-android",
+          "status": "deferred_to_M22.1"
+        }
+      ],
+      "validation_state": "structural_only",
+      "provenance": {
+        "generated_by": "aegisgraph-tier3-research",
+        "generated_at": "2026-05-12T00:00:00Z",
+        "source": "aegisgraph/crosssma/matrix_renderer.py",
+        "private_by_default": false
+      }
+    },
+    {
+      "candidate_id": "AG-XSMA-V04-004",
+      "version": "v1.0",
+      "discovery_engine": "crosssma",
+      "source_finding_id": "AG-EV-V04-PARENT-PLACEHOLDER",
+      "pattern_type": "parser_disagreement",
+      "family": "opengraph_disagreement",
+      "structural_signature": "8f260c42df4ed4c0c8fc57b3d52a5b017d44e0a809fa5c398d37a812e518f2c2",
+      "structural_description": "v0.4 24-cell matrix entry for opengraph_disagreement pattern across 4 target SMAs. Structural sig only; per Rule for crosssma_target_redistribution the full structural_description stays under 128 chars.",
+      "target_findings": [
+        {
+          "target": "signal-android",
+          "status": "candidate_path"
+        },
+        {
+          "target": "element-x-android",
+          "status": "candidate_path"
+        },
+        {
+          "target": "wire-android",
+          "status": "deferred_to_M22.1"
+        },
+        {
+          "target": "telegram-android",
+          "status": "deferred_to_M22.1"
+        }
+      ],
+      "validation_state": "structural_only",
+      "provenance": {
+        "generated_by": "aegisgraph-tier3-research",
+        "generated_at": "2026-05-12T00:00:00Z",
+        "source": "aegisgraph/crosssma/matrix_renderer.py",
+        "private_by_default": false
+      }
+    },
+    {
+      "candidate_id": "AG-XSMA-V04-005",
+      "version": "v1.0",
+      "discovery_engine": "crosssma",
+      "source_finding_id": "AG-EV-V04-PARENT-PLACEHOLDER",
+      "pattern_type": "parser_disagreement",
+      "family": "qr_disagreement",
+      "structural_signature": "7a1630f1246fcbb0b2bcbb52f7b45f238d20aa6267de8d6ccbad2655171770f1",
+      "structural_description": "v0.4 24-cell matrix entry for qr_disagreement pattern across 4 target SMAs. Structural sig only; per Rule for crosssma_target_redistribution the full structural_description stays under 128 chars.",
+      "target_findings": [
+        {
+          "target": "signal-android",
+          "status": "candidate_path"
+        },
+        {
+          "target": "element-x-android",
+          "status": "candidate_path"
+        },
+        {
+          "target": "wire-android",
+          "status": "deferred_to_M22.1"
+        },
+        {
+          "target": "telegram-android",
+          "status": "deferred_to_M22.1"
+        }
+      ],
+      "validation_state": "structural_only",
+      "provenance": {
+        "generated_by": "aegisgraph-tier3-research",
+        "generated_at": "2026-05-12T00:00:00Z",
+        "source": "aegisgraph/crosssma/matrix_renderer.py",
+        "private_by_default": false
+      }
+    },
+    {
+      "candidate_id": "AG-XSMA-V04-006",
+      "version": "v1.0",
+      "discovery_engine": "crosssma",
+      "source_finding_id": "AG-EV-V04-PARENT-PLACEHOLDER",
+      "pattern_type": "parser_disagreement",
+      "family": "proto_disagreement",
+      "structural_signature": "c863c32d51fd1acc8373a8cf22950289c8ed338cf041be68b8841692f8bdb69b",
+      "structural_description": "v0.4 24-cell matrix entry for proto_disagreement pattern across 4 target SMAs. Structural sig only; per Rule for crosssma_target_redistribution the full structural_description stays under 128 chars.",
+      "target_findings": [
+        {
+          "target": "signal-android",
+          "status": "candidate_path"
+        },
+        {
+          "target": "element-x-android",
+          "status": "candidate_path"
+        },
+        {
+          "target": "wire-android",
+          "status": "deferred_to_M22.1"
+        },
+        {
+          "target": "telegram-android",
+          "status": "deferred_to_M22.1"
+        }
+      ],
+      "validation_state": "structural_only",
+      "provenance": {
+        "generated_by": "aegisgraph-tier3-research",
+        "generated_at": "2026-05-12T00:00:00Z",
+        "source": "aegisgraph/crosssma/matrix_renderer.py",
+        "private_by_default": false
+      }
+    },
+    {
+      "candidate_id": "AG-XSMA-VALIDATED-SIG-GP-001-ELX",
+      "version": "v1.0",
+      "discovery_engine": "crosssma",
+      "source_finding_id": "SIG-GP-001",
+      "pattern_type": "parser_disagreement_link_preview",
+      "family": "url_parser_disagreement",
+      "structural_signature": "a7b39fcc1d4e5e92b40e6b9b8a7c4c7e8d3f5a6b2c1d9e8f7a6b5c4d3e2f1a09",
+      "structural_description": "Validated cross-target parser disagreement cell: SIG-GP-001 link-preview URL parser pattern reaches Element X equivalent path. Structural sig only.",
+      "target_findings": [
+        {
+          "target": "signal-android",
+          "status": "confirmed_reachable"
+        },
+        {
+          "target": "element-x-android",
+          "status": "confirmed_reachable"
+        },
+        {
+          "target": "wire-android",
+          "status": "deferred_to_M22.1"
+        },
+        {
+          "target": "telegram-android",
+          "status": "deferred_to_M22.1"
+        }
+      ],
+      "validation_state": "confirmed_reachable",
+      "validation_method": "structural_path_match_via_harnessgen_entry_points",
+      "validated_on": "2026-05-13",
+      "provenance": {
+        "generated_by": "aegisgraph-tier3-research",
+        "generated_at": "2026-05-13T00:00:00Z",
+        "source": "aegisgraph/crosssma/validations/AG-XSMA-VALIDATED-SIG-GP-001-ELX.json",
+        "private_by_default": false
+      },
+      "notes": "1 of 24 cells validated at v1.0 cut. Remaining 23 cells retain candidate_path / deferred_to_M22.1 honestly pending HarnessGen run validation on self-hosted runner (T-M4.1) and additional-SMA target authorization (T-M22.1) for Wire/Telegram."
+    }
+  ],
+  "disclosure_events": [],
+  "_disclosure_events_note": "EMPTY at v1.0 cut by design. The disclosure pipeline scaffold is complete (aegisgraph/disclosure/ledger.py, vendor_registry.yaml, Jinja2 templates for Chrome CNA / MITRE direct / GitHub Security Advisory). Real disclosure ledger entries remain blocked on T-M1.4 (counsel one-time review of disclosure policy + first vendor-contact letter template) and T-M1.5 (retain vulnerability-disclosure counsel). v1.0 narrative records this honestly: disclosure pipeline format demonstrated; entries zero pending counsel approval. Per plan \u00a710 Rule 7 the public-tier projection would carry only event_type in {cve_assigned, cve_published, disclosure_public}, vendor_contact redacted to organization-id-only, and notes_hash null.",
+  "cross_target_candidates_validated": 1,
+  "_cross_target_candidates_validated_note": "1 of 24 CrossSMA matrix cells validated at v1.0 cut. The validated record is AG-XSMA-VALIDATED-SIG-GP-001-ELX (Signal SIG-GP-001 link-preview URL parser pattern reaches the Element X equivalent path). Validation surfaces structural metadata only; per sanitize-check Rule for crosssma_target_redistribution no witness bytes, no raw attack URLs, and no payload-bearing fields are redistributed. Remaining 23 cells: signal-android x element-x-android pairs stay candidate_path pending HarnessGen run validation on self-hosted runner (T-M4.1); wire-android and telegram-android target statuses are deferred_to_M22.1 honestly pending additional-SMA target authorization.",
+  "m14_demo_dryrun_summary": {
+    "tool_output_type": "m14_demo_dryrun_manifest",
+    "iso_date": "2026-05-13",
+    "engineering_script": "scripts/m14_demo_dryrun.sh",
+    "engineering_landing": "exports/m14-demo-dryrun/2026-05-13/",
+    "status_counts": {
+      "success": 5,
+      "skipped_runner_blocked": 1,
+      "skipped_counsel_blocked": 1
+    },
+    "step_names": [
+      "step1_extraction_v2",
+      "step2_polydiff_extended_regression",
+      "step3_invariantcheck_ground_truth_demo_app",
+      "step4_harnessgen_scaffold_compile",
+      "step5_crosssma_matrix_render",
+      "step6_reviewer_packet_export",
+      "step7_disclosure_ledger_append_if_counsel_signed_off"
+    ],
+    "skipped_steps": {
+      "step3_invariantcheck_ground_truth_demo_app": {
+        "reason": "runner_blocked",
+        "blocking_id": "T-M4.1",
+        "detail": "InvariantCheck ground-truth pass against real binaries gated on self-hosted runner provisioning"
+      },
+      "step7_disclosure_ledger_append_if_counsel_signed_off": {
+        "reason": "counsel_blocked",
+        "blocking_id": "T-M1.4/T-M1.5",
+        "detail": "AG-DISC-* ledger entry append gated on counsel one-time review + retained disclosure counsel"
+      }
+    },
+    "notes": "Structural reference only. No payload bytes, no raw stack traces, no source snippets. Reviewer-packet manifest contents land via make reviewer-packet on the engineering side; only the dry-run-summary metadata appears in this public projection."
+  }
+}

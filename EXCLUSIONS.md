@@ -41,3 +41,25 @@ The following are intentionally NOT in this public-sanitized export:
   `crosssma_target_redistribution`; witness-hash refs only)
 - records carrying `claim_state == "reviewed_embargoed"` in any
   sanitized_candidate document (blocked by `disclosure_embargoed_leak`)
+
+## v1.0 additions (per plan §10 + reviewer-workbench + M14 demo dry-run)
+- `aegisgraph/workbench/promotions/**` (engineering-private reviewer
+  workbench promotion records; only sanitized reviewer-packet manifest
+  metadata appears publicly via `make reviewer-packet`, never the
+  raw promotion ledger or reviewer notes)
+- `exports/m14-demo-dryrun/**` (engineering-private M14 demo dry-run
+  outputs; only the structural `m14_demo_dryrun_summary` block —
+  step names, status counts, skip reasons — appears in this public
+  projection. No payload bytes, no raw stack traces, no source
+  snippets, no reviewer notes redistributed)
+- `aegisgraph/invariants/ground_truth/**` (engineering-private
+  ground-truth fixture outputs from M7; demo-vulnerable-app SARIF
+  bodies remain engineering-private; only the InvariantCheck
+  production count surfaces publicly)
+- `aegisgraph/harnessgen/scaffolds/private/**` (engineering-private
+  HarnessGen scaffold private inputs / corpus references; only
+  `discovery_runs[]` summaries appear publicly per Rule 5 + Rule 9)
+- `aegisgraph/crosssma/validations/raw/**` (engineering-private
+  CrossSMA validation working files; only the validated cell record
+  AG-XSMA-VALIDATED-SIG-GP-001-ELX with structural metadata appears
+  publicly per the `crosssma_target_redistribution` rule)
