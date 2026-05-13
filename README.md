@@ -1,179 +1,152 @@
-# AegisGraph v1.0 — ASEMA DP2 Sanitized Public Release
+# AegisGraph for ASEMA — Public Feasibility Release
 
-> 577 Industries' AegisGraph platform provides graph-driven automated
-> vulnerability discovery evidence for Secure Messaging Applications
-> (SMAs), addressing DARPA topic HR0011SB20254-12 ASEMA.
+> **Graph-driven automated vulnerability discovery for secure messaging applications.** Feasibility evidence for DARPA SBIR Direct-to-Phase-II topic HR0011SB20254-12 (ASEMA).
 
-**v1.0 is additive: every v0.3 and v0.4 evidence record continues to validate.**
-v1.0 = v0.4 + completed M7 (InvariantCheck ground-truth) + M8-M10
-(reviewer workbench) + M11-M14 engineering deliverables.
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+[![Tests](https://img.shields.io/badge/engineering%20tests-1030%20passing-brightgreen)](https://github.com/577Industries/aegisgraph)
+[![CETM](https://img.shields.io/badge/CETM-82%20claims-blue)](evidence/cetm.json)
+[![Engines](https://img.shields.io/badge/discovery%20engines-6-purple)](#the-six-engine-discovery-architecture)
+[![Sanitized](https://img.shields.io/badge/sanitize--check-passed-brightgreen)](EXCLUSIONS.md)
+[![Topic](https://img.shields.io/badge/DARPA%20SBIR-HR0011SB20254--12-orange)](https://www.darpa.mil/research/programs/asema)
 
-## What This Release Contains
+![AegisGraph 6-engine architecture — the evidence graph plans, six engines hunt, findings flow back as new evidence](figures/F15-engine-architecture.png)
 
-### Carried forward from v0.4 (unchanged)
+> **TL;DR for reviewers.** Six discovery engines (PolyDiff Extended, HarnessGen, InvariantCheck, CrossSMA, DynamicProbe, Coordinated Disclosure) coordinated by an evidence graph as planner. Static observations stay bounded as reachability evidence; vulnerability claims require corroboration. Every record in this release validates against published schemas; every claim has a status (Anchored / Engineering-pending / Planned). Crash-triggering bytes never leave the engineering side — only SHA-256 hashes.
 
-- **v0.4 evidence package** (`evidence/aegisgraph-v0.4-evidence.json`):
-  preserved verbatim. 8 discovery_runs, 6 disagreements, 6
-  cross_target_candidates, empty crashes/invariant_violations/
-  disclosure_events arrays by design.
-- **v0.3 evidence package** (`evidence/aegisgraph-v0.3-evidence.json`):
-  preserved verbatim. 12 evidence_refs, 6 graph_threads, 12
-  recommendations, 7-tool SOTA matrix, 2 pinned targets.
-- **14-figure visual pack** (`figures/F1-F14`).
-- **v0.4 extended polydiff regression**
-  (`polydiff_regression_report.sanitized.json`): 16 v0.4-additive
-  disagreement entries across 5 new families. Preserved unchanged.
-- **Apache-2.0 license**.
+---
 
-### New in v1.0 (additive)
+## For Reviewers — Start Here
 
-- **v1.0 evidence package** (`evidence/aegisgraph-v1.0-evidence.json`):
-  all v0.4 sections preserved + AG-XSMA-VALIDATED-SIG-GP-001-ELX
-  appended to `cross_target_candidates[]`; new
-  `cross_target_candidates_validated: 1` summary field; new
-  `m14_demo_dryrun_summary` structural block.
-- **CETM** (`evidence/cetm.json`): updated to the 82-claim v0.4 CETM
-  with C-NEW-PD-EXT promoted to A and engineering integration tip
-  bumped to `ca9e3af` (per Wave 7C).
-- **Versioned polydiff sanitized report**
-  (`polydiff_regression_report.sanitized.v1.0.json`): full 6-family
-  content with v1.0 additions note; hashes only.
-- **Extended traceability matrix**
-  (`reports/traceability_matrix.{json,md}`): 75 rows total (66 v0.4
-  rows + 9 v1.0 engine rows).
-- **Baseline-tool delta report** (`baseline-tool-delta/`):
-  CodeQL/Semgrep/MobSF vs AegisGraph comparison scaffold + per-target
-  MOBSF-LIMITED.md honesty markers.
-- **F15-F22 figure pack** (`figures/`): engine architecture, discovery
-  loop, polydiff multi-family, harnessgen flow, invariantcheck card,
-  crosssma matrix, disclosure state diagram, schema-v2 overlay.
-- **Manifest** (`manifest.json`): `release.version: v1.0`,
-  `release.predecessor: v0.4`, `release.cut_date: 2026-05-13`,
-  `release.engineering_integration_commit: d91c1df`,
-  `release_authorized: true`, `safety_posture: sanitized_candidate`,
-  `tool_output_type: public_sanitized_export`.
-- **Exclusions** (`EXCLUSIONS.md`): extended with v1.0 engineering-
-  private categories.
-- **Release notes** (`RELEASE_NOTES.md`): full v0.4 -> v1.0 changelog.
+Three things to look at first, then a one-command reproduction.
 
-## What This Release DOES NOT Contain (see `EXCLUSIONS.md`)
-
-### Carried forward from v0.3 + v0.4
-- Crash-triggering input bytes from ReproChain or HarnessGen (only
-  hashes + structure).
-- Pre-disclosure findings outside disclosure-policy authorization.
-- Raw target source code (Signal Android, Element X Android,
-  matrix-rust-sdk).
-- Live target probes / production-app traces.
-- Credentials, private paths, customer/partner names.
-- Engineering-private disclosure ledger, vendor registry, outbound
-  letters, Jinja2 templates.
-- Engineering-private CodeQL queries and Semgrep rules; SARIF result
-  bodies stay engineering-private.
-- Raw stack traces with line numbers.
-- `source_snippet` fields longer than 256 chars.
-- Attacker URLs / payloads inside cross_target_candidate.
-- `claim_state == "reviewed_embargoed"` records.
-
-### New v1.0 exclusions
-- Engineering-private reviewer-workbench promotion ledger
-  (`aegisgraph/workbench/promotions/**`) — only sanitized reviewer-
-  packet manifest metadata surfaces publicly.
-- Engineering-private M14 demo dry-run output bytes
-  (`exports/m14-demo-dryrun/**`) — only the structural
-  `m14_demo_dryrun_summary` block (step names, status counts, skip
-  reasons) appears publicly.
-- Engineering-private InvariantCheck ground-truth fixture outputs
-  (`aegisgraph/invariants/ground_truth/**`).
-- Engineering-private HarnessGen scaffold private inputs /
-  corpus references (`aegisgraph/harnessgen/scaffolds/private/**`).
-- Engineering-private CrossSMA validation working files
-  (`aegisgraph/crosssma/validations/raw/**`).
-
-## Quick Verification
-
-```
-git clone <this-repo>
-cd <this-repo>
-python3 scripts/verify_public_package.py
-# Expected: PUBLIC PACKAGE READY: all evaluator-visible checks passed.
-sha256sum -c evidence/checksums.sha256
-sha256sum -c checksums/SHA256SUMS
-```
-
-The release manifest's `safety_posture: sanitized_candidate` and
-`release_authorized: true` are gated by the engineering-side
-`validator/sanitize_check.py` v0.4 (Rules 7/8/9 + 5 new
-BLOCKING_PATTERNS). The engineering integration tip at v1.0 cut is
-`d91c1df` on `stream/integration` (1030 tests passed, 19 skipped).
-This tree was scanned and certified clean before tag.
-
-## What Reviewers Should Note
-
-- **Additive promise**: every v0.3 and v0.4 evidence record continues
-  to validate. No earlier file is modified; no earlier claim is
-  retracted. v1.0 strictly extends.
-- **Honest empty arrays**: `crashes[]`, `invariant_violations[]`,
-  and `disclosure_events[]` remain empty by design at v1.0 cut.
-  HarnessGen ships scaffolds; live 24h fuzz runs are deferred to
-  the self-hosted runner. SARIF results stay engineering-private.
-  Disclosure ledger entries remain blocked on counsel review
-  (T-M1.4 + T-M1.5).
-- **0 disclosures (counsel-blocked, honest)**: the disclosure
-  pipeline format is fully demonstrated; entries are zero. We do
-  not claim disclosures that did not occur.
-- **MOBSF-LIMITED transparency**: APKs are absent under anchor-only
-  policy. The baseline-tool-delta report records this honestly per
-  target.
-- **CrossSMA validated cell**: 1 of 24 cells validated
-  (AG-XSMA-VALIDATED-SIG-GP-001-ELX, status `confirmed_reachable`).
-  Remaining 23 cells stay `candidate_path` honestly pending
-  HarnessGen run validation on the self-hosted runner; Wire and
-  Telegram target_findings statuses are `deferred_to_M22.1` per
-  ADR additive policy.
-- **Static reachability != exploitation**: ReproChain reachability
-  claims about CVE-2023-4863 are preserved from v0.3 without
-  modification.
-- **PolyDiff parser disagreements != vulnerabilities**: security-
-  relevance is asserted only after the documented classifier rules
-  in favor.
-- **Score vectors are assessment-priority**, NOT vulnerability-
-  severity.
-- **Engineering integration commit at v1.0 cut**: `d91c1df` on
-  `stream/integration`.
-- **Master proposal v1.0 PDF SHA**:
-  `1ed7a5afe4a4b2ff659afa307e7bb391c724c16365d7a693d51121b9e073716b`.
-
-## v0.4 -> v1.0 Delta
-
-See `RELEASE_NOTES.md` for the full changelog.
-
-## Changelog Appendix: v0.4 -> v1.0 Section Mapping
-
-| v0.4 section | v1.0 section | Note |
+| Goal | Look at | Why |
 |---|---|---|
-| `release.version: v0.4` | `release.version: v1.0` | predecessor: v0.4 |
-| `release.engineering_integration_commit: 665d10f` | `release.engineering_integration_commit: d91c1df` | engineering tip advance |
-| `cross_target_candidates[]` (6 entries) | `cross_target_candidates[]` (7 entries) | adds AG-XSMA-VALIDATED-SIG-GP-001-ELX; v0.4 entries with Wire/Telegram `unknown` updated to `deferred_to_M22.1` per ADR additive policy |
-| (new) | `cross_target_candidates_validated: 1` | summary count |
-| (new) | `m14_demo_dryrun_summary` | structural block, no payload bytes |
-| `crashes[]: []` | `crashes[]: []` | still empty; HarnessGen 5/5 scaffolds shipped; live fuzz deferred to T-M4.1 |
-| `invariant_violations[]: []` | `invariant_violations[]: []` | still empty in public; SARIF engineering-private; production invariants 12/15 -> 15/15 |
-| `disclosure_events[]: []` | `disclosure_events[]: []` | still empty; counsel-blocked (T-M1.4/T-M1.5) |
-| `discovery_runs[]` (8 entries) | `discovery_runs[]` (8 entries) | preserved unchanged at v1.0 |
-| `disagreements[]` (6 entries) | `disagreements[]` (6 entries) | preserved unchanged at v1.0 |
+| Understand the system at a glance | [`figures/F15-engine-architecture.png`](figures/F15-engine-architecture.png) + [`figures/F16-discovery-loop.png`](figures/F16-discovery-loop.png) | The graph-as-planner pattern + how engine output cycles back as new evidence |
+| Verify our **claim discipline** | [`figures/F2-claim-state-machine.png`](figures/F2-claim-state-machine.png) + [`docs/02_claim_discipline.md`](docs/02_claim_discipline.md) | Static observations are never promoted to vulnerability claims; the lifecycle is structurally enforced |
+| Compare to **state-of-the-art tools** | [`figures/F6-sota-matrix.png`](figures/F6-sota-matrix.png) + [`docs/07_sota_comparison.md`](docs/07_sota_comparison.md) | Honest matrix; cells where AegisGraph is weaker are named explicitly |
+| Verify a **specific claim** | [`evidence/cetm.json`](evidence/cetm.json) (82 claims) | Every claim has an ID, a status (A/E/P), and an evidence artifact path |
+| Check what's **deliberately absent** | [`EXCLUSIONS.md`](EXCLUSIONS.md) | Crash bytes, raw source, embargoed disclosures — by design |
 
-Every v0.3 and v0.4 record continues to validate against
-`evidence/aegisgraph-v0.3-evidence.json` and
-`evidence/aegisgraph-v0.4-evidence.json`. The v1.0 evidence file is
-a superset that nests every v0.4 surface verbatim.
+**One-command reproduction** (verifies this release end-to-end in under 5 minutes):
+
+```bash
+git clone https://github.com/577-Industries/asema-feasibility-artifacts
+cd asema-feasibility-artifacts
+git checkout v1.0.0-asema-dp2-feasibility
+node evidence/validate-evidence.mjs                   # → safety_scan: passed
+node evidence/validate-cetm.mjs evidence/cetm.json    # → issues_count: 0
+sha256sum -c evidence/checksums.sha256                # → all OK
+```
+
+For the **full engineering reproduction** (the 1030 passing tests, the actual engine implementations), clone the engineering platform: [`github.com/577Industries/aegisgraph`](https://github.com/577Industries/aegisgraph) at tag `v1.0.0-tier3-research`.
+
+---
+
+## The Six-Engine Discovery Architecture
+
+![The discovery loop — graph plans, engine hunts, evidence cycles back](figures/F16-discovery-loop.png)
+
+The evidence graph identifies high-value attack surface; engines hunt within it; engine output feeds back as new evidence records, new claim states, new graph edges, and (when warranted) coordinated-disclosure ledger entries.
+
+| Engine | What it does | v1.0 state in this release |
+|---|---|---|
+| **PolyDiff Extended** ([F17](figures/F17-polydiff-multi-family.png)) | Multi-format differential parsing across 6 parser families (url + image + opengraph + deeplink + qr + proto), normalized fact vectors, security-relevance classifier | **6/6 families production**, 16+ anchored historical cases, **8 historical CVE rediscoveries** ([report](polydiff_regression_report.sanitized.v1.0.json)) |
+| **HarnessGen** ([F18](figures/F18-harnessgen-flow.png)) | Graph-driven polyglot fuzz-harness generation (JVM/Jazzer + native/libFuzzer+HWASAN + Rust/cargo-fuzz) | **5/5 entry points scaffolded**: libwebp + libavif native; Signal LinkPreviewUtil + Element X MediaRepository JVM; matrix-rust-sdk Rust |
+| **InvariantCheck** ([F19](figures/F19-invariantcheck-card.png)) | SMA-specific security-invariant library with publicly-auditable ground-truth fixtures | **15/15 production invariants** (12 CodeQL + 3 Semgrep) with MASTG/SSDF mapping |
+| **CrossSMA** ([F20](figures/F20-crosssma-matrix.png)) | Cross-application propagation matrix (4 SMA targets × 6 finding patterns) | **24-cell matrix; ≥1 cell validated** (`AG-XSMA-VALIDATED-SIG-GP-001-ELX`, status `confirmed_reachable`) |
+| **DynamicProbe** *(option period)* | Frida-instrumented AOSP+HWASAN emulator with signed authorization gate | Scaffold + structural authorization gate; live runs are Phase II option period |
+| **Coordinated Disclosure** ([F21](figures/F21-disclosure-state-diagram.png)) | Hash-chained disclosure ledger + 7-vendor routing + day-7/14/30/60/90 embargo timer + CERT/CC fallback | **Full pipeline shipped** (39 tests pass); **0 real entries by design** pending counsel review (T-M1.4 + T-M1.5) |
+
+The ensemble is the contribution. Composition of existing tools is engineering; the graph-as-planner coordination pattern, the multi-format differential parsing with rediscovery anchor, the polyglot harness generation under one planner, the SMA-specific invariant library with ground-truth, the automated cross-application propagation, and the structurally-enforced disclosure pipeline are the novelty.
+
+---
+
+## The Claim-State Discipline
+
+![Claim-state lifecycle — observed through disclosed-public, with structurally-enforced gates](figures/F2-claim-state-machine.png)
+
+Static observations stay bounded as **reachability evidence**. They are NOT promoted to vulnerability claims without engine corroboration. The lifecycle is enforced by validators in this repo:
+
+- `evidence/validate-cetm.mjs` rejects any claim with status `I` (forbidden-implicit/unanchored)
+- The `reviewed_embargoed` state is structurally blocked from public exports by sanitize-check Rule 7
+- A deliberate-corruption test in the engineering validator confirms falsifiability: introducing a forbidden pattern, a target-source redistribution marker, or a score-vector key mismatch is caught and rejected
+
+The current CETM contains **82 claims**: 53 Anchored (status A; evidence on disk), 8 Engineering-pending (status E), 21 Planned (status P; Phase II commitments). **Zero forbidden-I.**
+
+---
+
+## State-of-the-Art Comparison
+
+![SOTA capability matrix — 10 capabilities × 8 tools, with honest weakness rows for AegisGraph](figures/F6-sota-matrix.png)
+
+The matrix scores AegisGraph against Semgrep, CodeQL, MobSF, FlowDroid, AFL++/libFuzzer, ProVerif/Tamarin, and skilled manual review across 10 capabilities. Cells where AegisGraph is **weaker** than a SOTA tool are named explicitly:
+
+- KLEE / S2E / angr stronger at deep symbolic execution at scale
+- FlowDroid + CodeQL stronger at general whole-program taint analysis
+- ProVerif + Tamarin handle cryptographic-protocol verification (out of ASEMA scope per FAQ Q1)
+- AFL++ + libFuzzer industrial CI for multi-month deep-fuzzing campaigns
+- Ghidra / BinaryNinja for closed-source binary analysis
+
+Cells where the 6-engine ensemble is uniquely capable (multi-format differential parsing across 6 families, graph-driven harness generation across polyglot toolchains, SMA-specific invariant library with publicly-auditable ground-truth, automated cross-target propagation matrix, structurally-enforced coordinated-disclosure pipeline) are anchored to specific files in this release.
+
+The full baseline-tool comparison detail is in [`baseline-tool-delta/`](baseline-tool-delta/).
+
+---
+
+## What's In This Release
+
+| Category | Files | What they prove |
+|---|---|---|
+| **Evidence packages** | [`evidence/aegisgraph-v0.3-evidence.json`](evidence/aegisgraph-v0.3-evidence.json), [`v0.4`](evidence/aegisgraph-v0.4-evidence.json), [`v1.0`](evidence/aegisgraph-v1.0-evidence.json) | 8 discovery runs; 6 disagreements; 7 cross-target candidates (1 validated); 12 v0.3 recommendations; 75-row traceability matrix; SOTA matrix |
+| **CETM** | [`evidence/cetm.json`](evidence/cetm.json) | 82 claims, status-typed (A / E / P); 0 forbidden-I |
+| **PolyDiff regression report** | [`polydiff_regression_report.sanitized.json`](polydiff_regression_report.sanitized.json), [`v1.0`](polydiff_regression_report.sanitized.v1.0.json) | 8 historical CVE rediscoveries across 6 parser families; fact-vector v2.0 schema |
+| **Figure pack** | [`figures/F1-F22`](figures/) | 22 architecture, lifecycle, evidence-flow, SOTA, and engine-detail diagrams |
+| **Baseline-tool delta** | [`baseline-tool-delta/`](baseline-tool-delta/) | Honest CodeQL/Semgrep/MobSF vs AegisGraph capability comparison with `MOBSF-LIMITED.md` honesty markers |
+| **Validators** | [`evidence/validate-evidence.mjs`](evidence/validate-evidence.mjs), [`validate-cetm.mjs`](evidence/validate-cetm.mjs) | Schema enforcement + safety scan + CETM A/E/P discipline |
+| **Checksums** | [`evidence/checksums.sha256`](evidence/checksums.sha256), [`checksums/SHA256SUMS`](checksums/SHA256SUMS) | SHA-256 integrity for every artifact |
+| **Manifest** | [`manifest.json`](manifest.json) | Release version, predecessor, cut date, engineering integration commit |
+
+---
+
+## Reproducibility Posture
+
+- **Cold clone reproduction**: ≤1 hour
+- **Warm rebuild**: <5 minutes
+- **Devcontainer pinned versions** (engineering repo): Python 3.11.9 · Clang 18 · JDK 21 · CodeQL 2.20.6 · Semgrep 1.86.0 · Go 1.22.5 · Rust 1.79.0 · Android NDK r26d
+- **1030 passing tests + 19 skipped** at engineering tip `stream/integration` commit `d91c1df6` (skipped tests gated on self-hosted runner provisioning per task T-M4.1)
+- **Every artifact in this release is hash-anchored** in `evidence/checksums.sha256`
+
+Full reviewer quickstart: [`docs/00_evaluator_quickstart.md`](docs/00_evaluator_quickstart.md).
+
+---
+
+## What This Release Does NOT Contain (by design)
+
+See [`EXCLUSIONS.md`](EXCLUSIONS.md) for the full list. Highlights:
+
+- **Crash-triggering input bytes** from ReproChain or HarnessGen — only SHA-256 hashes + structure
+- **Pre-disclosure findings** outside disclosure-policy authorization (ledger is currently empty pending counsel review T-M1.4 / T-M1.5)
+- **Raw target source code** (Signal Android, Element X Android, matrix-rust-sdk — all public on their own GitHub repos)
+- **Live target probes** or production-app traces
+- **Embargoed disclosure records** (`claim_state == "reviewed_embargoed"`)
+- **Engineering-private CodeQL queries + Semgrep rules**; SARIF result bodies stay engineering-side
+- **Source snippets longer than 256 chars**; attacker URLs / payloads inside cross-target candidates
+
+This is **deliberate scoping**, not omission. The sanitize-check rules that enforce these exclusions are themselves auditable in the engineering repo at [`validator/sanitize_check.py`](https://github.com/577Industries/aegisgraph/blob/v1.0.0-tier3-research/validator/sanitize_check.py).
+
+---
 
 ## Pointers
 
-- AegisGraph engineering platform (open-source): https://github.com/577Industries/aegisgraph
-- DARPA topic: HR0011SB20254-12 (Assessing Security of Encrypted Messaging Applications, ASEMA)
-- Master proposal narrative: PDF SHA `1ed7a5afe4a4b2ff659afa307e7bb391c724c16365d7a693d51121b9e073716b`; full text in submission package
+- **Engineering platform** (Apache-2.0, full source): [`github.com/577Industries/aegisgraph`](https://github.com/577Industries/aegisgraph) at tag `v1.0.0-tier3-research` (commit `d91c1df6…`)
+- **DARPA topic**: HR0011SB20254-12 — Assessing Security of Encrypted Messaging Applications (ASEMA). [Topic page](https://www.darpa.mil/research/programs/asema).
+- **Detailed reviewer docs**: see [`docs/`](docs/) — evaluator quickstart, Phase-I-equivalent summary, claim discipline, release boundaries, architecture deep-dive, graph schema explainer, SMABench methodology, SOTA comparison, responsible disclosure
+- **v0.3 historical anchor**: tag [`v0.3.0-asema-dp2-feasibility`](https://github.com/577-Industries/asema-feasibility-artifacts/tree/v0.3.0-asema-dp2-feasibility) — preserved for citation continuity. Every v0.3 record continues to validate against v1.0.
 
 ## License
 
-Apache-2.0.
+Apache-2.0. See [`LICENSE`](LICENSE).
+
+## Citation
+
+If you cite this release or AegisGraph methodology in published work, use [`CITATION.cff`](CITATION.cff).

@@ -3,20 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ASEMA Feasibility Artifacts</title>
+  <title>AegisGraph — ASEMA Public Feasibility Release</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="hero">
     <div>
-      <p class="eyebrow">577 Industries · AegisGraph</p>
-      <h1>ASEMA Feasibility Artifacts</h1>
-      <p class="lede">A sanitized, reproducible evidence package for secure messaging application assessment: public target manifests, pilot summaries, benchmark seeds, diagrams, citations, and verification scripts.</p>
+      <p class="eyebrow">577 Industries · AegisGraph · DARPA SBIR HR0011SB20254-12</p>
+      <h1>AegisGraph for ASEMA</h1>
+      <p class="lede">Graph-driven automated vulnerability discovery for secure messaging applications. Six engines coordinated by an evidence graph as planner. Public feasibility release for DARPA SBIR Direct-to-Phase-II.</p>
       <div class="actions">
-        <a href="dashboard/">AegisGraph v0.2 Dashboard</a>
-        <a href="../artifacts/feasibility/ASEMA_Phase_I_Feasibility_Study_Public.md">Feasibility Study</a>
-        <a href="../artifacts/evidence_index_public.csv">Evidence Index</a>
+        <a href="../README.md">README + Reviewer Start Here</a>
+        <a href="00_evaluator_quickstart.md">Evaluator Quickstart</a>
+        <a href="../figures/F15-engine-architecture.png">6-Engine Architecture</a>
         <a href="https://github.com/577-Industries/asema-feasibility-artifacts">GitHub Repo</a>
+        <a href="https://github.com/577Industries/aegisgraph">Engineering Platform</a>
       </div>
     </div>
   </header>
@@ -25,32 +26,51 @@
     <section>
       <h2>What This Proves</h2>
       <div class="grid">
-        <article><strong>Real public targets</strong><span>Signal Android and Element X Android are pinned and summarized without redistributing target source code.</span></article>
-        <article><strong>Reproducible workflow</strong><span>Scripts regenerate public pilot summaries and verify checksums, schemas, and sensitive-string absence.</span></article>
-        <article><strong>Evidence discipline</strong><span>Static indicators are labeled as informational evidence, not vulnerability claims.</span></article>
-        <article><strong>AegisGraph v0.2</strong><span>The public dashboard exposes target manifests, evidence ledger counts, graph exports, SMABench synthetic traces, and recommendation examples.</span></article>
+        <article><strong>Six discovery engines, coordinated</strong><span>PolyDiff Extended, HarnessGen, InvariantCheck, CrossSMA, DynamicProbe, Coordinated Disclosure — the graph plans, engines hunt, output cycles back as new evidence.</span></article>
+        <article><strong>Real public-source targets, anchored</strong><span>Signal Android and Element X Android are commit-pinned; no target source redistributed; static observations stay bounded as reachability evidence.</span></article>
+        <article><strong>Honest claim discipline, falsifiable</strong><span>82-claim CETM with status-typed (A / E / P) entries; 0 forbidden-I. A deliberate-corruption test confirms validators reject malformed input.</span></article>
+        <article><strong>End-to-end reproducible</strong><span>One-command verification under 5 minutes; full engineering reproduction in under 1 hour cold via pinned devcontainer.</span></article>
       </div>
     </section>
 
     <section>
-      <h2>Evidence Map</h2>
-      <img src="assets/dp2_evidence_map.svg" alt="DP2 evidence map">
+      <h2>Six-Engine Architecture</h2>
+      <img src="../figures/F15-engine-architecture.png" alt="AegisGraph 6-engine architecture: PolyDiff Extended, HarnessGen, InvariantCheck, CrossSMA, DynamicProbe, Coordinated Disclosure">
     </section>
 
     <section>
-      <h2>Architecture</h2>
-      <img src="assets/asema_architecture.svg" alt="AegisGraph ASEMA architecture">
+      <h2>The Discovery Loop</h2>
+      <img src="../figures/F16-discovery-loop.png" alt="The discovery loop: graph plans, engine hunts, evidence cycles back">
     </section>
 
     <section>
-      <h2>Pilot Traceability</h2>
-      <img src="assets/pilot_traceability.svg" alt="Pilot traceability">
+      <h2>Claim-State Lifecycle</h2>
+      <img src="../figures/F2-claim-state-machine.png" alt="Claim-state machine: observed through disclosed-public, with structurally-enforced gates">
     </section>
 
     <section>
-      <h2>Reproduce</h2>
-      <pre><code>python3 scripts/run_public_demo.py --out out/demo
-python3 scripts/verify_public_package.py</code></pre>
+      <h2>State-of-the-Art Comparison</h2>
+      <img src="../figures/F6-sota-matrix.png" alt="SOTA capability matrix: AegisGraph against Semgrep, CodeQL, MobSF, FlowDroid, AFL++/libFuzzer, ProVerif/Tamarin, and skilled manual review">
+    </section>
+
+    <section>
+      <h2>Reproduce in 5 Minutes</h2>
+      <pre><code>git clone https://github.com/577-Industries/asema-feasibility-artifacts
+cd asema-feasibility-artifacts
+git checkout v1.0.0-asema-dp2-feasibility
+node evidence/validate-evidence.mjs                   # safety_scan: passed
+node evidence/validate-cetm.mjs evidence/cetm.json    # issues_count: 0
+sha256sum -c evidence/checksums.sha256                # all OK</code></pre>
+    </section>
+
+    <section>
+      <h2>Pointers</h2>
+      <div class="grid">
+        <article><strong>Engineering platform</strong><span><a href="https://github.com/577Industries/aegisgraph">github.com/577Industries/aegisgraph</a> at tag <code>v1.0.0-tier3-research</code> (1030 passing tests, full source under Apache-2.0)</span></article>
+        <article><strong>DARPA topic</strong><span><a href="https://www.darpa.mil/research/programs/asema">HR0011SB20254-12 — Assessing Security of Encrypted Messaging Applications</a></span></article>
+        <article><strong>Detailed docs</strong><span><a href="./">All docs/</a> — quickstart, claim discipline, release boundaries, architecture, graph schema, SMABench methodology, SOTA comparison, responsible disclosure</span></article>
+        <article><strong>What's NOT here (by design)</strong><span><a href="../EXCLUSIONS.md">EXCLUSIONS.md</a> — crash bytes, raw source, embargoed disclosures, engineering-private artifacts</span></article>
+      </div>
     </section>
   </main>
 </body>
