@@ -1,0 +1,22 @@
+# Dependabot: keeps the workflow's action pins and the local-demo web app's
+# npm tree current. Monthly + grouped so a demo artifact repo never floods
+# review; security updates arrive on their own schedule regardless.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 3
+    groups:
+      github-actions:
+        patterns: ["*"]
+  - package-ecosystem: "npm"
+    directory: "/apps/local-demo/web"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 3
+    groups:
+      npm-minor-patch:
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
