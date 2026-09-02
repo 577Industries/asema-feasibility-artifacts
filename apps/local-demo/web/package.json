@@ -3,11 +3,11 @@
     "dev": "vite --host 127.0.0.1"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "latest",
-    "vite": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "lucide-react": "latest"
-  },
-  "devDependencies": {}
+    "@vitejs/plugin-react": "^6.0.1",
+    "lucide-react": "^1.14.0",
+    "nanoid": "^3.3.18",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "vite": "^8.2.1"
+  }
 }
